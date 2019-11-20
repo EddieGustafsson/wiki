@@ -34,7 +34,6 @@
                         <input type="hidden" name="typ" value="function">
                         <input type="hidden" name="handling" value="tabort">
                         <input type="hidden" name="funktion" value="tabortWiki">
-                        <input type="hidden" name="anvandarId" value="4">
                         <input type="number" name="wikiId" placeholder="Vilket wiki ska tas bort">
                         <input type="submit" value="Ta Bort Wiki">
                     </form>
