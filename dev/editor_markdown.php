@@ -22,7 +22,24 @@
                 var editor = editormd("editor", {
                     width: "900px",
                     height: "800px",
-                    // markdown: "xxxx",     // dynamic set Markdown text
+
+                    theme : "dark",
+                    previewTheme : "dark",
+                    editorTheme : "pastel-on-dark",
+                    
+                    codeFold : true,
+                    htmlDecode : "style,script,iframe|on*",
+                    emoji: true,
+                    taskList: true,
+                    tocm: true,
+                    tex: true,
+                    flowChart: true,
+                    sequenceDiagram: true,
+
+                    imageUpload : true,
+                    imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                    imageUploadURL : "./php/upload.php",
+                    
                     path : "../assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
                 });
             });
