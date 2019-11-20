@@ -19,15 +19,25 @@
                         <input type="hidden" name="handling" value="skapa">
                         <input type="hidden" name="funktion" value="skapaWiki">
                         <input type="hidden" name="anvandarId" value="4">
-                        <input type="text" name="titel" placeholder="Skriv en titel">
+                        <input type="text" name="titel" placeholder="Skriv titeln på wikit">
                         <input type="submit" value="Skapa Wiki">
                     </form>
                 </div>
                 <div class="col">
-                    <p>Paragraf Ryttare</p>
+                    <p>Poof</p>
                 </div>
                 <div class="col">
-                    <p>Paragraf Ryttare</p>
+                    <h3>Ta Bort Wiki</h3>
+                    <form action="http://10.130.216.101/TP/api.php" method="POST">
+                        <input type="hidden" name="nyckel" value="iRxOUsizwhoXddb4">
+                        <input type="hidden" name="tjanst" value="wiki">
+                        <input type="hidden" name="typ" value="function">
+                        <input type="hidden" name="handling" value="tabort">
+                        <input type="hidden" name="funktion" value="tabortWiki">
+                        <input type="hidden" name="anvandarId" value="4">
+                        <input type="number" name="wikiId" placeholder="Vilket wiki ska tas bort">
+                        <input type="submit" value="Ta Bort Wiki">
+                    </form>
                 </div>
             </div>
         </div>
