@@ -26,7 +26,7 @@
                     theme : "dark",
                     previewTheme : "dark",
                     editorTheme : "pastel-on-dark",
-                    
+
                     codeFold : true,
                     htmlDecode : "style,script,iframe|on*",
                     emoji: true,
@@ -35,10 +35,12 @@
                     tex: true,
                     flowChart: true,
                     sequenceDiagram: true,
+                    autoLoadModules: true,
+                    lineNumbers: true, // Display editor line numbers
 
-                    imageUpload : true,
-                    imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-                    imageUploadURL : "./php/upload.php",
+                    imageUpload: true,
+                    imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                    imageUploadURL: "./php/upload.php",
                     
                     path : "../assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
                 });
