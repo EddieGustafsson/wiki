@@ -12,8 +12,8 @@
             <div class="row">
                 <div class="col">
                     <h3>Skapa Wiki</h3>
-                    <form action="10.130.216.101/TP/api.php" method="POST">
-                        <input type="hidden" name="nyckel" value="iRxOUsizwhoXddB4">
+                    <form action="http://10.130.216.101/TP/api.php" method="POST">
+                        <input type="hidden" name="nyckel" value="iRxOUsizwhoXddb4">
                         <input type="hidden" name="tjanst" value="wiki">
                         <input type="hidden" name="typ" value="function">
                         <input type="hidden" name="handling" value="skapa">
