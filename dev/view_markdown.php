@@ -1,9 +1,18 @@
+<?php 
+include "../functions/view_json.php";
+
+if(isset($_GET["page"])){
+    $wiki_page_id = 3;
+    $page_id = $_GET["page"];
+    $array = getWiki($wiki_page_id);
+}
+?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Marvel´s Superheroes - View Markdown</title>
+        <title>Marvel Wiki - <?php echo $array['titel']; ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -55,7 +64,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);background-color: #fff;">
                         <li class="breadcrumb-item"><a href="#">Hem</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Avengers</li>
+                        <li class="breadcrumb-item active" aria-current="page"><?php echo $array['sidor'][$page_id]['titel']; ?></li>
                     </ol>
                 </nav>
             </div>
@@ -75,7 +84,7 @@
                             </li>
                         </ul>
                         <br>
-                        <h1>Avengers (Earth-616)</h1>
+                        <h1><?php echo $array['sidor'][$page_id]['titel']; ?></h1>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -83,35 +92,12 @@
                                 <div id="test-markdown-view">
                                     <!-- Server-side output Markdown text -->
                                     <textarea style="display:none;">
-###History
-------------
->And there came a day, a day unlike any other, when Earth's mightiest heroes found themselves united against a common threat! On that day, the Avengers were born, to fight the foes no single super hero could withstand!
-
-*This is an abridged version of The Avengers history.*
-
-### Overview
-The **Avengers** are a team of extraordinary individuals with special abilities and the will to do good in the world. The team's purpose is to protect the planet Earth and its people from both domestic and extraterrestrial threats. They are a nonprofit organization privately funded by industrialist Tony Stark's Maria Stark Foundation.[3] The group is recognized as a peacekeeping force by the National Security Council of the United States of America, the United Nations Security Council, and S.H.I.E.L.D.. The team functions with the peaceful interests of the whole world rather than a specific country or organization as stated in the Avengers Charter.
-
-### Origins
-The first five founding members of the Avengers first banded together when Loki, the Asgardian God of Mischief, attempted to discredit the monstrous Hulk in order to draw his half-brother, the god of thunder Thor, into battle. Loki was trapped in Asgard due to his brother's actions but still able to manipulate Midgard. Loki tricked the Hulk into destroying a railway line. The Hulk's friend Rick Jones and the Teen Brigade radioed the Fantastic Four for help, but Loki instead relayed the information to Thor to draw him out in the open.
-
-![](https://vignette.wikia.nocookie.net/marveldatabase/images/c/cd/Avengers_%28Earth-616%29_from_Avengers_Vol_1_1_0001.jpg/revision/latest/scale-to-width-down/200?cb=20161102225907") 
-
-However, Iron Man, the Wasp, and Ant-Man also received the radio signal unbeknownst to Loki and arrived at the scene, attempting to reason with the Green Goliath. Not falling for the trick, Thor confronted Loki and exposed his scheme to the others. Defeating Loki together, the group agreed they worked well together and should formalize the team. The Wasp suggested the name "Avengers" and a legend was born.
-
-The newly formed team assembled a short time later at the midtown Manhattan mansion of industrialist Tony Stark (in reality their fellow member Iron Man). Stark soon donated the mansion to the Avengers for their exclusive use, and set up a foundation to cover all the operation expenses of the nonprofit team under his mother's name, creating the Maria Stark Foundation. The team put down a charter and by laws to govern their operations. The Stark family's trusted butler Edwin Jarvis was kept on as the principal regular domestic employee at what became known as the Avengers Mansion. The Teen Brigade became regular allies and informants to the Avengers and were in close contact.
-
-### Captain America
-The Hulk soon proved to be uncontrollable and left the team after their fight against the Space Phantom and he even teamed up with Namor the Sub-Mariner against the Avengers. After the fight, the Avengers discovered the legendary World War II hero Captain America who had been in suspended animation, frozen in ice since just before the end of World War II. Needing to adjust to the world he awoke in, Captain America joined the heroes.
-
-A born leader, the living legend was given retroactive "founding member" status in place of the Hulk, and was seen as the heart and soul of the team for decades. With Cap by their side, the Avengers faced enemies like Vuk, an alien stranded on Earth; the Lava Men[11] the Mole Man and the Red Ghost,[12] Count Nefaria and the Maggia,[13] the Kallusians,[14] as well as teaming up with the Fantastic Four against the Hulk[15] and the Mole Man again.
-
-
+<?php echo $array['sidor'][$page_id]['innehall']; ?>
                                     </textarea>             
                                 </div>
                             </div>
                             <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:center;">
-                                <h3>Avengers</h3>
+                                <h3>test</h3>
                                 <img src="https://vignette.wikia.nocookie.net/marveldatabase/images/c/cb/Avengers_Vol_8_16_Textless.jpg/revision/latest/scale-to-width-down/250?cb=20181218192518">
                             </div>
                         </div>
