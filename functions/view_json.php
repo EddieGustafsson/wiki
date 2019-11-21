@@ -1,8 +1,5 @@
 <?php
-if (isset($_GET["wiki"])){
-    
-    $wiki_id = $_GET["wiki"];
-
+function getWiki($wiki_id){
     // Create map with request parameters
     $params = array ('nyckel' => 'iRxOUsizwhoXddb4', 'tjanst' => 'wiki', 'typ' => 'JSON', 'wiki' => $wiki_id);
 
@@ -24,5 +21,6 @@ if (isset($_GET["wiki"])){
     $result =  file_get_contents ('http://10.130.216.101/TP/api.php', false, $context);
 
     $array = json_decode($result, true);
-    echo '<pre>'; print_r($array);
+
+    return $array;
 }
