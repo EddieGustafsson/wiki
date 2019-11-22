@@ -8,7 +8,7 @@ if(isset($_GET["page"])){
 }
 ?>
 <!DOCTYPE html>
-<html class="no-js">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,17 @@ if(isset($_GET["page"])){
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+        <style>
+            :target {
+                display: block;
+                position: relative;
+                top: -70px; 
+                visibility: hidden;
+            }
+            img{
+                padding: 0px 20px 0px 20px;
+            }
+        </style>
     </head>
     
     <body class="d-flex flex-column h-100">
@@ -88,19 +98,41 @@ if(isset($_GET["page"])){
             <div class="container">
                 <div class="card shadow-lg">
                     <div class="card-header">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Artikel</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Redigera</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Historik</a>
-                            </li>
-                        </ul>
-                        <br>
-                        <h1><?php echo $array['sidor'][$page_id]['titel']; ?></h1>
+                        <div class="row">
+                            <div class="col-8">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Artikel</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Redigera</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Historik</a>
+                                    </li>
+                                </ul>
+                                <br>
+                                <h1><?php echo $array['sidor'][$page_id]['titel']; ?></h1>
+                                <p><i>Senast ändrad: <?php echo $array['sidor'][$page_id]['datum']; ?></i></p>
+                            </div>
+                            <div class="col-4">
+                                <p>Debug:</p>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+                                        <sub>Sid-ID: <?php echo $array['sidor'][$page_id]['id']; ?></sub><br>
+                                        <sub>JSON-ID: <?php echo $page_id; ?></sub><br>
+                                        <sub>Godkänd av id: <?php echo $array['sidor'][$page_id]['godkantAv']; ?></sub><br>
+                                        <sub>Godkänd av namn: <?php echo $array['sidor'][$page_id]['godKantAvNamn']; ?></sub><br>
+                                    </div>
+                                    <div class="col">
+                                        <sub>Bidragsgivare: <?php echo $array['sidor'][$page_id]['bidragsgivare']; ?></sub><br>
+                                        <sub>Dolt: <?php echo $array['sidor'][$page_id]['dolt']; ?></sub><br>
+                                        <sub>Låst: <?php echo $array['sidor'][$page_id]['last']; ?></sub><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -112,7 +144,7 @@ if(isset($_GET["page"])){
                                     </textarea>             
                                 </div>
                             </div>
-                            <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:center;">
+                            <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:left;">
                                 <div class="sticky-top" style="top: 80px;">
                                     <h3>Innehållsförteckning</h3>
                                     <div id="custom-toc-container"></div>
@@ -150,11 +182,13 @@ if(isset($_GET["page"])){
                 var testView = editormd.markdownToHTML("test-markdown-view", {
                     // markdown : "[TOC]\n### Hello world!\n## Heading 2", // Also, you can dynamic set Markdown text
                     htmlDecode : true,  // Enable / disable HTML tag encode.
-                    // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
+                    toc: true,
                     tocm: true,    // Using [TOCM]
-                    tocContainer: "#custom-toc-container", // 自定义 ToC 容器层
+                    tocContainer: "#custom-toc-container",
+                    // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
                 });
             });
         </script>
+
     </body>
 </html>
