@@ -3,10 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Marvel Wiki – <?php echo $array['sidor'][$page_id]['titel']; ?></title>
+        <title>
+        <?php 
+            if(isset($page_title)){
+                echo $page_title;
+            } else {
+                echo $array['sidor'][$page_id]['titel']; 
+            }
+        ?>
+        – Marvel Wiki 
+        </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.min.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
