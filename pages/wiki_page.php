@@ -2,9 +2,9 @@
 include "../functions/view_json.php";
 
 if(isset($_GET["page"])){
-    $wiki_page_id = 3;
+    $wiki_id = 3;
     $page_id = $_GET["page"];
-    $array = getWiki($wiki_page_id);
+    $array = getWiki($wiki_id);
 } else {
     header("location:wiki_page.php?page=0");
 }
