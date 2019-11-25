@@ -7,29 +7,23 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.min.css">
     </head>
     <body>
-        <div id="wikisida-form" class="wikisida-form">
 
+        <div id="wikisida-form" class="wikisida-form">
             <div id="skapa-wikisida" class="skapa-wikisida">
                 <h4>Skapa wikisida</h4>
 
-                <form action="http://10.130.216.101/TP/api.php" method="POST">
-                    <input type='hidden' name='nyckel' value='JIOAJWWNPA259FB2'/>
-                    <input type='hidden' name='tjanst' value='wiki'/> 
-                    <input type='hidden' name='typ' value='function'/>
-                    <input type='hidden' name='handling' value='skapa'/>
-                    <input type='hidden' name='funktion' value='skapaWikiUppdatering'/>
-                    <input type="hidden" name="wikiId" value="6">
-
+                <form id="form" action="../functions/text_formating.php" method="POST">
                     Sid id: <input type="text" name="sidId"><br>
                     Bidragare: <input type="text" name="bidragsgivare"><br>
                     Titel: <input type="text" name="titel"><br>
                     <p>Innehåll:</p>
                     <div id="editor">
                         <!-- Tips: Editor.md can auto append a `<textarea>` tag -->
-                         <textarea name="innehall" style="display:none;"></textarea>
+                         <textarea id="innehall" name="innehall" style="display:none;"></textarea>
                     </div>
 
                     <input type="submit" value="Skapa wikisida">
+                    
                 </form>
         </div>
 
@@ -40,9 +34,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/editormd.min.js"></script>
         <script type="text/javascript">
-        var editor;
+        
             $(function() {
-                    editor = editormd("editor", {
+                    var editor = editormd("editor", {
                     width: "900px",
                     height: "800px",
 
@@ -69,14 +63,9 @@
                 });
             });
 
-            for(let i = 0; i < editor.length; i++)
-            {
-                if(editor.indexOf(i) == '\"' || editor.indexOf(i) == "\'"){
-                editor.indexOf(i) = "2_%1"
-                var_dump(editor.indexOf(i));
-            }
-
         </script>
+
+        
     </body>
 </html>
 
