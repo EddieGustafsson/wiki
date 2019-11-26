@@ -5,8 +5,6 @@ include "../functions/view_json.php";
 if(isset($_GET["page"])){
     $page_id = $_GET["page"];
     $array = getWiki($wiki_id);
-} else {
-    header("location:wiki_page.php?page=0");
 }
 
 include '../includes/head.php';
