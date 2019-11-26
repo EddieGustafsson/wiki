@@ -1,0 +1,14 @@
+:target {
+    display: block;
+    position: relative;
+    top: -95px; 
+    visibility: hidden;
+}
+
+img{
+    padding: 0px 20px 0px 20px;
+}
+
+.editormd-preview-close-btn{
+    display: none!important;
+}

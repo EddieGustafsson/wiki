@@ -1,2 +1,3 @@
 <?php
-$api = "iRxOUsizwhoXddb4";
+$api = "JIOAJWWNPA259FB2";
+$wiki_id = "3";
