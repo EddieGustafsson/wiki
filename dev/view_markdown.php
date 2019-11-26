@@ -1,9 +1,11 @@
 <?php 
 include "../functions/view_json.php";
+include "../functions/get_title.php";
 
 if(isset($_GET["page"])){
     $wiki_page_id = 3;
-    $page_id = $_GET["page"];
+    $title = $_GET["page"];
+    $page_id = getTitle($title);
     $array = getWiki($wiki_page_id);
 }
 ?>
