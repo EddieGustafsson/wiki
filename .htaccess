@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^([^/]*)$ /pages/wiki_page.php?page=$1 [L]
+RewriteRule ^([^/]*)$ /Wiki/pages/wiki_page.php?page=$1 [L]
