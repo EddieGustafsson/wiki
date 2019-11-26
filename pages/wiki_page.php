@@ -1,8 +1,8 @@
 <?php 
+include "../includes/settings.php";
 include "../functions/view_json.php";
 
 if(isset($_GET["page"])){
-    $wiki_id = 3;
     $page_id = $_GET["page"];
     $array = getWiki($wiki_id);
 } else {
