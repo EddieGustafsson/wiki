@@ -37,6 +37,11 @@
     <body class="d-flex flex-column h-100">
 
         <div class="container sticky-top" style="margin-bottom:15px">
+            <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
+                <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
+                    <a class="float-right" href="">Logga in</a>
+                </div>
+            </nav>
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ca091b !important;">
                 <a class="navbar-brand" href="#">Marvel Wiki</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
