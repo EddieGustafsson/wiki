@@ -15,23 +15,12 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="icon" href="http://localhost/Wiki/assets/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="http://localhost/Wiki/assets/css/main.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.min.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            :target {
-                display: block;
-                position: relative;
-                top: -70px; 
-                visibility: hidden;
-            }
-            img{
-                padding: 0px 20px 0px 20px;
-            }
-        </style>
     </head>
     
     <body class="d-flex flex-column h-100">
@@ -39,7 +28,7 @@
         <div class="container sticky-top" style="margin-bottom:15px">
             <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
                 <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
-                    <a class="float-right" href="">Logga in</a>
+                    <a class="float-right" data-toggle="modal" data-target="#login" href="">Logga in</a>
                 </div>
             </nav>
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ca091b !important;">
