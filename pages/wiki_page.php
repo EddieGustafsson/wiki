@@ -1,10 +1,13 @@
 <?php 
 include "../includes/settings.php";
 include "../functions/view_json.php";
+include "../functions/get_title.php";
 
 if(isset($_GET["page"])){
-    $page_id = $_GET["page"];
-    $array = getWiki($wiki_id);
+    $wiki_page_id = 3;
+    $title = $_GET["page"];
+    $page_id = getTitle($title);
+    $array = getWiki($wiki_page_id);
 }
 
 include '../includes/head.php';
