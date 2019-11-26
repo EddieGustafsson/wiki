@@ -1,6 +1,6 @@
 <?php
 
-    function getTitle(){
+    function getTitle($title){
 
         include "../includes/settings.php";
 
@@ -26,8 +26,13 @@
 
         $array = json_decode($result, true);
 
-        
+        for($i = 0; $i < sizeof($array['sidor']); $i++){
 
+            if($array['sidor'][$i]['titel'] == $title){
+                return $i;
+            }
+
+        }
 
     }
 
