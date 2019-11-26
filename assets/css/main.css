@@ -12,3 +12,21 @@ img{
 .editormd-preview-close-btn{
     display: none!important;
 }
+
+.breadcrumb{
+    background-color: #ececec !important;
+}
+
+/* Dark mode*/
+
+.darkmode--activated .card, .darkmode--activated .editormd-html-preview, .darkmode--activated .bg-dark, .darkmode--activated .nav-link.active{
+    background-color: #222121!important;
+}
+
+.darkmode--activated p, .darkmode--activated sub, .darkmode--activated h1, .darkmode--activated h2, .darkmode--activated h3, .darkmode--activated h4, .darkmode--activated h5, .darkmode--activated .card-header{
+    color: white;
+}
+
+.darkmode--activated ul, .darkmode--activated li::before{
+    color: white;
+}

@@ -13,7 +13,7 @@ include '../includes/head.php';
         <main role="main" class="flex-shrink-0">
             <div class="container">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);background-color: #fff;">
+                    <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);">
                         <li class="breadcrumb-item"><a href="#">Hem</a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?php echo $array['sidor'][$page_id]['titel']; ?></li>
                     </ol>
@@ -70,7 +70,7 @@ include '../includes/head.php';
                                 </div>
                             </div>
                             <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:left;">
-                                <div class="sticky-top" style="top: 80px;">
+                                <div class="sticky-top" style="top: 100px; z-index: 1;">
                                     <h3>Innehållsförteckning</h3>
                                     <div id="custom-toc-container"></div>
                                 </div>
