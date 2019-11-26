@@ -31,7 +31,7 @@
                     <a class="float-right" data-toggle="modal" data-target="#login" href="">Logga in</a>
                 </div>
             </nav>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ca091b !important;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ce1022 !important;">
                 <a class="navbar-brand" href="#">Marvel Wiki</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
