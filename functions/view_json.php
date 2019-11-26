@@ -1,7 +1,9 @@
 <?php
 function getWiki($wiki_id){
+    include "../includes/settings.php";
+
     // Create map with request parameters
-    $params = array ('nyckel' => 'iRxOUsizwhoXddb4', 'tjanst' => 'wiki', 'typ' => 'JSON', 'wiki' => $wiki_id);
+    $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'JSON', 'wiki' => $wiki_id);
 
     // Build Http query using params
     $query = http_build_query ($params);
