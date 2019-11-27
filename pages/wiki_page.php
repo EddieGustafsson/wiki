@@ -17,8 +17,18 @@ include '../includes/head.php';
             <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);">
-                        <li class="breadcrumb-item"><a href="#">Hem</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?php echo $array['sidor'][$page_id]['titel']; ?></li>
+                        <?php 
+                        if($array['sidor'][$page_id]['titel'] != 'Home'){
+                            echo 
+                            '
+                            <li class="breadcrumb-item"><a href="#">Hem</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">'. $array['sidor'][$page_id]['titel'] .'</li>
+                            ';
+                        } else {
+                            echo '<li class="breadcrumb-itemactive" aria-current="page"><a>Hem</a></li>';
+                        }
+                        
+                        ?>
                     </ol>
                 </nav>
             </div>
