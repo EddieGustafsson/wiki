@@ -33,7 +33,7 @@ include '../includes/head.php';
                                         <a class="nav-link active" href="#">Artikel</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Redigera</a>
+                                        <a class="nav-link" href="/Wiki/<?php echo $array['sidor'][$page_id]['titel']; ?>/_edit">Redigera</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Historik</a>
