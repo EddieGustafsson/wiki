@@ -1,14 +1,15 @@
 <?php
 include "../includes/settings.php";
 include "../functions/view_json.php";
+include "../functions/get_title.php";
 
 $page_title = 'Redigera artikel';
 
 if(isset($_GET["page"])){
-    $page_id = $_GET["page"];
-    $array = getWiki($wiki_id);
-} else {
-    header("location:edit_page.php?page=0");
+    $wiki_page_id = 3;
+    $title = $_GET["page"];
+    $page_id = getTitle($title);
+    $array = getWiki($wiki_page_id);
 }
 
 include '../includes/head.php';
@@ -18,7 +19,7 @@ include '../includes/head.php';
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);background-color: #fff;">
                         <li class="breadcrumb-item"><a href="#">Hem</a></li>
-                        <li class="breadcrumb-item"><a href="#"><?php echo $array['sidor'][$page_id]['titel']; ?></a></li>
+                        <li class="breadcrumb-item"><a href="/Wiki/<?php echo $array['sidor'][$page_id]['titel']; ?>"><?php echo $array['sidor'][$page_id]['titel']; ?></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?php echo $page_title; ?></li>
                     </ol>
                 </nav>
