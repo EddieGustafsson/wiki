@@ -28,11 +28,13 @@
 
         for($i = 0; $i < sizeof($array['sidor']); $i++){
 
-            if($array['sidor'][$i]['titel'] == $title){
+            if(strtolower($array['sidor'][$i]['titel']) == strtolower($title)){
                 return $i;
             }
 
         }
+
+        header("location: _create");
 
     }
 
