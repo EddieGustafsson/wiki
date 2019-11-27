@@ -28,7 +28,8 @@
         <div class="container sticky-top" style="margin-bottom:15px">
             <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
                 <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
-                    <a class="float-right" data-toggle="modal" data-target="#login" href="">Logga in</a>
+                    <!--<a class="float-right" data-toggle="modal" data-target="#login" href="">Logga in</a>-->
+                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#login">Logga in</button>
                 </div>
             </nav>
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ce1022 !important;">
