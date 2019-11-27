@@ -17,6 +17,10 @@ img{
     background-color: #ececec !important;
 }
 
+.darkmode-toggle{
+    background: #4f4f51!important;
+}
+
 /* Dark mode*/
 
 .darkmode--activated .card, .darkmode--activated .editormd-html-preview, .darkmode--activated .bg-dark, .darkmode--activated .nav-link.active{
