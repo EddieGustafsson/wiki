@@ -40,13 +40,13 @@ include '../includes/head.php';
                             <div class="col-8">
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">Artikel</a>
+                                        <a class="nav-link active">Artikel</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/Wiki/<?php echo $array['sidor'][$page_id]['titel']; ?>/_edit">Redigera</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Historik</a>
+                                        <a class="nav-link" href="/Wiki/<?php echo $array['sidor'][$page_id]['titel']; ?>/_history">Historik</a>
                                     </li>
                                 </ul>
                                 <br>
