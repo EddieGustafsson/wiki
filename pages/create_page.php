@@ -78,12 +78,12 @@ include '../includes/head.php';
                     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
                     imageUploadURL: "./php/upload.php",
                     
-                    path : "../assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
+                    path : "http://localhost/Wiki/assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
                 });
 
             });
         </script>
-        <script src="../assets/js/languages/en.js"></script>
+        <script src="http://localhost/Wiki/assets/js/languages/en.js"></script>
 
     </body>
 </html>
