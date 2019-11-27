@@ -69,7 +69,7 @@
                         <i class="fa fa-compass"></i> Utforska
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Slumpartikel</a>
+                            <a class="dropdown-item" href="localhost:8080/Wiki/pages/random_page.php">Slumpartikel</a>
                             <a class="dropdown-item" href="#">Senaste ändringarna</a>
                         </div>
                     </li>
