@@ -28,4 +28,4 @@ $random_page_id = rand(0, sizeof($array['sidor']));
 
 $page = strtolower($array['sidor'][$random_page_id]['titel']);
 
-header("location: ../$page");
+header("location: $page");
