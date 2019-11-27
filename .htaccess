@@ -1,5 +1,6 @@
 RewriteEngine On
 RewriteRule ^_create\/?$ "/Wiki/pages/create_page.php" [L]
+RewriteRule ^$ "/Wiki/pages/wiki_page.php?page=home" [L]
 RewriteRule ^home\/?$ "/Wiki/pages/wiki_page.php?page=home" [L]
 RewriteRule ^([^/]*)/_edit$ /Wiki/pages/edit_page.php?page=$1 [L]
 RewriteRule ^([^/]*)/?$ /Wiki/pages/wiki_page.php?page=$1 [L]
