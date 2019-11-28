@@ -40,15 +40,30 @@ include '../includes/head.php';
                             <div class="row">
                                 <div class="col">
                                     <?php
-                                    echo "<ul>";
+                                    echo "<div class='list-group'>";
 
                                     for($i = 0; $i < sizeof($array['sidor']); $i++){
 
-                                        echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
+                                        //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
+
+                                        $source = $array['sidor'][$i]['innehall'];
+                                        $source = substr($source,0,300);
+
+                                        echo 
+                                        '
+                                        <a href="/Wiki/'.$array['sidor'][$i]['titel'].'" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1"><strong>'.$array['sidor'][$i]['titel'].'</strong></h5>
+                                                <small>'.$array['sidor'][$i]['datum'].'</small>
+                                            </div>
+                                            <p class="mb-1">'.$source.'...</p>
+                                            <small>Godkänt av: '.$array['sidor'][$i]['godKantAvNamn'].'</small>
+                                        </a>
+                                        ';
                             
                                     }
 
-                                    echo "</ul>";
+                                    echo "</div>";
                                     
                                     ?>
                                 </div>
