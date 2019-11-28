@@ -38,7 +38,7 @@ include '../includes/head.php';
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <div id="editor">
+                                    <div style="margin-top:10px;" id="editor">
                                         <textarea name="source" style="display:none;"></textarea>
                                     </div>
                                     <div>
