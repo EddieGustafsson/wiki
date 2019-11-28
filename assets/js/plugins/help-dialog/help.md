@@ -57,8 +57,6 @@ Kombinerad betoning med **asterisker och _underscores_**.
 Struken text. ~~Ser ut så här.~~
 
 
-<a name="lists"/>
-
 ## Listor
 
 (I det här exemplet visas ledande och efterföljande utrymmen med punkter: ⋅)
@@ -99,7 +97,6 @@ Struken text. ~~Ser ut så här.~~
 - Eller minus
 + Eller plus
 
-<a name="links"/>
 
 ## Länkar
 
@@ -151,8 +148,6 @@ Lite text för att visa att referenslänkar kan följa senare.
 [1]: http://slashdot.org
 [länka texten själv]: http://www.reddit.com
 
-<a name="images"/>
-
 ## Bilder
 
 ```no-highlight
@@ -177,7 +172,6 @@ Referens-stil:
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Titel Text 2"
 
-<a name="code"/>
 
 ## Kod och syntaxmarkering
 
@@ -224,9 +218,6 @@ Inget språk anges, så ingen syntaxmarkering.
 Men låt oss kasta in en <b>tag</b>.
 ```
 
-
-<a name="tables"/>
-
 ## Tabeller
 
 Tabeller är inte en del av den grundläggande Markdown-specifikationen, men de ingår i GFM och * Markdown Here * stöder dem. De är ett enkelt sätt att lägga till tabeller till din e-post - en uppgift som annars skulle kräva kopiering och klistra in från ett annat program.
@@ -265,7 +256,6 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 
-<a name="blockquotes"/>
 
 ## Blockquotes
 
