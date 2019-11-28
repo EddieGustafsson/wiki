@@ -97,7 +97,7 @@ include '../includes/head.php';
 
             });
         </script>
-        <script src="../assets/js/languages/en.js"></script>
+        <script src="../assets/js/languages/sv.js"></script>
 
     </body>
 </html>

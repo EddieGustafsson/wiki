@@ -83,7 +83,7 @@ include '../includes/head.php';
 
             });
         </script>
-        <script src="http://localhost/Wiki/assets/js/languages/en.js"></script>
+        <script src="http://localhost/Wiki/assets/js/languages/sv.js"></script>
 
     </body>
 </html>
