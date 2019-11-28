@@ -71,6 +71,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/Wiki/_random">Slumpartikel</a>
+                            <a class="dropdown-item" href="/Wiki/_showall">Alla sidor</a>
                             <a class="dropdown-item" href="#">Senaste ändringarna</a>
                         </div>
                     </li>
