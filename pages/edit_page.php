@@ -2,6 +2,7 @@
 include "../includes/settings.php";
 include "../functions/view_json.php";
 include "../functions/get_title.php";
+include "../functions/delete_wiki_page.php";
 
 $page_title = 'Redigera artikel';
 
