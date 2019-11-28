@@ -21,7 +21,7 @@ include '../includes/head.php';
                         if($array['sidor'][$page_id]['titel'] != 'Home'){
                             echo 
                             '
-                            <li class="breadcrumb-item"><a href="#">Hem</a></li>
+                            <li class="breadcrumb-item"><a href="/Wiki">Hem</a></li>
                             <li class="breadcrumb-item active" aria-current="page">'. $array['sidor'][$page_id]['titel'] .'</li>
                             ';
                         } else {
