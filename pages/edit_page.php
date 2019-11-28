@@ -37,14 +37,10 @@ include '../includes/head.php';
                                         <input name="title" type="text" class="form-control" aria-label="Sizing example input" placeholder="Titel" value="<?php echo $array['sidor'][$page_id]['titel']; ?>" aria-describedby="inputGroup-sizing-lg">
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <p style="margin-top:1px;margin-bottom:-2px;">Inställningar:</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Lås artikel
-                                        </label>
-                                    </div>
+                                <div class="col-4" style="margin-top: 5px;">
+                                    <button type="button" class="btn btn-outline-dark ">Sidverision</button>
+                                    <button type="button" class="btn btn-success ">Ny sida</button>
+                                    <button type="button" class="btn btn-outline-danger ">Ta bort sida</button>
                                 </div>
                             </div>
                         </div>
