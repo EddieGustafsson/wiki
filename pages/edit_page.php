@@ -39,9 +39,9 @@ include '../includes/head.php';
                                     </div>
                                 </div>
                                 <div class="col-4" style="margin-top: 5px;">
-                                    <button type="button" class="btn btn-outline-dark ">Sidverision</button>
-                                    <button type="button" class="btn btn-success ">Ny sida</button>
-                                    <button type="button" class="btn btn-outline-danger ">Ta bort sida</button>
+                                    <a type="button" href="/Wiki/<?php echo $array['sidor'][$page_id]['titel']; ?>_history" class="btn btn-outline-dark ">Sidverision</a>
+                                    <a type="button" href="/Wiki/_create" class="btn btn-success ">Ny sida</a>
+                                    <a type="button" href="/Wiki/<?php echo $array['sidor'][$page_id]['titel']; ?>_delete" class="btn btn-outline-danger ">Ta bort sida</a>
                                 </div>
                             </div>
                         </div>
