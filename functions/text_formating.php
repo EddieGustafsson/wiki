@@ -14,7 +14,7 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
                             , 'Ä', 'ä', 'Ö', 'ö', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '´', '!', '"'
                             , '#', '¤', '%', '&', '/', '(', ')', '=', '?', '`', '@', '£', '$', '¥', '{', '[', ']', '}'
                             , '\\', '±', '¨', '^', '~', "'", '*', '-', '_', '.', ':', '', ',', ';', '<', '>', '|', '    ', '
-');
+', '―');
     
     $allowed_char_length = count($allowed_char);
 
@@ -25,7 +25,7 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
             if($char == $allowed_char[$i]){
                 $source = $source . $char;    
                 
-            }else if($i == 110){
+            }else if($i == $allowed_char_length){
                 $char = "";
                 $source = $source . $char;
             }
