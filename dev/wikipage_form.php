@@ -13,13 +13,12 @@
                 <h4>Skapa wikisida</h4>
 
                 <form id="form" action="../functions/text_formating.php" method="POST">
-                    Sid id: <input type="text" name="sidId"><br>
-                    Bidragare: <input type="text" name="bidragsgivare"><br>
-                    Titel: <input type="text" name="titel"><br>
+                    Bidragare: <input type="text" name="user_id"><br>
+                    Titel: <input type="text" name="title"><br>
                     <p>Innehåll:</p>
                     <div id="editor">
                         <!-- Tips: Editor.md can auto append a `<textarea>` tag -->
-                         <textarea id="innehall" name="innehall" style="display:none;"></textarea>
+                         <textarea id="innehall" name="source" style="display:none;"></textarea>
                     </div>
 
                     <input type="submit" value="Skapa wikisida">
