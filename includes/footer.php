@@ -57,9 +57,9 @@
 
                     console.log(page_id);
 
-                    let desc = jsonData.sidor[page_id].innehall;
+                    let desc = jsonData.sidor[0].innehall; //0 bör ändras till page_id
 
-                    let maxLength = 450; // maximum number of characters to extract
+                    let maxLength = 200; // maximum number of characters to extract
 
                     //trim the string to the maximum length
                     let trimmedString = desc.substr(0, maxLength);
@@ -71,7 +71,7 @@
 
                     var popover = $('[data-toggle="popover"]');
 
-                    popover.attr("data-content",trimmedString).data('popover').setContent();
+                    popover.attr("data-content",trimmedString + "...").data('popover').setContent();
 
                     popover.data('popover').$tip.addClass(popover.data('popover').options.placement);
                     
