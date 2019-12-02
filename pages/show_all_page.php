@@ -42,6 +42,8 @@ include '../includes/head.php';
                                     <?php
                                     echo "<div class='list-group'>";
 
+                                    sort($array['sidor']);
+
                                     for($i = 0; $i < sizeof($array['sidor']); $i++){
 
                                         //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
