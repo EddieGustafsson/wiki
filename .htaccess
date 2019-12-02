@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteRule ^_showall\/?$ "/Wiki/pages/show_all_page.php" [L]
 RewriteRule ^_logout\/?$ "/Wiki/pages/logout_page.php" [L]
-RewriteRule ^_login\/?$ "/Wiki/pages/login_page.php" [L]
+RewriteRule ^_login\/?$ "/Wiki/functions/login.php" [L]
 RewriteRule ^_create\/?$ "/Wiki/pages/create_page.php" [L]
 RewriteRule ^_random\/?$ "/Wiki/pages/random_page.php" [L]
 RewriteRule ^$ "/Wiki/pages/wiki_page.php?page=home" [L]
