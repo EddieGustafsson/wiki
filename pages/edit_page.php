@@ -14,6 +14,17 @@ if(isset($_GET["page"])){
 }
 
 include '../includes/head.php';
+
+if(empty($_SESSION['username'])){
+
+    echo 
+    "
+    <script>
+        window.location = '".$host."/home?edit=unauthorized';
+    </script>
+    ";
+}
+
 ?>
         <main role="main" class="flex-shrink-0">
             <div class="container">

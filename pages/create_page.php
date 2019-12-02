@@ -1,7 +1,18 @@
 <?php
 $page_title = 'Skapa en ny artikel';
+
 include '../includes/settings.php';
 include '../includes/head.php';
+
+if(empty($_SESSION['username'])){
+
+    echo 
+    "
+    <script>
+        window.location = '".$host."/home?create=unauthorized';
+    </script>
+    ";
+}
 ?>
         <main role="main" class="flex-shrink-0">
             <div class="container">
