@@ -5,6 +5,10 @@
     visibility: hidden;
 }
 
+.navbar-dark .navbar-text a {
+    color:#0f0f0f!important;
+}
+
 img{
     padding: 0px 20px 0px 20px;
 }
