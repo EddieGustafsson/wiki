@@ -1,3 +1,6 @@
+<?php
+include '../includes/settings.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +18,8 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="/Wiki/assets/images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="/Wiki/assets/css/main.css">
+        <link rel="icon" href="<?php echo $host;?>/assets/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="<?php echo $host;?>/assets/css/main.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.min.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
@@ -39,7 +42,7 @@
                 </div>
             </nav>
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ce1022 !important;">
-                <a class="navbar-brand" href="home">Marvel Wiki</a>
+                <a class="navbar-brand" href="<?php echo $host;?>/home">Marvel Wiki</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -76,8 +79,8 @@
                         <i class="fa fa-compass"></i> Utforska
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/Wiki/_random">Slumpartikel</a>
-                            <a class="dropdown-item" href="/Wiki/_showall">Alla sidor</a>
+                            <a class="dropdown-item" href="<?php echo $host;?>/_random">Slumpartikel</a>
+                            <a class="dropdown-item" href="<?php echo $host;?>/_showall">Alla sidor</a>
                             <a class="dropdown-item" href="#">Senaste ändringarna</a>
                         </div>
                     </li>

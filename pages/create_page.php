@@ -1,19 +1,20 @@
 <?php
 $page_title = 'Skapa en ny artikel';
+include '../includes/settings.php';
 include '../includes/head.php';
 ?>
         <main role="main" class="flex-shrink-0">
             <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);background-color: #fff;">
-                        <li class="breadcrumb-item"><a href="/Wiki/home">Hem</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo $host;?>/home">Hem</a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?php echo $page_title; ?></li>
                     </ol>
                 </nav>
             </div>
 
             <div class="container">
-                <form method="POST" action="/Wiki/functions/text_formating.php">
+                <form method="POST" action="<?php echo $host;?>/functions/text_formating.php">
                     <input type="hidden" name="page_id" value="0">
                     <input type="hidden" name="user_id" value="1">
                     <div class="card shadow-lg">
@@ -78,12 +79,12 @@ include '../includes/head.php';
                     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
                     imageUploadURL: "./php/upload.php",
                     
-                    path : "http://localhost/Wiki/assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
+                    path : "<?php echo $host;?>/assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
                 });
 
             });
         </script>
-        <script src="http://localhost/Wiki/assets/js/languages/sv.js"></script>
+        <script src="<?php echo $host;?>/assets/js/languages/sv.js"></script>
 
     </body>
 </html>

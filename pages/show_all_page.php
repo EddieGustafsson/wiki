@@ -15,7 +15,7 @@ include '../includes/head.php';
             <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);background-color: #fff;">
-                        <li class="breadcrumb-item"><a href="/home">Hem</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo $host;?>/home">Hem</a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?php echo $page_title; ?></li>
                     </ol>
                 </nav>
