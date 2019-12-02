@@ -43,8 +43,8 @@ include '../includes/settings.php';
                             echo 
                             '
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger">Inloggad som <strong>'.$_SESSION["username"].'</strong></button>
-                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-danger btn-sm">Inloggad som <strong>'.$_SESSION["username"].'</strong></button>
+                                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
