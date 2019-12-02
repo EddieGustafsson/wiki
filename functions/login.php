@@ -31,17 +31,14 @@ $array = json_decode($result, true);
 //print_r($array);
 
 if($array['success'] == true){
-    echo "Username: ".$array['anamn']."</br>";
-    echo "Role: ".$array['roll']."</br>";
-    
     session_start();
     $_SESSION["username"] = $array['anamn'];
     $_SESSION["role"] = $array['roll'];
 
-    print_r($_SESSION);
+    header("location: ".$host."/home?login=success");
     
 } else {
-    echo "Login failed";
+    header("location: ".$host."/home?login=failed");
 }
 
 
