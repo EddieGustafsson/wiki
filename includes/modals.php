@@ -8,7 +8,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo $host;?>/functions/login.php" method="POST">
+                    <form action="<?php echo $host;?>/_login" method="POST">
                         <label for="inputUsername" class="sr-only">Användarnamn</label>
                         <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Användarnamn" required autofocus>
                         <br>
