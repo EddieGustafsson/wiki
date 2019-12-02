@@ -10,6 +10,8 @@
  * @updateTime  2015-06-09
  */
 
+let jsonData;
+let trimmedString;
 
 ;(function(factory) {
     "use strict";
@@ -3538,7 +3540,10 @@
                 out += " title=\"" + title + "\"";
             }
 
-            out += " data-placement=\"top\" data-trigger=\"focus\" data-html=\"true\" data-toggle=\"popover\" data-content=\"test123\" >" + text + "</a>";
+            out += " data-content=\"\"";
+            out += " id=\"" + text + "\"";
+
+            out += " data-placement=\"top\" data-trigger=\"focus\" data-html=\"true\" data-toggle=\"popover\">" + text + "</a>";
 
             return out;
         };
