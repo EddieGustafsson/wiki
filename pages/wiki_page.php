@@ -43,7 +43,7 @@ include '../includes/head.php';
                                         <a class="nav-link active">Artikel</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_edit">Redigera</a>
+                                        <a class="nav-link <?php if(empty($_SESSION['username'])){ echo "disabled"; }?>" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_edit">Redigera</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_history">Historik</a>
@@ -59,23 +59,30 @@ include '../includes/head.php';
                                 ?></h1>
                                 <p><i>Senast ändrad: <?php echo $array['sidor'][$page_id]['datum']; ?></i></p>
                             </div>
-                            <div class="col-4">
-                                <p>Debug:</p>
-                                <hr>
-                                <div class="row">
-                                    <div class="col">
-                                        <sub>Sid-ID: <?php echo $array['sidor'][$page_id]['id']; ?></sub><br>
-                                        <sub>JSON-ID: <?php echo $page_id; ?></sub><br>
-                                        <sub>Godkänd av id: <?php echo $array['sidor'][$page_id]['godkantAv']; ?></sub><br>
-                                        <sub>Godkänd av namn: <?php echo $array['sidor'][$page_id]['godKantAvNamn']; ?></sub><br>
+                            <?php 
+                                if(isset($_SESSION['role']) == "superadmin"){ 
+                                    echo 
+                                    '
+                                    <div class="col-4">
+                                    <p>Debug:</p>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col">
+                                            <sub>Sid-ID: '.$array['sidor'][$page_id]['id'].'</sub><br>
+                                            <sub>JSON-ID: '.$page_id.'</sub><br>
+                                            <sub>Godkänd av id: '.$array['sidor'][$page_id]['godkantAv'].'</sub><br>
+                                            <sub>Godkänd av namn: '.$array['sidor'][$page_id]['godKantAvNamn'].'</sub><br>
+                                        </div>
+                                        <div class="col">
+                                            <sub>Bidragsgivare: '.$array['sidor'][$page_id]['bidragsgivare'].'</sub><br>
+                                            <sub>Dolt: '.$array['sidor'][$page_id]['dolt'].'</sub><br>
+                                            <sub>Låst: '.$array['sidor'][$page_id]['last'].'</sub><br>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <sub>Bidragsgivare: <?php echo $array['sidor'][$page_id]['bidragsgivare']; ?></sub><br>
-                                        <sub>Dolt: <?php echo $array['sidor'][$page_id]['dolt']; ?></sub><br>
-                                        <sub>Låst: <?php echo $array['sidor'][$page_id]['last']; ?></sub><br>
                                     </div>
-                                </div>
-                            </div>
+                                    '; 
+                                }
+                            ?>
                         </div>
                     </div>
                     <div class="card-body">
