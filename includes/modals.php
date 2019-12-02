@@ -8,20 +8,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <label for="inputEmail" class="sr-only">Användarnamn</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Användarnamn" required autofocus>
-                    <br>
-                    <label for="inputPassword" class="sr-only">Lösenord</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Lösenord" required>
-                    <br>
-                    <div class="checkbox mb-3 text-center">
-                        <label>
-                        <input type="checkbox" value="remember-me"> Kom ihåg mig
-                        </label>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-danger btn-lg">Logga in</button>
-                    </div>
+                    <form action="<?php echo $host;?>/_login" method="POST">
+                        <label for="inputUsername" class="sr-only">Användarnamn</label>
+                        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Användarnamn" required autofocus>
+                        <br>
+                        <label for="inputPassword" class="sr-only">Lösenord</label>
+                        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Lösenord" required>
+                        <br>
+                        <div class="checkbox mb-3 text-center">
+                            <label>
+                            <input type="checkbox" value="remember-me"> Kom ihåg mig
+                            </label>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger btn-lg">Logga in</button>
+                        </div>
+                    </form>
                 </div>
             </div>
     </div>
