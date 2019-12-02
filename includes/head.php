@@ -39,7 +39,7 @@ include '../includes/settings.php';
             <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
                 <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
                     <?php 
-                        if(session_status() == true){
+                        if(!empty($_SESSION['username'])){
                             echo 
                             '
                                 <div class="btn-group">
