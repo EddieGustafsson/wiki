@@ -22,7 +22,6 @@
         <script type="text/javascript">
             $(function() {
                 var testView = editormd.markdownToHTML("test-markdown-view", {
-                    // markdown : "[TOC]\n### Hello world!\n## Heading 2", // Also, you can dynamic set Markdown text
                     htmlDecode : true,  // Enable / disable HTML tag encode.
                     toc: true,
                     tocm: true,    // Using [TOCM]
@@ -34,6 +33,55 @@
             $(function () {
                 $('[data-toggle="popover"]').popover({ trigger: "hover focus" })
             })
+
+            function getTitle(title){
+                for(i = 0; i < jsonData.sidor.length; i++){
+
+                    if(jsonData.sidor[i].innehall.toLowerCase() == title.toLowerCase()){
+                        return i;
+                    }
+
+                }
+            }
+
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+
+                    jsonData = JSON.parse(this.responseText);
+
+                    let title = "Avengers";
+
+                    let page_id = getTitle(title);
+
+                    console.log(page_id);
+
+                    let desc = jsonData.sidor[page_id].innehall;
+
+                    let maxLength = 450; // maximum number of characters to extract
+
+                    //trim the string to the maximum length
+                    let trimmedString = desc.substr(0, maxLength);
+
+                    //re-trim if we are in the middle of a word
+                    trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+                    trimmedString = trimmedString.replace(/#|>/g,'');
+                    //trimmedString = trimmedString.replace(/ \"[\s\S]*?\"/g, ''); //Trims Citations
+
+                    var popover = $('[data-toggle="popover"]');
+
+                    popover.attr("data-content",trimmedString).data('popover').setContent();
+
+                    popover.data('popover').$tip.addClass(popover.data('popover').options.placement);
+                    
+                }
+
+            };
+
+            xhttp.open("POST", "http://10.130.216.101/TP/api.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("nyckel=JIOAJWWNPA259FB2&tjanst=wiki&typ=JSON&wiki=3");
 
             new Darkmode({ 
                 label: '🌓',
