@@ -28,11 +28,10 @@ $result =  file_get_contents ('http://10.130.216.101/TP/Login/login.php', false,
 
 $array = json_decode($result, true);
 
-//print_r($array);
-
 if($array['success'] == true){
     session_start();
     $_SESSION["username"] = $array['anamn'];
+    $_SESSION["user_id"] = $array['anvandarId'];
     $_SESSION["role"] = $array['roll'];
 
     header("location: ".$host."/home?login=success");
