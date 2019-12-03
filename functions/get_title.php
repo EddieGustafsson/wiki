@@ -1,7 +1,5 @@
 <?php
 
-    session_start();
-
     function getTitle($title){
 
         include "../includes/settings.php";
@@ -36,7 +34,7 @@
 
         }
 
-        header("location: _create");
+        header("location: _create?page=" . $title . "");
 
     }
 
