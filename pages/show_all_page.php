@@ -42,7 +42,11 @@ include '../includes/head.php';
                                     <?php
                                     echo "<div class='list-group'>";
 
-                                    sort($array['sidor']);
+                                    function cmp($a, $b) {
+                                        return strcmp($a['titel'], $b['titel']);
+                                    }
+
+                                    usort($array['sidor'], 'cmp');
 
                                     for($i = 0; $i < sizeof($array['sidor']); $i++){
 
