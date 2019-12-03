@@ -1,4 +1,4 @@
-<!-- Deaktivate account -->
+<!-- Deactivate account -->
 
 <div class="modal fade" tabindex="-1" id="deactivate-account" tabindex="-1" role="dialog" aria-labelledby="deactivate-account" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#remove-account-check" class="btn btn-outline-danger btn-lg">Deaktivera konto</button>
+                            <button type="submit" class="btn btn-outline-danger btn-lg">Deaktivera konto</button>
                         </div>
                     </form>
                 </div>
