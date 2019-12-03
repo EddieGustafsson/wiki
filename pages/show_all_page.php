@@ -42,6 +42,12 @@ include '../includes/head.php';
                                     <?php
                                     echo "<div class='list-group'>";
 
+                                    function cmp($a, $b) {
+                                        return strcmp($a['titel'], $b['titel']);
+                                    }
+
+                                    usort($array['sidor'], 'cmp');
+
                                     for($i = 0; $i < sizeof($array['sidor']); $i++){
 
                                         //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
