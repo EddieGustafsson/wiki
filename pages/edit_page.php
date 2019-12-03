@@ -38,9 +38,9 @@ if(empty($_SESSION['username'])){
             </div>
 
             <div class="container">
-                <form method="POST" action="">
-                    <input type="hidden" name="page_id" value="0">
-                    <input type="hidden" name="user_id" value="0">
+                <form method="POST" action="<?php echo $host;?>/functions/text_formating.php">
+                    <input type="hidden" name="page_id" value="<?php echo $array['sidor'][$page_id]['id']; ?>">
+                    <input type="hidden" name="user_id" value="1">
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <div class="row">
