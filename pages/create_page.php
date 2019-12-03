@@ -3,6 +3,7 @@ $page_title = 'Skapa en ny artikel';
 
 include '../includes/settings.php';
 include '../includes/head.php';
+include '../functions/get_title.php';
 
 if(empty($_SESSION['username'])){
 
@@ -13,6 +14,7 @@ if(empty($_SESSION['username'])){
     </script>
     ";
 }
+
 ?>
         <main role="main" class="flex-shrink-0">
             <div class="container">
@@ -33,7 +35,7 @@ if(empty($_SESSION['username'])){
                             <div class="row">
                                 <div class="col-8">
                                     <div class="input-group input-group-lg">
-                                        <input name="title" type="text" class="form-control" aria-label="Sizing example input" placeholder="Titel" aria-describedby="inputGroup-sizing-lg" required autofocus>
+                                        <input name="title" value="<?php if(isset($_GET['page'])){echo $_GET['page'];}; ?> " type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required autofocus>
                                     </div>
                                 </div>
                                 <div class="col-4">
