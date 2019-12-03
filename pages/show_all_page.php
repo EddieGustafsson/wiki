@@ -53,6 +53,8 @@ include '../includes/head.php';
                                         //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
 
                                         $source = $array['sidor'][$i]['innehall'];
+                                        $source = str_replace("**","",$source);
+                                        $source = str_replace(">","",$source);
                                         $source = substr($source,0,300);
 
                                         echo 
