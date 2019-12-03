@@ -34,7 +34,7 @@
 
         }
 
-        header("location: _create");
+        header("location: _create?page=" . $title . "");
 
     }
 
