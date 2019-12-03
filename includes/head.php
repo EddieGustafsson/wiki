@@ -48,9 +48,8 @@ include '../includes/settings.php';
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="'.$host.'/_settings"><i class="fab fa-accessible-icon"></i>Test</a>
+                                        <a class="dropdown-item" href="'.$host.'/_settings"><i class="fas fa-cogs"></i>Inställningar</a>
                                     <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="'.$host.'/_logout"><i class="fa fa-sign-out-alt"></i> Logga ut</a>
                                     </div>
