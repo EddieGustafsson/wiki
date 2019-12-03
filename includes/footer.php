@@ -86,4 +86,10 @@
             new Darkmode({ 
                 label: '🌓',
             }).showWidget();
+
+            const pasteBox = document.getElementById("no-paste");
+            pasteBox.onpaste = e => {
+                e.preventDefault();
+                return false;
+             };
         </script>
