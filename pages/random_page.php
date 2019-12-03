@@ -24,7 +24,7 @@ $result =  file_get_contents ('http://10.130.216.101/TP/api.php', false, $contex
 
 $array = json_decode($result, true);
 
-$random_page_id = rand(0, sizeof($array['sidor']));
+$random_page_id = rand(0, sizeof($array['sidor']) - 1);
 
 $page = strtolower($array['sidor'][$random_page_id]['titel']);
 
