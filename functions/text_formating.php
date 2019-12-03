@@ -4,6 +4,11 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
     $user_id = $_POST['user_id']; //bidragsgivare
     $title = $_POST['title']; //titel
     $source = $_POST['source']; //innehall
+    if(isset($_POST['page_id'])){
+        $page_id = $_POST['page_id'];
+    } else {
+        $page_id = null;
+    }
 
 
     $characters = str_split($source);
@@ -37,7 +42,7 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
     //echo $source;
     //echo "<br>". $allowed_char_length;
 
-    $params = array ('nyckel' => 'JIOAJWWNPA259FB2', 'tjanst' => 'wiki', 'typ' => 'function', 'handling' => 'skapa', 'funktion' => 'skapaWikiUppdatering', 'wikiId' => '3', 'sidId' => '', 'bidragsgivare' => $user_id, 'titel' => $title, 'innehall' => $source);
+    $params = array ('nyckel' => 'JIOAJWWNPA259FB2', 'tjanst' => 'wiki', 'typ' => 'function', 'handling' => 'skapa', 'funktion' => 'skapaWikiUppdatering', 'wikiId' => '3', 'sidId' => $page_id, 'bidragsgivare' => $user_id, 'titel' => $title, 'innehall' => $source);
     $query = http_build_query ($params);
     $context_data = array (
         'method' => 'POST',
@@ -53,31 +58,4 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
     header('location: /Wiki/'.$title.'');
 }
 
-
 ?>
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
