@@ -49,7 +49,7 @@ if(empty($_SESSION['username'])){
                             </div>
                             <div class="col-9">
                                 <div class="tab-content" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab" style="min-height: 500px;">
                                         <div class="settings-section">
                                             <h4>Ändra användarnamn</h4>
                                             <hr>
@@ -69,7 +69,7 @@ if(empty($_SESSION['username'])){
                                             <button data-toggle="modal" data-target="#remove-account" type="button" class="btn btn-outline-danger btn-sm">Ta bort ditt konto</button>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                                    <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" style="min-height: 500px;">
                                         <h4>Ändra lösenord</h4>
                                         <hr>
                                         <lable><strong>Gammalt lösenord</strong></lable>
@@ -89,7 +89,7 @@ if(empty($_SESSION['username'])){
                                         <br>
                                         <button type="button" class="btn btn-secondary btn-sm">Uppdatera lösenord</button>
                                     </div>
-                                    <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab">
+                                    <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab" style="min-height: 500px;">
                                         <div class="settings-section">
                                             <h4>Ändra tema</h4>
                                             <hr>
@@ -106,7 +106,7 @@ if(empty($_SESSION['username'])){
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="advanced-settings" role="tabpanel" aria-labelledby="advanced-settings-tab">
+                                    <div class="tab-pane fade" id="advanced-settings" role="tabpanel" aria-labelledby="advanced-settings-tab" style="min-height: 500px;">
                                         
                                     </div>
                                 </div>
