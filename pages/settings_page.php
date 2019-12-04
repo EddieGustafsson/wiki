@@ -95,11 +95,11 @@ if(empty($_SESSION['username'])){
                                             <hr>
                                             <form action="<?php echo $host;?>/functions/theme_switch.php" method="POST">
                                             <select name="theme" class="custom-select custom-select-sm w-25">
-                                                <option value="main" selected>Vanilla</option>
-                                                <option value="darkmode">Darkmode</option>
-                                                <option value="polka">Polkamode</option>
-                                                <option value="zebra">Zebra</option>
-                                                <option value="color-blind">Color blind</option>
+                                                <option <?php if($_COOKIE['theme'] == "main"){echo "selected";}?> value="main">Vanilla</option>
+                                                <option <?php if($_COOKIE['theme'] == "darkmode"){echo "selected";}?> value="darkmode">Darkmode</option>
+                                                <option <?php if($_COOKIE['theme'] == "polka"){echo "selected";}?> value="polka">Polkamode</option>
+                                                <option <?php if($_COOKIE['theme'] == "zebra"){echo "selected";}?> value="zebra">Zebra</option>
+                                                <option <?php if($_COOKIE['theme'] == "color-blind"){echo "selected";}?> value="color-blind">Color blind</option>
                                             </select>
                                             <br>
                                             <button style="margin-top:15px;" type="submit" class="btn btn-secondary btn-sm">Ändra tema</button>
@@ -107,7 +107,30 @@ if(empty($_SESSION['username'])){
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="advanced-settings" role="tabpanel" aria-labelledby="advanced-settings-tab" style="min-height: 500px;">
-                                        
+                                        <div class="settings-section">
+                                            <h4>Utvecklarinställningar</h4>
+                                            <hr>
+                                            <form action="<?php echo $host?>/functions/advanced_settings.php" method="POST">
+                                                <div class="custom-control custom-switch">
+                                                    <?php 
+                                                        if($_COOKIE['debug'] == "on"){ 
+                                                            echo 
+                                                            '
+                                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="debug" checked>
+                                                            ';
+                                                        } else {
+                                                            echo 
+                                                            '
+                                                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="debug">
+                                                            ';
+                                                        }
+                                                    ?>
+                                                    
+                                                    <label class="custom-control-label" for="customSwitch1">Panel för felsökningsinformation</label>
+                                                </div>
+                                                <button style="margin-top:15px;" type="submit" class="btn btn-secondary btn-sm">Spara</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
