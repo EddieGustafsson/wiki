@@ -1,6 +1,15 @@
 <?php
 session_start();
 include '../includes/settings.php';
+
+$stylesArr = array('main', 'darkmode', 'zebra', 'color-blind', 'polka');
+
+if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
+    $style = '/' . $_COOKIE['theme'] . '.css';
+} else {
+    $style = '/main.css';
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +29,7 @@ include '../includes/settings.php';
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="<?php echo $host;?>/assets/images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="<?php echo $host;?>/assets/css/main.css">
+        <link rel="stylesheet" href="<?php echo $host;?>/assets/css<?php echo $style; ?>">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.min.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
