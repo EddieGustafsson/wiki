@@ -50,28 +50,6 @@
 
                     jsonData = JSON.parse(this.responseText);
 
-                    /*let title = "Avengers";
-
-                    let page_id = getTitle(title);
-
-                    console.log(page_id);*/
-
-                    let desc = jsonData.sidor[0].innehall; //0 bör ändras till page_id
-
-                    let maxLength = 200; // maximum number of characters to extract
-
-                    //trim the string to the maximum length
-                    let trimmedString = desc.substr(0, maxLength);
-
-                    //re-trim if we are in the middle of a word
-                    trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
-                    trimmedString = trimmedString.replace(/#|>/g,'');
-                    //trimmedString = trimmedString.replace(/ \"[\s\S]*?\"/g, ''); //Trims Citations
-
-                    var popover = $('[data-toggle="popover"]');
-
-                    popover.attr("data-content",trimmedString + "...").data('popover');
-
                     var links = $('#test-markdown-view').find('a');
                     //console.log(links);
 
@@ -87,11 +65,21 @@
 
                     }
 
-                    /*$('#test-markdown-view').find('a').each(function(){
+                    let desc = jsonData.sidor[3].innehall; //0 bör ändras till page_id
 
-                        console.log($(this).attr('href'));
+                    let maxLength = 200; // maximum number of characters to extract
 
-                    });*/
+                    //trim the string to the maximum length
+                    let trimmedString = desc.substr(0, maxLength);
+
+                    //re-trim if we are in the middle of a word
+                    trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+                    trimmedString = trimmedString.replace(/#|>/g,'');
+                    //trimmedString = trimmedString.replace(/ \"[\s\S]*?\"/g, ''); //Trims Citations
+
+                    var popover = $('[data-toggle="popover"]');
+
+                    popover.attr("data-content",trimmedString + "...").data('popover');
                     
                 }
 
