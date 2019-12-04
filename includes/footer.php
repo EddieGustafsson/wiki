@@ -34,15 +34,14 @@
                 $('[data-toggle="popover"]').popover({ trigger: "hover focus" })
             })
 
-            function getTitle(title){
+            /*function getTitle(title){
                 for(i = 0; i < jsonData.sidor.length; i++){
-
                     if(jsonData.sidor[i].innehall.toLowerCase() == title.toLowerCase()){
                         return i;
                     }
 
                 }
-            }
+            }*/
 
             let xhttp = new XMLHttpRequest();
 
@@ -51,11 +50,11 @@
 
                     jsonData = JSON.parse(this.responseText);
 
-                    let title = "Avengers";
+                    /*let title = "Avengers";
 
                     let page_id = getTitle(title);
 
-                    console.log(page_id);
+                    console.log(page_id);*/
 
                     let desc = jsonData.sidor[0].innehall; //0 bör ändras till page_id
 
@@ -71,9 +70,23 @@
 
                     var popover = $('[data-toggle="popover"]');
 
-                    popover.attr("data-content",trimmedString + "...").data('popover').setContent();
+                    popover.attr("data-content",trimmedString + "...").data('popover');
 
-                    popover.data('popover').$tip.addClass(popover.data('popover').options.placement);
+                    var links = $('#test-markdown-view').find('a');
+
+                    for(i = 0; i < links.length; i++){
+
+                        console.log(links[i].href);
+                        var link = links[i];
+                        console.log(link);
+
+                    }
+
+                    /*$('#test-markdown-view').find('a').each(function(){
+
+                        console.log($(this).attr('href'));
+
+                    });*/
                     
                 }
 
