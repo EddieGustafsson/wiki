@@ -94,7 +94,7 @@ if(empty($_SESSION['username'])){
                                             <h4>Ändra tema</h4>
                                             <hr>
                                             <select class="custom-select custom-select-sm w-25">
-                                                <option value="1" selected>Vanila</option>
+                                                <option value="1" selected>Vanilla</option>
                                                 <option value="2">Darkmode</option>
                                                 <option value="3">Zebra</option>
                                                 <option value="4">Color blind</option>
