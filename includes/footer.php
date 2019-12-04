@@ -73,12 +73,17 @@
                     popover.attr("data-content",trimmedString + "...").data('popover');
 
                     var links = $('#test-markdown-view').find('a');
+                    //console.log(links);
 
                     for(i = 0; i < links.length; i++){
 
-                        console.log(links[i].href);
+                        //console.log(links[i].href);
                         var link = links[i];
-                        console.log(link);
+                        var title = link.getAttribute("data-original-title");
+                        
+                        //console.log(title);
+                        //console.log(lank.getAttribute("data-original-title"));
+                        //console.log(i);
 
                     }
 
