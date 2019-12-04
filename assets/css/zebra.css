@@ -5,14 +5,14 @@ body {
     45deg,
     transparent,
     transparent 10px,
-    #ccc 10px,
-    #ccc 20px
+    white 10px,
+    white 20px
   ),
   /* on "bottom" */
   linear-gradient(
     to bottom,
-    #eee,
-    #999
+    rgb(88, 88, 88),
+    black
   );
 }
 

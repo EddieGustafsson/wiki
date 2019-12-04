@@ -8,6 +8,10 @@ body {
       );
 }
 
+p, sub, h1, h2, h3, h4, h5, .card-header, lable{
+    color: red;
+}
+
 :target {
     display: block;
     position: relative;
