@@ -93,14 +93,17 @@ if(empty($_SESSION['username'])){
                                         <div class="settings-section">
                                             <h4>Ändra tema</h4>
                                             <hr>
-                                            <select class="custom-select custom-select-sm w-25">
-                                                <option value="1" selected>Vanilla</option>
-                                                <option value="2">Darkmode</option>
-                                                <option value="3">Zebra</option>
-                                                <option value="4">Color blind</option>
+                                            <form action="<?php echo $host;?>/functions/theme_switch.php" method="POST">
+                                            <select name="theme" class="custom-select custom-select-sm w-25">
+                                                <option value="main" selected>Vanilla</option>
+                                                <option value="darkmode">Darkmode</option>
+                                                <option value="polka">Polkamode</option>
+                                                <option value="zebra">Zebra</option>
+                                                <option value="color-blind">Color blind</option>
                                             </select>
                                             <br>
-                                            <button style="margin-top:15px;" type="button" class="btn btn-secondary btn-sm">Ändra tema</button>
+                                            <button style="margin-top:15px;" type="submit" class="btn btn-secondary btn-sm">Ändra tema</button>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="advanced-settings" role="tabpanel" aria-labelledby="advanced-settings-tab">
