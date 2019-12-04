@@ -95,6 +95,18 @@ if(empty($_SESSION['username'])){
                     autoLoadModules: true,
                     lineNumbers: true, // Display editor line numbers
                     autoHeight: true,
+                    
+                    <?php 
+                        if($style == "/darkmode.css"){
+                            echo 
+                            '
+                            theme: "dark",
+                            previewTheme: "dark", 
+                            editorTheme: "pastel-on-dark",
+
+                            ';
+                        }
+                    ?>
 
                     imageUpload: true,
                     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
