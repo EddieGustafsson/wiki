@@ -121,3 +121,5 @@ if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
                 </div>
             </nav>
         </div>
+
+<?php include '../includes/alert.php' ?>
