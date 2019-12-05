@@ -113,7 +113,8 @@ if(empty($_SESSION['username'])){
                                             <hr>
                                                 <div class="custom-control custom-switch">
                                                     <?php 
-                                                        if(isset($_COOKIE['debug']) == "on"){ 
+                                                    if(isset($_COOKIE['debug'])){
+                                                        if($_COOKIE['debug'] == "on"){ 
                                                             echo 
                                                             '
                                                             <input type="checkbox" class="custom-control-input" id="customSwitch1" name="debug" checked>
@@ -124,6 +125,12 @@ if(empty($_SESSION['username'])){
                                                             <input type="checkbox" class="custom-control-input" id="customSwitch1" name="debug">
                                                             ';
                                                         }
+                                                    } else {
+                                                        echo 
+                                                        '
+                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1" name="debug">
+                                                        ';
+                                                    }
                                                     ?>
                                                     
                                                     <label class="custom-control-label" for="customSwitch1">Panel för felsökningsinformation</label>
