@@ -51,24 +51,15 @@
                     jsonData = JSON.parse(this.responseText);
                     var links = $('#test-markdown-view').find('a');
                     links.attr("style", "color:red;");
-                    //console.log(links);
 
                     for(i = 0; i < links.length; i++){
 
-                        //console.log(links[i].href);
                         var link = links[i];
                         var title = link.getAttribute("data-original-title");
-                        //console.log(title);
 
                         for(j = 0; j < jsonData.sidor.length; j++){
 
-                            //console.log(j);
-                            //console.log(jsonData.sidor[j].titel);
-                            //console.log(title);
-
                             if(title == jsonData.sidor[j].titel){
-
-                                //console.log("hej");
 
                                 let desc = jsonData.sidor[j].innehall;//0 bör ändras till page_id
 
@@ -81,7 +72,6 @@
                                 trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
                                 trimmedString = trimmedString.replace(/#|>/g,'');
                                 //trimmedString = trimmedString.replace(/ \"[\s\S]*?\"/g, ''); //Trims Citations
-                                //console.log(trimmedString);
 
                                 var popover = $('[data-original-title=' + title + ']');
                                 popover.attr("style", "color:#0000EE;");
@@ -90,11 +80,6 @@
                             }
 
                         }
-                        
-                        //console.log(title);
-                        //console.log(jsonData.sidor[0].title);
-                        //console.log(lank.getAttribute("data-original-title"));
-                        //console.log(i);
 
                     }
                     
