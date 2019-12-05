@@ -15,7 +15,6 @@
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <!--<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.3/lib/darkmode-js.min.js"></script>-->
         <script src="/Wiki/assets/js/editormd.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
@@ -34,15 +33,6 @@
                 $('[data-toggle="popover"]').popover({ trigger: "hover focus" })
             })
 
-            /*function getTitle(title){
-                for(i = 0; i < jsonData.sidor.length; i++){
-                    if(jsonData.sidor[i].innehall.toLowerCase() == title.toLowerCase()){
-                        return i;
-                    }
-
-                }
-            }*/
-
             let xhttp = new XMLHttpRequest();
 
             xhttp.onreadystatechange = function () {
@@ -51,6 +41,7 @@
                     jsonData = JSON.parse(this.responseText);
                     var links = $('#test-markdown-view').find('a');
                     links.attr("style", "color:red;");
+                    links.attr("data-content","Sidan finns inte.").data('popover');
 
                     for(i = 0; i < links.length; i++){
 
