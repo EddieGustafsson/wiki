@@ -3,6 +3,7 @@ $page_title = 'Skapa en ny artikel';
 
 include '../includes/settings.php';
 include '../includes/head.php';
+include '../functions/get_title.php';
 
 if(empty($_SESSION['username'])){
 
@@ -13,6 +14,7 @@ if(empty($_SESSION['username'])){
     </script>
     ";
 }
+
 ?>
         <main role="main" class="flex-shrink-0">
             <div class="container">
@@ -26,14 +28,13 @@ if(empty($_SESSION['username'])){
 
             <div class="container">
                 <form method="POST" action="<?php echo $host;?>/functions/text_formating.php">
-                    <input type="hidden" name="page_id" value="0">
-                    <input type="hidden" name="user_id" value="1">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"]?>">
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-8">
                                     <div class="input-group input-group-lg">
-                                        <input name="title" type="text" class="form-control" aria-label="Sizing example input" placeholder="Titel" aria-describedby="inputGroup-sizing-lg" required autofocus>
+                                        <input name="title" value="<?php if(isset($_GET['page'])){echo $_GET['page'];}; ?> " type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required autofocus>
                                     </div>
                                 </div>
                                 <div class="col-4">
@@ -85,6 +86,18 @@ if(empty($_SESSION['username'])){
                     autoLoadModules: true,
                     lineNumbers: true, // Display editor line numbers
                     autoHeight: true,
+
+                    <?php 
+                        if($style == "/darkmode.css"){
+                            echo 
+                            '
+                            theme: "dark",
+                            previewTheme: "dark", 
+                            editorTheme: "pastel-on-dark",
+
+                            ';
+                        }
+                    ?>
 
                     imageUpload: true,
                     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],

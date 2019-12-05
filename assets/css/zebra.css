@@ -1,0 +1,54 @@
+body {
+    background: 
+  /* On "top" */
+  repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    white 10px,
+    white 20px
+  ),
+  /* on "bottom" */
+  linear-gradient(
+    to bottom,
+    rgb(88, 88, 88),
+    black
+  );
+}
+
+.breadcrumb{
+    color: white;
+}
+
+
+:target {
+    display: block;
+    position: relative;
+    top: -95px; 
+    visibility: hidden;
+}
+
+.navbar-dark .navbar-text a {
+    color:#0f0f0f!important;
+}
+
+.settings-section{
+    margin-bottom: 40px;
+}
+
+.settings-section-modal{
+    margin-bottom: 10px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color:#ce1022!important;
+}
+
+img{
+    padding: 0px 20px 0px 20px;
+}
+
+.editormd-preview-close-btn{
+    display: none!important;
+}

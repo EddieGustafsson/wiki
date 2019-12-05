@@ -4,10 +4,9 @@ include "../functions/view_json.php";
 include "../functions/get_title.php";
 
 if(isset($_GET["page"])){
-    $wiki_page_id = 3;
     $title = $_GET["page"];
     $page_id = getTitle($title);
-    $array = getWiki($wiki_page_id);
+    $array = getWiki($wiki_id);
 }
 
 include '../includes/head.php';
@@ -60,7 +59,7 @@ include '../includes/head.php';
                                 <p><i>Senast ändrad: <?php echo $array['sidor'][$page_id]['datum']; ?></i></p>
                             </div>
                             <?php 
-                                if(isset($_SESSION['role']) == "superadmin"){ 
+                                if($_SESSION['role'] == "superadmin" && $_COOKIE['debug'] == "on"){ 
                                     echo 
                                     '
                                     <div class="col-4">

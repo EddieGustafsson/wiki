@@ -15,7 +15,9 @@
         try{
             $array = getHistory($wiki_page_id);
         }
-        catch(Exception $e){}
+        catch(Exception $e){
+
+        }
             
     }
 
@@ -77,6 +79,9 @@
                                         ';
                         
                                     }
+                                } else{
+                                    echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
+                                }
 
                                     echo "</div>";
                                     
@@ -96,6 +101,6 @@
 
 <?php
 
-}
+
 
 ?>
