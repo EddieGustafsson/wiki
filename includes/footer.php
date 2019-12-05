@@ -112,10 +112,6 @@
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("nyckel=nx06YHDvPELOArYg&tjanst=wiki&typ=JSON&wiki=8");
 
-            new Darkmode({ 
-                label: '🌓',
-            }).showWidget();
-
             const pasteBox = document.getElementById("no-paste");
             pasteBox.onpaste = e => {
                 e.preventDefault();
