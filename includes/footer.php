@@ -49,8 +49,8 @@
                 if (this.readyState === 4 && this.status === 200) {
 
                     jsonData = JSON.parse(this.responseText);
-
                     var links = $('#test-markdown-view').find('a');
+                    links.attr("style", "color:red;");
                     //console.log(links);
 
                     for(i = 0; i < links.length; i++){
@@ -84,6 +84,7 @@
                                 //console.log(trimmedString);
 
                                 var popover = $('[data-original-title=' + title + ']');
+                                popover.attr("style", "color:#0000EE;");
                                 popover.attr("data-content",trimmedString + "...").data('popover');
 
                             }
