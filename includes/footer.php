@@ -90,8 +90,14 @@
                                 //console.log(trimmedString);
 
                                 var popover = $('[data-original-title=' + title + ']');
-
                                 popover.attr("data-content",trimmedString + "...").data('popover');
+
+                            }else if(title != jsonData.sidor[j].titel){
+
+                                console.log("hej");
+                                var missingLink = $('[data-original-title=' + title + ']');
+                                console.log(missingLink);
+                                missingLink.attr("style", "color:red;");
 
                             }
 
