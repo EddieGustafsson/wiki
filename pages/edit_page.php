@@ -7,10 +7,9 @@ include "../functions/delete_wiki_page.php";
 $page_title = 'Redigera artikel';
 
 if(isset($_GET["page"])){
-    $wiki_page_id = 3;
     $title = $_GET["page"];
     $page_id = getTitle($title);
-    $array = getWiki($wiki_page_id);
+    $array = getWiki($wiki_id);
 }
 
 include '../includes/head.php';
