@@ -62,10 +62,10 @@ include '../includes/head.php';
                                         <a href="/Wiki/'.$array['sidor'][$i]['titel'].'" class="list-group-item list-group-item-action">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1"><strong>'.$array['sidor'][$i]['titel'].'</strong></h5>
-                                                <small>'.$array['sidor'][$i]['datum'].'</small>
+                                                <small class="show-all-small">'.$array['sidor'][$i]['datum'].'</small>
                                             </div>
                                             <p class="mb-1">'.$source.'...</p>
-                                            <small>Godkänt av: '.$array['sidor'][$i]['godKantAvNamn'].'</small>
+                                            <small class="show-all-small">Godkänt av: '.$array['sidor'][$i]['godKantAvNamn'].'</small>
                                         </a>
                                         ';
                             

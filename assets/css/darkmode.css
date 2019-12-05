@@ -1,17 +1,29 @@
 body {
-    background-color: #000000!important;
+    background-color: #262626!important;
 }
 
 .card, .breadcrumb, .modal-content, .editormd-html-preview, .bg-dark, .nav-link.active, .list-group-item{
     background-color: #2b2828!important;
 }
 
-p, sub, h1, h2, h3, h4, h5, .card-header, lable, .custom-control-label{
+p, sub, h1, h2, h3, h4, h5, .card-header, lable, .custom-control-label, .breadcrumb-itemactive{
     color: white;
 }
 
 ul, li::before{
     color: white;
+}
+
+.list-group-item{
+    background-color: #383838!important;
+}
+
+.list-group-item:hover{
+    background-color: #353030!important;
+}
+
+.show-all-small{
+    color: rgb(163, 163, 163);
 }
 
 :target {
