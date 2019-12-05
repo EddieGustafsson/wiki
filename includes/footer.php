@@ -51,19 +51,26 @@
                     jsonData = JSON.parse(this.responseText);
 
                     var links = $('#test-markdown-view').find('a');
-                    //console.log(links);
+                    console.log(links);
 
                     for(i = 0; i < links.length; i++){
 
                         //console.log(links[i].href);
                         var link = links[i];
                         var title = link.getAttribute("data-original-title");
+
+                        /*if(title == jsonData.sidor[3].title){
+
+                            console.log("hej");
+
+                        }*/
                         
                         //console.log(title);
+                        //console.log(jsonData.sidor[2].title);
                         //console.log(lank.getAttribute("data-original-title"));
                         //console.log(i);
 
-                        let desc = jsonData.sidor[3].innehall; //0 bör ändras till page_id
+                        let desc = jsonData.sidor[3].innehall;//0 bör ändras till page_id
 
                         let maxLength = 200; // maximum number of characters to extract
 
