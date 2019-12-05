@@ -107,10 +107,10 @@ if(empty($_SESSION['username'])){
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="advanced-settings" role="tabpanel" aria-labelledby="advanced-settings-tab" style="min-height: 500px;">
-                                        <div class="settings-section">
+                                        <form action="<?php echo $host?>/functions/advanced_settings.php" method="POST">    
+                                            <div class="settings-section">
                                             <h4>Utvecklarinställningar</h4>
                                             <hr>
-                                            <form action="<?php echo $host?>/functions/advanced_settings.php" method="POST">
                                                 <div class="custom-control custom-switch">
                                                     <?php 
                                                         if($_COOKIE['debug'] == "on"){ 
@@ -129,8 +129,8 @@ if(empty($_SESSION['username'])){
                                                     <label class="custom-control-label" for="customSwitch1">Panel för felsökningsinformation</label>
                                                 </div>
                                                 <button style="margin-top:15px;" type="submit" class="btn btn-secondary btn-sm">Spara</button>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
