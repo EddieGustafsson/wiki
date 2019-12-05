@@ -34,6 +34,9 @@ if($array['success'] == true){
     $_SESSION["user_id"] = $array['anvandarId'];
     $_SESSION["role"] = $array['roll'];
 
+    setcookie("debug", 'off', time()+(60*60*24*30), '/');
+    setcookie("theme", 'main', time()+(60*60*24*30), '/');
+
     header("location: ".$host."/home?login=success");
     
 } else {

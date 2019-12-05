@@ -113,7 +113,7 @@ if(empty($_SESSION['username'])){
                                             <hr>
                                                 <div class="custom-control custom-switch">
                                                     <?php 
-                                                        if($_COOKIE['debug'] == "on"){ 
+                                                        if(isset($_COOKIE['debug']) == "on"){ 
                                                             echo 
                                                             '
                                                             <input type="checkbox" class="custom-control-input" id="customSwitch1" name="debug" checked>
