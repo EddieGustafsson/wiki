@@ -14,6 +14,12 @@ ul, li::before{
     color: white;
 }
 
+.nav-pills{
+    background-color: #2f2d2d !important;
+    border-radius: 5px;
+    height: 100%;
+}
+
 .list-group-item{
     background-color: #383838!important;
 }
@@ -24,6 +30,12 @@ ul, li::before{
 
 .show-all-small{
     color: rgb(163, 163, 163);
+}
+
+.form-control{
+    color: white!important;
+    border: 1px solid #2f2f2f!important;
+    background-color: #424242!important;
 }
 
 :target {
