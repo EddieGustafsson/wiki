@@ -60,12 +60,6 @@
                         var title = link.getAttribute("data-original-title");
                         //console.log(title);
 
-                        /*if(title == jsonData.sidor.titel){
-
-                            console.log("hej");
-
-                        }*/
-
                         for(j = 0; j < jsonData.sidor.length; j++){
 
                             //console.log(j);
@@ -91,13 +85,6 @@
 
                                 var popover = $('[data-original-title=' + title + ']');
                                 popover.attr("data-content",trimmedString + "...").data('popover');
-
-                            }else if(title != jsonData.sidor[j].titel){
-
-                                console.log("hej");
-                                var missingLink = $('[data-original-title=' + title + ']');
-                                console.log(missingLink);
-                                missingLink.attr("style", "color:red;");
 
                             }
 
