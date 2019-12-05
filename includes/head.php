@@ -2,8 +2,6 @@
 session_start();
 include '../includes/settings.php';
 
-$stylesArr = array('main', 'darkmode', 'zebra', 'color-blind', 'polka');
-
 if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
     $style = '/' . $_COOKIE['theme'] . '.css';
 } else {

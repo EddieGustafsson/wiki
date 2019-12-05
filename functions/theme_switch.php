@@ -1,6 +1,5 @@
 <?php
-
-$stylesArr = array('main', 'darkmode', 'zebra', 'color-blind', 'polka');
+include '../includes/settings.php';
 
 if(isset($_POST['theme']) && in_array($_POST['theme'], $stylesArr)) {
     $style = $_POST['theme'];
