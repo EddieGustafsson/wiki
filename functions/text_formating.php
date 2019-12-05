@@ -1,4 +1,6 @@
 <?php
+include "../includes/settings.php";
+
 if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
 
     $user_id = $_POST['user_id']; //bidragsgivare
@@ -7,7 +9,7 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
     if(isset($_POST['page_id'])){
         $page_id = $_POST['page_id'];
     } else {
-        $page_id = null;
+        $page_id = "";
     }
 
 
@@ -42,7 +44,7 @@ if(isset($_POST['user_id'], $_POST['title'], $_POST['source'])){
     //echo $source;
     //echo "<br>". $allowed_char_length;
 
-    $params = array ('nyckel' => 'JIOAJWWNPA259FB2', 'tjanst' => 'wiki', 'typ' => 'function', 'handling' => 'skapa', 'funktion' => 'skapaWikiUppdatering', 'wikiId' => '3', 'sidId' => $page_id, 'bidragsgivare' => $user_id, 'titel' => $title, 'innehall' => $source);
+    $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'function', 'handling' => 'skapa', 'funktion' => 'skapaWikiUppdatering', 'wikiId' => $wiki_id, 'sidId' => $page_id, 'bidragsgivare' => $user_id, 'titel' => $title, 'innehall' => $source);
     $query = http_build_query ($params);
     $context_data = array (
         'method' => 'POST',
