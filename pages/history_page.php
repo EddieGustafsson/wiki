@@ -21,6 +21,7 @@
             
     }
 
+
     include '../includes/head.php';
 ?>
         <main role="main" class="flex-shrink-0">
