@@ -58,6 +58,7 @@
                         //console.log(links[i].href);
                         var link = links[i];
                         var title = link.getAttribute("data-original-title");
+                        //console.log(title);
 
                         /*if(title == jsonData.sidor.titel){
 
@@ -68,11 +69,12 @@
                         for(j = 0; j < jsonData.sidor.length; j++){
 
                             //console.log(j);
-                            console.log(jsonData.sidor[j].titel);
+                            //console.log(jsonData.sidor[j].titel);
+                            //console.log(title);
 
                             if(title == jsonData.sidor[j].titel){
 
-                                console.log("hej");
+                                //console.log("hej");
 
                                 let desc = jsonData.sidor[j].innehall;//0 bör ändras till page_id
 
@@ -85,8 +87,9 @@
                                 trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
                                 trimmedString = trimmedString.replace(/#|>/g,'');
                                 //trimmedString = trimmedString.replace(/ \"[\s\S]*?\"/g, ''); //Trims Citations
+                                //console.log(trimmedString);
 
-                                var popover = $('[data-toggle="popover"]');
+                                var popover = $('[data-original-title=' + title + ']');
 
                                 popover.attr("data-content",trimmedString + "...").data('popover');
 
