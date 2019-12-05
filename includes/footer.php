@@ -16,6 +16,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
         <script src="/Wiki/assets/js/editormd.js"></script>
+        <script src="/Wiki/assets/js/linked_popovers.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
         <script type="text/javascript">
@@ -32,51 +33,6 @@
             $(function () {
                 $('[data-toggle="popover"]').popover({ trigger: "hover focus" })
             })
-
-            let xhttp = new XMLHttpRequest();
-
-            xhttp.onreadystatechange = function () {
-                if (this.readyState === 4 && this.status === 200) {
-
-                    jsonData = JSON.parse(this.responseText);
-                    var links = $('#test-markdown-view').find('a');
-                    links.attr("style", "color:red;");
-                    links.attr("data-content","Sidan finns inte.").data('popover');
-
-                    for(i = 0; i < links.length; i++){
-
-                        var link = links[i];
-                        var title = link.getAttribute("data-original-title");
-
-                        for(j = 0; j < jsonData.sidor.length; j++){
-
-                            if(title == jsonData.sidor[j].titel){
-
-                                let desc = jsonData.sidor[j].innehall;//0 bör ändras till page_id
-
-                                let maxLength = 200; // maximum number of characters to extract
-
-                                //trim the string to the maximum length
-                                let trimmedString = desc.substr(0, maxLength);
-
-                                //re-trim if we are in the middle of a word
-                                trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
-                                trimmedString = trimmedString.replace(/#|>/g,'');
-                                //trimmedString = trimmedString.replace(/ \"[\s\S]*?\"/g, ''); //Trims Citations
-
-                                var popover = $('[data-original-title=' + title + ']');
-                                popover.attr("style", "color:#0000EE;");
-                                popover.attr("data-content",trimmedString + "...").data('popover');
-
-                            }
-
-                        }
-
-                    }
-                    
-                }
-
-            };
 
             xhttp.open("POST", "http://10.130.216.101/TP/api.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
