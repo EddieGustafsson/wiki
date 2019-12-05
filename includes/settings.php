@@ -1,4 +1,4 @@
 <?php
-$api = "JIOAJWWNPA259FB2";
+$api = "nx06YHDvPELOArYg";
 $host = "http://localhost/Wiki";
-$wiki_id = "3";
+$wiki_id = "8";

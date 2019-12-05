@@ -1,0 +1,47 @@
+body {
+    background-color: #000000!important;
+}
+
+.card, .breadcrumb, .modal-content, .editormd-html-preview, .bg-dark, .nav-link.active, .list-group-item{
+    background-color: #2b2828!important;
+}
+
+p, sub, h1, h2, h3, h4, h5, .card-header, lable, .custom-control-label{
+    color: white;
+}
+
+ul, li::before{
+    color: white;
+}
+
+:target {
+    display: block;
+    position: relative;
+    top: -95px; 
+    visibility: hidden;
+}
+
+.navbar-dark .navbar-text a {
+    color:#0f0f0f!important;
+}
+
+.settings-section{
+    margin-bottom: 40px;
+}
+
+.settings-section-modal{
+    margin-bottom: 10px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color:#ce1022!important;
+}
+
+img{
+    padding: 0px 20px 0px 20px;
+}
+
+.editormd-preview-close-btn{
+    display: none!important;
+}

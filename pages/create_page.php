@@ -28,8 +28,7 @@ if(empty($_SESSION['username'])){
 
             <div class="container">
                 <form method="POST" action="<?php echo $host;?>/functions/text_formating.php">
-                    <input type="hidden" name="page_id" value="0">
-                    <input type="hidden" name="user_id" value="1">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"]?>">
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <div class="row">
@@ -87,6 +86,18 @@ if(empty($_SESSION['username'])){
                     autoLoadModules: true,
                     lineNumbers: true, // Display editor line numbers
                     autoHeight: true,
+
+                    <?php 
+                        if($style == "/darkmode.css"){
+                            echo 
+                            '
+                            theme: "dark",
+                            previewTheme: "dark", 
+                            editorTheme: "pastel-on-dark",
+
+                            ';
+                        }
+                    ?>
 
                     imageUpload: true,
                     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
