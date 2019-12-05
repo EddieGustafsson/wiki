@@ -97,6 +97,7 @@ if(empty($_SESSION['username'])){
                                             <select name="theme" class="custom-select custom-select-sm w-25">
                                                 <option <?php if($_COOKIE['theme'] == "main"){echo "selected";}?> value="main">Vanilla</option>
                                                 <option <?php if($_COOKIE['theme'] == "darkmode"){echo "selected";}?> value="darkmode">Darkmode</option>
+                                                <option <?php if($_COOKIE['theme'] == "comicmode"){echo "selected";}?> value="comicmode">Comicmode</option>
                                                 <option <?php if($_COOKIE['theme'] == "polka"){echo "selected";}?> value="polka">Polkamode</option>
                                                 <option <?php if($_COOKIE['theme'] == "zebra"){echo "selected";}?> value="zebra">Zebra</option>
                                                 <option <?php if($_COOKIE['theme'] == "color-blind"){echo "selected";}?> value="color-blind">Color blind</option>
