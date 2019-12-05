@@ -51,7 +51,7 @@
                     jsonData = JSON.parse(this.responseText);
 
                     var links = $('#test-markdown-view').find('a');
-                    console.log(links);
+                    //console.log(links);
 
                     for(i = 0; i < links.length; i++){
 
@@ -59,14 +59,27 @@
                         var link = links[i];
                         var title = link.getAttribute("data-original-title");
 
-                        /*if(title == jsonData.sidor[3].title){
+                        /*if(title == jsonData.sidor.titel){
 
                             console.log("hej");
 
                         }*/
+
+                        for(j = 0; j < jsonData.sidor.length; j++){
+
+                            //console.log(j);
+                            console.log(jsonData.sidor[j].titel);
+
+                            if(title == jsonData.sidor[j].titel){
+
+                                console.log("hej");
+
+                            }
+
+                        }
                         
                         //console.log(title);
-                        //console.log(jsonData.sidor[2].title);
+                        //console.log(jsonData.sidor[0].title);
                         //console.log(lank.getAttribute("data-original-title"));
                         //console.log(i);
 
@@ -94,7 +107,7 @@
 
             xhttp.open("POST", "http://10.130.216.101/TP/api.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("nyckel=JIOAJWWNPA259FB2&tjanst=wiki&typ=JSON&wiki=3");
+            xhttp.send("nyckel=nx06YHDvPELOArYg&tjanst=wiki&typ=JSON&wiki=8");
 
             new Darkmode({ 
                 label: '🌓',
