@@ -8,6 +8,8 @@ if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
     $style = '/main.css';
 }
 
+$link = basename($_SERVER["REQUEST_URI"]);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +45,7 @@ if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
     
     <body class="d-flex flex-column h-100">
 
-        <div class="container sticky-top" style="margin-bottom:15px">
+        <div class="container <?php if($link != "_edit" && $link != "_create"){echo "sticky-top";}?>" style="margin-bottom:15px">
             <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
                 <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
                     <?php 
