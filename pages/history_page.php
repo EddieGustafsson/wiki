@@ -64,6 +64,10 @@
 
                                         if($array != null){
 
+                                            for($i = 0; $i < sizeof($array); $i++){
+                                                $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
+                                            }
+
                                             function cmp($a, $b) {
                                                 return strcmp($b['id'], $a['id']);
                                             }
@@ -82,7 +86,7 @@
                                                 <a href="/Wiki/'.$array[$i]['titel'].'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
                                                 '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
                                                     <div class="d-flex w-100 justify-content-between">
-                                                        <h5 class="mb-1"><strong>Uppdaterade '.$array[$i]['titel'].'</strong></h5>
+                                                        <h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5>
                                                     </div>
                                                     <small>Senast uppdaterad: '.$array[$i]['datum'].' godkänt utav '.$array[$i]['godkantAv'].'</small>
                                                 </a>
