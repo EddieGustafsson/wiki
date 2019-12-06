@@ -95,10 +95,22 @@ include '../includes/head.php';
                                 </div>
                             </div>
                             <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:left;">
-                                <div class="sticky-top" style="top: 100px; z-index: 1;">
-                                    <h3>Innehållsförteckning</h3>
-                                    <div id="custom-toc-container"></div>
-                                </div>
+                                <div style="z-index: 1;"class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h3>Innehållsförteckning</h3>
+                                            </button>
+                                        </h2>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div id="custom-toc-container"></div>
+                                        </div>
+                                    </div>
+                                 </div>
                             </div>
                         </div>
                     </div>
