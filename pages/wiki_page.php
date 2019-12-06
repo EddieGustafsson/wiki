@@ -59,7 +59,7 @@ include '../includes/head.php';
                                 <p><i>Senast ändrad: <?php echo $array['sidor'][$page_id]['datum']; ?></i></p>
                             </div>
                             <?php 
-                                if(isset($_COOKIE['debug'])){
+                                if(isset($_COOKIE['debug']) && isset($_SESSION['role'])){
                                     if($_SESSION['role'] == "superadmin" && $_COOKIE['debug'] == "on"){ 
                                         echo 
                                         '
