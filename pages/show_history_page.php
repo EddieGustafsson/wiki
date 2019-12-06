@@ -5,6 +5,7 @@ include "../functions/get_history.php";
 
 if(isset($_GET['version']) && isset($_GET['id'])){
     $page_id = $_GET['id'];
+    $page_title = $_GET['title'];
     $version_id = $_GET['version'];
     $array = getHistory($page_id);
     $index = $_GET['index'];
