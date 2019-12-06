@@ -62,31 +62,38 @@
                                 <div class="col">
                                     <?php
 
-                                if($array != null){
-                                    echo "<div class='list-group'>";
+                                        if($array != null){
 
-                                    for($i = 0; $i < sizeof($array); $i++){
+                                            function cmp($a, $b) {
+                                                return strcmp($b['id'], $a['id']);
+                                            }
 
-                                        //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
+                                            usort($array, 'cmp');
 
-                                        $source = $array[$i]['innehall'];
-                                        $source = substr($source,0,300);
-                                        echo '
-                                        <a href="/Wiki/'.$array[$i]['titel'].'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
-                                        '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1"><strong>Uppdaterade '.$array[$i]['titel'].'</strong></h5>
-                                            </div>
-                                            <small>Senast uppdaterad: '.$array[$i]['datum'].' godkänt utav '.$array[$i]['godkantAv'].'</small>
-                                        </a>
-                                        ';
-                        
-                                    }
-                                } else{
-                                    echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
-                                }
+                                            echo "<div class='list-group'>";
 
-                                    echo "</div>";
+                                            for($i = 0; $i < sizeof($array); $i++){
+
+                                                //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
+
+                                                $source = $array[$i]['innehall'];
+                                                $source = substr($source,0,300);
+                                                echo '
+                                                <a href="/Wiki/'.$array[$i]['titel'].'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
+                                                '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-1"><strong>Uppdaterade '.$array[$i]['titel'].'</strong></h5>
+                                                    </div>
+                                                    <small>Senast uppdaterad: '.$array[$i]['datum'].' godkänt utav '.$array[$i]['godkantAv'].'</small>
+                                                </a>
+                                                ';
+                                
+                                            }
+                                        } else{
+                                            echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
+                                        }
+
+                                            echo "</div>";
                                     
                                     ?>
                                 </div>

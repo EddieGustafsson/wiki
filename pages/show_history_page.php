@@ -20,7 +20,6 @@ include '../includes/head.php';
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb shadow" style="border: 1px solid rgba(0,0,0,.125);">
                         <?php 
-                        if($array[$index]['titel'] != 'Home'){
                             echo 
                             '
                             <li class="breadcrumb-item"><a href="/Wiki">Hem</a></li>
@@ -28,9 +27,6 @@ include '../includes/head.php';
                             <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'/_history>Historik</a></li>
                             <li class="breadcrumb-item active" aria-current="page">'.$array[$index]['titel'].'</li>
                             ';
-                        } else {
-                            echo '<li class="breadcrumb-itemactive" aria-current="page"><a>Hem</a></li>';
-                        }
                         
                         ?>
                     </ol>
