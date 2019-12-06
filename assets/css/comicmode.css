@@ -1,7 +1,7 @@
 body {
     background-image: url("../images/marvelcomics.jpg");
     background-repeat: repeat;
-    background-size: contain, cover;
+    background-size: 800px
 }
 
 .breadcrumb{
