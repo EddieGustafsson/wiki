@@ -102,7 +102,7 @@ include '../includes/head.php';
                                         <div class="card-header" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <h3>Innehållsförteckning</h3>
+                                                <h3 style="color:black;">Innehållsförteckning</h3>
                                             </button>
                                         </h2>
                                         </div>
