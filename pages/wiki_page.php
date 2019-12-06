@@ -59,28 +59,30 @@ include '../includes/head.php';
                                 <p><i>Senast ändrad: <?php echo $array['sidor'][$page_id]['datum']; ?></i></p>
                             </div>
                             <?php 
-                                if($_SESSION['role'] == "superadmin" && $_COOKIE['debug'] == "on"){ 
-                                    echo 
-                                    '
-                                    <div class="col-4">
-                                    <p>Debug:</p>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col">
-                                            <sub>Sid-ID: '.$array['sidor'][$page_id]['id'].'</sub><br>
-                                            <sub>JSON-ID: '.$page_id.'</sub><br>
-                                            <sub>Godkänd av id: '.$array['sidor'][$page_id]['godkantAv'].'</sub><br>
-                                            <sub>Godkänd av namn: '.$array['sidor'][$page_id]['godKantAvNamn'].'</sub><br>
+                                if(isset($_COOKIE['debug'])){
+                                    if($_SESSION['role'] == "superadmin" && $_COOKIE['debug'] == "on"){ 
+                                        echo 
+                                        '
+                                        <div class="col-4">
+                                        <p>Debug:</p>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col">
+                                                <sub>Sid-ID: '.$array['sidor'][$page_id]['id'].'</sub><br>
+                                                <sub>JSON-ID: '.$page_id.'</sub><br>
+                                                <sub>Godkänd av id: '.$array['sidor'][$page_id]['godkantAv'].'</sub><br>
+                                                <sub>Godkänd av namn: '.$array['sidor'][$page_id]['godKantAvNamn'].'</sub><br>
+                                            </div>
+                                            <div class="col">
+                                                <sub>Bidragsgivare: '.$array['sidor'][$page_id]['bidragsgivare'].'</sub><br>
+                                                <sub>Dolt: '.$array['sidor'][$page_id]['dolt'].'</sub><br>
+                                                <sub>Låst: '.$array['sidor'][$page_id]['last'].'</sub><br>
+                                            </div>
                                         </div>
-                                        <div class="col">
-                                            <sub>Bidragsgivare: '.$array['sidor'][$page_id]['bidragsgivare'].'</sub><br>
-                                            <sub>Dolt: '.$array['sidor'][$page_id]['dolt'].'</sub><br>
-                                            <sub>Låst: '.$array['sidor'][$page_id]['last'].'</sub><br>
                                         </div>
-                                    </div>
-                                    </div>
-                                    '; 
-                                }
+                                        '; 
+                                    }
+                                }   
                             ?>
                         </div>
                     </div>
