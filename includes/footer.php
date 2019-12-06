@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-3">
+        <footer class="footer mt-auto py-3">
             <div class="container">
                 <div class="card shadow-lg">
                     <div class="card-header">
@@ -11,12 +11,21 @@
             </div>
         </footer>
 
+        <div class="alert text-center cookiealert" role="alert">
+            <b>Gillar du kakor?</b> &#x1F36A; Vi använder cookies för att säkerställa att du får den bästa upplevelsen på vår webbplats. <a href="https://cookiesandyou.com/" target="_blank">Läs mer</a>
+
+            <button type="button" class="btn btn-danger btn-sm acceptcookies" aria-label="Close">
+                Jag godkänner
+            </button>
+        </div>
+
         <?php include '../includes/modals.php'; ?>
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <script src="/Wiki/assets/js/editormd.js"></script>
-        <script src="/Wiki/assets/js/linked_popovers.js"></script>
+        <script src="<?php echo $host;?>/assets/js/editormd.js"></script>
+        <script src="<?php echo $host;?>/assets/js/linked_popovers.js"></script>
+        <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
         <script type="text/javascript">
