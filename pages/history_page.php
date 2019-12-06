@@ -83,7 +83,7 @@
                                                 $source = $array[$i]['innehall'];
                                                 $source = substr($source,0,300);
                                                 echo '
-                                                <a href="/Wiki/'.$array[$i]['titel'].'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
+                                                <a href="/Wiki/'.$page_title.'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
                                                 '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
                                                     <div class="d-flex w-100 justify-content-between">
                                                         <h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5>
