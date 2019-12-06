@@ -12,7 +12,7 @@
                                 <div class="col-sm">
                                     <h4 class="card-text">Kom igång </h4>
                                     <ul>
-                                        <li><a href="<?php echo $host;?>/hem">Hem</a></li>
+                                        <li><a href="<?php echo $host;?>/home">Hem</a></li>
                                         <li><a data-toggle="modal" data-target="#login" href="#">Logga in</a></li>
                                         <li><a href="<?php echo $host;?>/_random">Slumpa en artikel</a></li>
                                         <li><a href="<?php echo $host;?>/_showall">Alla sidor</a></li>
