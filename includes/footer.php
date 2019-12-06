@@ -1,11 +1,35 @@
         <footer class="footer mt-auto py-3">
             <div class="container">
                 <div class="card shadow-lg">
-                    <div class="card-header">
-                    © 2019 Marvel Wiki
-                    </div>
                     <div class="card-body">
-                        <p class="card-text">Test footer.</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <h4 class="card-text">Om oss</h4>
+                                    <p class="card-text">“We don't make mistakes, just happy little accidents.”</p>
+                                    <p class="card-text">― Bob Ross </p>
+                                </div>
+                                <div class="col-sm">
+                                    <h4 class="card-text">Kom igång </h4>
+                                    <ul>
+                                        <li><a href="<?php echo $host;?>/hem">Hem</a></li>
+                                        <li><a data-toggle="modal" data-target="#login" href="#">Logga in</a></li>
+                                        <li><a href="<?php echo $host;?>/_random">Slumpa en artikel</a></li>
+                                        <li><a href="<?php echo $host;?>/_showall">Alla sidor</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm">
+                                    <h4 class="card-text">Hjälp</h4>
+                                    <ul>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Kontakta oss</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <small><a href="#">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="#">Användarvillkor</a></small>
+                        </div>
                     </div>
                 </div>
             </div>
