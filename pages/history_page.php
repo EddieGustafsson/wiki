@@ -3,6 +3,7 @@
     include "../functions/view_json.php";
     include "../functions/get_title.php";
     include "../functions/get_history.php";
+    include "../functions/get_page_id.php";
 
     $page_title = 'Historik';
 
@@ -10,8 +11,8 @@
 
     if(isset($_GET['page'])){
         $page_title = $_GET['page'];
-        $wiki_page_id = getTitle($page_title);
-
+        $wiki_page_id = getPageId($page_title);
+        
         try{
             $array = getHistory($wiki_page_id);
         }
@@ -32,7 +33,7 @@
                             echo 
                             '
                             <li class="breadcrumb-item"><a href="/Wiki">Hem</a></li>
-                            <li class="breadcrumb-item"><a href=/Wiki/'. $page_title .'>'. $page_title .'</a></li>
+                            <li class="breadcrumb-item"><a href=/Wiki/'.$page_title.'>'.$page_title.'</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Historik</a></li>
                             ';
                             

@@ -23,9 +23,9 @@ include '../includes/head.php';
                             echo 
                             '
                             <li class="breadcrumb-item"><a href="/Wiki">Hem</a></li>
-                            <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch .'>'. $parent_branch .'</a></li>
-                            <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch .'/_history>Historik</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">'. $array[$index]['titel'] .'</li>
+                            <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'>'.$parent_branch.'</a></li>
+                            <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'/_history>Historik</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">'.$array[$index]['titel'].'</li>
                             ';
                         } else {
                             echo '<li class="breadcrumb-itemactive" aria-current="page"><a>Hem</a></li>';
@@ -53,28 +53,7 @@ include '../includes/head.php';
                                 ?></h1>
                                 <p><i>Senast ändrad: <?php echo $array[$index]['datum']; ?></i></p>
                             </div>
-                            <?php 
-                                if(isset($_SESSION['role']) == "superadmin"){ 
-                                    echo 
-                                    '
-                                    <div class="col-4">
-                                    <p>Debug:</p>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col">
-                                            <sub>Sid-ID: '.$array[$index]['id'].'</sub><br>
-                                            <sub>JSON-ID: '.$page_id.'</sub><br>
-                                            <sub>Godkänd av id: '.$array[$index]['godkantAv'].'</sub><br>
-                                            <sub>Godkänd av namn: '.$array[$index]['godKantAv'].'</sub><br>
-                                        </div>
-                                        <div class="col">
-                                            <sub>Bidragsgivare: '.$array[$index]['bidragsgivare'].'</sub><br>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    '; 
-                                }
-                            ?>
+                        
                         </div>
                     </div>
                     <div class="card-body">
