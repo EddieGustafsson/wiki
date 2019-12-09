@@ -29,6 +29,8 @@
                         </div>
                         <div style="text-align: center;">
                             <small><a href="#">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="#">Användarvillkor</a></small>
+                            <br>
+                            <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="#">Wikingdom</a></small>
                         </div>
                     </div>
                 </div>
