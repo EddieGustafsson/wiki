@@ -24,7 +24,16 @@ if(!empty($_GET['status'])){
                     alert("alert-success", "Panel för felsökningsinformation har nu deaktiverats");
                     break;
             }
-            break;
+            break;  
+        case 'delete':
+            switch($_GET['reason']){
+                case 'PageDeleted':
+                    alert("alert-success", "<i class='fas fa-info-circle'></i> Artikeln har nu tagist bort.");
+                    break;
+                case 'Error':
+                    alert("alert-danger", "<i class='fas fa-exclamation-triangle'></i> Det uppstod något fel vid borttaning av artikeln. Vänligen försök igen.");
+                    break;
+            }
     }
 }
 
