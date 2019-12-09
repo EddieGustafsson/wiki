@@ -2,7 +2,6 @@
 include "../includes/settings.php";
 include "../functions/view_json.php";
 include "../functions/get_title.php";
-include "../functions/delete_wiki_page.php";
 
 $page_title = 'Redigera artikel';
 
@@ -51,7 +50,7 @@ if(empty($_SESSION['username'])){
                                 <div class="col-4" style="margin-top: 5px;">
                                     <a type="button" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_history" class="btn btn-outline-dark ">Sidverision</a>
                                     <a type="button" href="<?php echo $host;?>/_create" class="btn btn-success ">Ny sida</a>
-                                    <a type="button" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_delete" class="btn btn-outline-danger ">Ta bort sida</a>
+                                    <a type="button" data-toggle="modal" data-target="#remove-page-check" class="btn btn-outline-danger ">Ta bort sida</a>
                                 </div>
                             </div>
                         </div>
