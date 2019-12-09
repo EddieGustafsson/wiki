@@ -1,3 +1,30 @@
+<!-- Remove page check -->
+
+<div class="modal fade" id="remove-page-check" tabindex="-1" role="dialog" aria-labelledby="remove-page-check" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="remove-page-check">Sidan kommer strax att raderas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="<?php echo $host;?>/functions/delete_page.php">
+                        <input type="hidden" name="page_id" value="<?php if(!empty($array['sidor'][$page_id]['id'])){echo $array['sidor'][$page_id]['id'];} ?>">
+                        <div class="alert alert-danger" role="alert">
+                            <i class="fas fa-exclamation-triangle"></i> Är du säker på att du vill fortsätta?
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-danger btn-lg">Ja</button>
+                            <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Avbryt</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
+
 <!-- Deactivate account -->
 
 <div class="modal fade" tabindex="-1" id="deactivate-account" tabindex="-1" role="dialog" aria-labelledby="deactivate-account" aria-hidden="true">
