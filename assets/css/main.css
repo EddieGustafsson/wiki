@@ -5,12 +5,6 @@
     visibility: hidden;
 }
 
-.editormd-toolbar{
-
-    position: sticky!important;
-
-}
-
 .navbar-dark .navbar-text a {
     color:#0f0f0f!important;
 }
