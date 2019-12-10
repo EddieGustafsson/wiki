@@ -29,17 +29,17 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
             <div class="card-body">
                 <div class="row">
                     <div class="col-3" style="border-right: 1px solid rgba(0,0,0,.125);">
-                        <div class="nav flax-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="user-list-tab" data-toggle="pill" href="#user-list" role="tab" aria-controls="user-list" aria-selected="false">Användarlista</a>
                             <a class="nav-link active" id="statistics-tab" data-toggle="pill" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistik</a>
                         </div>
                     </div>
                     <div class="col-9">
                         <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="account-tab" style="min-height: 500px;">
+                            <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="user-list-tab" style="min-height: 500px;">
                                 <h4>Användarlista</h4>
                             </div>
-                            <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="security-tab" style="min-height: 500px;">
+                            <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab" style="min-height: 500px;">
                                 <h4>Statistik</h4>
                             </div>
                         </div>
