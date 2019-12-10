@@ -11,7 +11,7 @@ if(isset($_GET['query'])){
 
     if(!isset($search_array['code'])){
         for($i = 0; $i < sizeof($search_array); $i++){
-            if($search_array[$i] == $query){
+            if(strtolower($search_array[$i]) == strtolower($query)){
                 header("location: ".$host."/".$query."");
             }
         }
@@ -56,7 +56,7 @@ include '../includes/head.php';
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4" style="border-right: 1px solid rgba(0,0,0,.125);">
-                                <h4>Filtera</h4>
+                                <h4>Filter</h4>
                             </div>
                             <div class="col-8">
                                 <form action="<?php echo $host;?>/_search" method="GET">
