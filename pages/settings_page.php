@@ -57,12 +57,6 @@ if(empty($_SESSION['username'])){
                                             <button data-toggle="modal" data-target="#change-username" type="button" class="btn btn-secondary btn-sm">Ändra ditt användarnamn</button>
                                         </div>
                                         <div class="settings-section">
-                                            <h4 style="color:#ffc107;font-weight: bold;">Deaktivera konto</h4>
-                                            <hr>
-                                            <p>När du har deaktiverat ditt konto så kommer endast en adminstratör kunna aktivera det igen.</p>
-                                            <button data-toggle="modal" data-target="#deactivate-account" type="button" class="btn btn-outline-warning btn-sm">Deaktivera ditt konto</button>
-                                        </div>
-                                        <div class="settings-section">
                                             <h4 style="color:red;font-weight: bold;">Ta bort konto</h4>
                                             <hr>
                                             <p>När du raderar ditt konto kommer det inte att gå ångra. Snälla, var helt säker.</p>
