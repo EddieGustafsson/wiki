@@ -37,12 +37,18 @@
             </div>
         </footer>
 
-        <div class="alert text-center cookiealert" role="alert">
-            <b>Gillar du kakor?</b> &#x1F36A; Vi använder cookies för att säkerställa att du får den bästa upplevelsen på vår webbplats. <a href="https://cookiesandyou.com/" target="_blank">Läs mer</a>
-
-            <button type="button" class="btn btn-danger btn-sm acceptcookies" aria-label="Close">
-                Jag godkänner
-            </button>
+        <div class="cookie-consent-overlay">
+            <div class="alert text-center cookiealert" role="alert">
+                <b>Gillar du kakor?</b> &#x1F36A; Vi använder cookies för att säkerställa att du får den bästa upplevelsen på vår webbplats. <a href="https://cookiesandyou.com/" target="_blank">Läs mer</a>
+                <div class="cookie-buttons">
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+                        Jag godkänner
+                    </button>
+                    <a type="button" href="https://google.com" class="btn btn-danger btn-sm" style="text-decoration: none!important;">
+                        Jag godkänner inte
+                    </a>
+                </div>
+            </div>
         </div>
 
         <?php include '../includes/modals.php'; ?>
