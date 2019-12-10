@@ -34,7 +34,7 @@ if(empty($_SESSION['username'])){
                             <div class="row">
                                 <div class="col-8">
                                     <div class="input-group input-group-lg">
-                                        <input name="title" value="<?php if(isset($_GET['page'])){echo $_GET['page'];}; ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required autofocus>
+                                        <input placeholder="Din titel" name="title" value="<?php if(isset($_GET['page'])){echo $_GET['page'];}; ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required autofocus>
                                     </div>
                                 </div>
                                 <div class="col-4">

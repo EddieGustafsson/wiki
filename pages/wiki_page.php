@@ -97,22 +97,26 @@ include '../includes/head.php';
                                 </div>
                             </div>
                             <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:left;">
-                                <div style="z-index: 1;"class="accordion" id="accordionExample">
+                                <div id="accordion">
                                     <div class="card">
                                         <div class="card-header" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <h3 style="color:black;">Innehållsförteckning</h3>
-                                            </button>
-                                        </h2>
+                                            <h5 class="mb-0">
+                                                <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <h5>Innehållsförteckning</h5>
+                                                </button>
+                                                <div class="float-right" data-toggle="collapse" data-target="#collapseOne" style="margin-top: 3%;">
+                                                    <i class="fa" aria-hidden="true"></i>
+                                                </div>
+                                            </h5>
                                         </div>
 
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div id="custom-toc-container"></div>
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <div id="custom-toc-container"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>

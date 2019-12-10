@@ -3,6 +3,7 @@
 
     var cookieAlert = document.querySelector(".cookiealert");
     var acceptCookies = document.querySelector(".acceptcookies");
+    var cookie_consent_overlay = document.querySelector(".cookie-consent-overlay");
 
     if (!cookieAlert) {
        return;
@@ -14,9 +15,14 @@
         cookieAlert.classList.add("show");
     }
 
+    if (!getCookie("acceptCookies")) {
+        cookie_consent_overlay.classList.add("show");
+    }
+
     acceptCookies.addEventListener("click", function () {
         setCookie("acceptCookies", true, 365);
         cookieAlert.classList.remove("show");
+        location.reload(); 
     });
 
     function setCookie(cname, cvalue, exdays) {

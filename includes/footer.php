@@ -30,19 +30,25 @@
                         <div style="text-align: center;">
                             <small><a href="#">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="#">Användarvillkor</a></small>
                             <br>
-                            <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="#">Wikingdom</a></small>
+                            <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="https://github.com/EddieGustafsson/wiki">Wikingdom</a></small>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <div class="alert text-center cookiealert" role="alert">
-            <b>Gillar du kakor?</b> &#x1F36A; Vi använder cookies för att säkerställa att du får den bästa upplevelsen på vår webbplats. <a href="https://cookiesandyou.com/" target="_blank">Läs mer</a>
-
-            <button type="button" class="btn btn-danger btn-sm acceptcookies" aria-label="Close">
-                Jag godkänner
-            </button>
+        <div class="cookie-consent-overlay">
+            <div class="alert text-center cookiealert" role="alert">
+                <b>Gillar du kakor?</b> &#x1F36A; Vi använder cookies för att säkerställa att du får den bästa upplevelsen på vår webbplats. <a href="https://cookiesandyou.com/" target="_blank">Läs mer</a>
+                <div class="cookie-buttons">
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+                        Jag godkänner
+                    </button>
+                    <a type="button" href="https://google.com" class="btn btn-danger btn-sm" style="text-decoration: none!important;">
+                        Jag godkänner inte
+                    </a>
+                </div>
+            </div>
         </div>
 
         <?php include '../includes/modals.php'; ?>
@@ -73,9 +79,34 @@
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("nyckel=nx06YHDvPELOArYg&tjanst=wiki&typ=JSON&wiki=8");
 
-            const pasteBox = document.getElementById("no-paste");
+            const pasteBox = document.getElementById("confirmation_phrase");
             pasteBox.onpaste = e => {
                 e.preventDefault();
                 return false;
              };
         </script>
+
+        <?php 
+
+        if(isset($_SESSION["delete_account"]) && $_SESSION["delete_account"] == "true"){
+            echo 
+            "
+            <script>
+                $('#remove-account-check').modal({
+                    show: true
+                })
+
+              $('#remove-account-check').on('hide.bs.modal', function(){
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function() {
+                    document.location = '".$host."/functions/delete_account.php';
+                }
+                xhr.open('GET', '".$host."/functions/delete_account.php', true);
+                xhr.send();
+              });
+
+            </script>
+            ";
+        }
+
+        ?>
