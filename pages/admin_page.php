@@ -31,7 +31,7 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                     <div class="col-3" style="border-right: 1px solid rgba(0,0,0,.125);">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="user-list-tab" data-toggle="pill" href="#user-list" role="tab" aria-controls="user-list" aria-selected="false">Användarlista</a>
-                            <a class="nav-link active" id="statistics-tab" data-toggle="pill" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistik</a>
+                            <a class="nav-link" id="statistics-tab" data-toggle="pill" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistik</a>
                         </div>
                     </div>
                     <div class="col-9">
