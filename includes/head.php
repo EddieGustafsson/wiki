@@ -49,7 +49,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
             <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
                 <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
                     <?php 
-                        if(!empty($_SESSION['username']) && $_SESSION['role'] == "superadmin"){
+                        if(!empty($_SESSION['username'])/* && $_SESSION['role'] == "superadmin"*/){
                             echo 
                             '
                                 <div class="btn-group">
@@ -58,14 +58,17 @@ $link = basename($_SERVER["REQUEST_URI"]);
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.$host.'/_admin"><i class="fab fa-accessible-icon"></i> Skapa Konto</a>
+                            ';
+                            if($_SESSION['role'] == "superadmin"){ echo'<a class="dropdown-item" href="'.$host.'/_admin"><i class="fab fa-accessible-icon"></i> Skapa Konto</a>';}
+                            echo 
+                            '
                                         <a class="dropdown-item" href="'.$host.'/_settings"><i class="fas fa-cogs"></i> Inställningar</a>
                                     <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="'.$host.'/_logout"><i class="fa fa-sign-out-alt"></i> Logga ut</a>
                                     </div>
                                 </div>
                             ';
-                        } else if(!empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
+                        /*} else if(!empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
 
                             echo 
                             '
@@ -81,7 +84,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                                     </div>
                                 </div>
                             ';
-                        
+                        */
                         }else {
                             echo '<button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#login">Logga in</button>';
                         }
