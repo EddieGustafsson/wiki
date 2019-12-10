@@ -58,8 +58,8 @@ $link = basename($_SERVER["REQUEST_URI"]);
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.$host.'/_settings"><i class="fab fa-accessible-icon"></i>Test</a>
-                                        <a class="dropdown-item" href="'.$host.'/_settings"><i class="fas fa-cogs"></i>Inställningar</a>
+                                    'if($_SESSION['role'] == "superadmin"){ echo '<a class="dropdown-item" href="'.$host.'/_admin"><i class="fab fa-accessible-icon"></i> Skapa Konto</a>'; }'
+                                        <a class="dropdown-item" href="'.$host.'/_settings"><i class="fas fa-cogs"></i> Inställningar</a>
                                     <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="'.$host.'/_logout"><i class="fa fa-sign-out-alt"></i> Logga ut</a>
                                     </div>
