@@ -30,7 +30,7 @@
                         <div style="text-align: center;">
                             <small><a href="#">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="#">Användarvillkor</a></small>
                             <br>
-                            <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="#">Wikingdom</a></small>
+                            <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="https://github.com/EddieGustafsson/wiki">Wikingdom</a></small>
                         </div>
                     </div>
                 </div>
@@ -79,9 +79,34 @@
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("nyckel=nx06YHDvPELOArYg&tjanst=wiki&typ=JSON&wiki=8");
 
-            const pasteBox = document.getElementById("no-paste");
+            const pasteBox = document.getElementById("confirmation_phrase");
             pasteBox.onpaste = e => {
                 e.preventDefault();
                 return false;
              };
         </script>
+
+        <?php 
+
+        if(isset($_SESSION["delete_account"]) && $_SESSION["delete_account"] == "true"){
+            echo 
+            "
+            <script>
+                $('#remove-account-check').modal({
+                    show: true
+                })
+
+              $('#remove-account-check').on('hide.bs.modal', function(){
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function() {
+                    document.location = '".$host."/functions/delete_account.php';
+                }
+                xhr.open('GET', '".$host."/functions/delete_account.php', true);
+                xhr.send();
+              });
+
+            </script>
+            ";
+        }
+
+        ?>
