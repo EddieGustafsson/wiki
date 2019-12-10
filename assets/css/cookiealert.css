@@ -49,3 +49,13 @@
 .cookie-buttons{
     margin-top: 5px;
 }
+
+[data-toggle="collapse"] .fa:before {   
+    cursor: pointer;
+    content: "\f062";
+    color: grey;         /* adjust as needed */
+  }
+  
+  [data-toggle="collapse"].collapsed .fa:before {
+    content: "\f063";
+  }
