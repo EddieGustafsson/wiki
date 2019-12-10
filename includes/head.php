@@ -115,9 +115,9 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         </div>
                     </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Sök i Marvel Wiki" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Sök</button>
+                    <form class="form-inline my-2 my-lg-0" action="<?php echo $host;?>/_search" method="GET">
+                        <input name="query" class="form-control mr-sm-2" type="search" placeholder="Sök i Marvel Wiki" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Sök</button>
                     </form>
                 </div>
             </nav>
