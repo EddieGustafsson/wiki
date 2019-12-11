@@ -1,5 +1,7 @@
 <?php
 
+$page_title = "Adminpanel";
+
 include '../includes/settings.php';
 include '../includes/head.php';
 
