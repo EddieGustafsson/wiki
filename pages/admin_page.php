@@ -67,11 +67,20 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                                     </div>
                                                     <div id="' . $user . '' . $id . '" class="collapse" aria-labelledby="' . $user . '" data-parent="#accordian">
                                                         <div class="card-body">
-                                                            <div class="col">
-                                                                <button type="button" class="btn btn-outline-warning btn-sm">Deaktivera Konto</button>
-                                                            </div>
-                                                            <div class="col">
-                                                                <button type="button" class="btn btn-outline-danger btn-sm">Ta Bort Konto</button>
+                                                            <div class="row">
+                                                                <div class="col" style="border-right: 1px solid rgba(0,0,0,.125);">
+                                                                    <h4>Deaktivera Konto</h4>
+                                                                    <hr>
+                                                                    <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
+                                                                    samt tar bort möjligheten för dem att ändra något.</p>
+                                                                    <button type="button" class="btn btn-outline-warning btn-sm">Deaktivera Konto</button>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <h4>Ta Bort Konto</h4>
+                                                                    <hr>
+                                                                    <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p>
+                                                                    <button type="button" class="btn btn-outline-danger btn-sm">Ta Bort Konto</button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
