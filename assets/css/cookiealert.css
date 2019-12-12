@@ -59,3 +59,11 @@
   [data-toggle="collapse"].collapsed .fa:before {
     content: "\f063";
   }
+
+
+.page-item.active .page-link{
+    z-index: 1!important;
+    color:#fff!important;
+    background-color:#ce1022!important;
+    border-color:#ce1022!important;
+}
