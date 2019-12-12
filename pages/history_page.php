@@ -50,7 +50,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-8">
-                                    <h1><?php echo $page_title; ?></h1>
+                                    <h1>Historik för <?php echo $page_title; ?></h1>
                                 </div>
                                 <div class="col-4">
 
@@ -86,9 +86,12 @@
                                                 <a href="/Wiki/'.$page_title.'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
                                                 '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
                                                     <div class="d-flex w-100 justify-content-between">
-                                                        <h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" value="'.$array[$i]['sidId'].'" class="custom-control-input" id="customCheck1">
+                                                        <label class="custom-control-label" for="customCheck1"><h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5></label>
+                                                        </div>
                                                     </div>
-                                                    <small>Senast uppdaterad: '.$array[$i]['datum'].' godkänt utav '.$array[$i]['godkantAv'].'</small>
+                                                    <small>Användare '.$array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$array[$i]['datum'].'</small>
                                                 </a>
                                                 ';
                                 
