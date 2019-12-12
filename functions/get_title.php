@@ -5,7 +5,7 @@
         include "../includes/settings.php";
 
         // Create map with request parameters
-        $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'JSON', 'wiki' => $wiki_id);
+        $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'function', 'handling' => 'skapa', 'funktion' => 'sokFalt', 'wikiId' => $wiki_id, 'sok' => '');
 
         // Build Http query using params
         $query = http_build_query ($params);
@@ -26,9 +26,9 @@
 
         $array = json_decode($result, true);
 
-        for($i = 0; $i < sizeof($array['sidor']); $i++){
+        for($i = 0; $i < sizeof($array); $i++){
 
-            if(strtolower($array['sidor'][$i]['titel']) == strtolower($title)){
+            if(strtolower($array[$i]) == strtolower($title)){
                 return $i;
             }
 
