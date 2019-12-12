@@ -27,7 +27,7 @@
 
 <?php 
 
-if($page_title = 'Inställnigar'){
+if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
     echo 
     '
     <!-- Deactivate account -->
