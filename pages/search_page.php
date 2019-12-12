@@ -17,6 +17,16 @@ if(isset($_GET['query'])){
         }
     }
 
+    $raw_data = $search_array;
+
+    // use get variable to paging number
+    $page = !isset($_GET['page']) ? 1 : $_GET['page'];
+    $limit = 5; // five rows per page
+    $offset = ($page - 1) * $limit; // offset
+    $total_items = count($raw_data); // total items
+    $total_pages = ceil($total_items / $limit);
+    $final = array_splice($raw_data, $offset, $limit); // splice them according to offset and limit
+
 }
 
 $page_title = 'Sök';
@@ -89,54 +99,58 @@ include '../includes/head.php';
                                 <br>
                                 <table class="table table-striped">
                                     <tbody>
-                                        <?php 
-                                        if($query != "" && !isset($search_array['code'])){
-                                            for($i = 0; $i < sizeof($search_array); $i++){
+                                        <?php if($query != "" && !isset($search_array['code'])): ?>
 
-                                                $order = $i + 1;
-
-                                                echo 
-                                                '
+                                            <?php foreach($final as $key): ?>
                                                 <tr>
-                                                    <th scope="row">'.$order.'</th>
-                                                    <td><a href="'.$host.'/'.$search_array[$i].'">'.$search_array[$i].'</a></td>
+                                                    <td><a href="<?php echo $host?>/<?php echo !is_array($key) ? $key : implode(',', $key);?>"><?php echo !is_array($key) ? $key : implode(',', $key); ?></a></td>
                                                 </tr>
-                                                ';
-                                            }
-                                        } else {
-                                            echo 
-                                            '
-                                            <tr>
-                                                <td><center>Inget resultat för din sökning.</center></td>
-                                            </tr>
-                                            ';
-                                        }
-                                        ?>
+                                            <?php endforeach; ?>
+
+                                        <?php else: ?>
+
+                                            <p><center>Inget resultat för din sökning.</center></p>
+                                            <p><center><a href="<?php echo $host?>/<?php echo $query?>/">Klicka här för att skapa en artikel för <strong><?php echo $query?></strong></a></center></p>
+
+                                        <?php endif; ?>
                                     </tbody>
                                 </table>
                                 <br>
-                                <?php 
+                                <?php if($query != "" && !isset($search_array['code'])): ?>
                                 
-                                if($query != "" && !isset($search_array['code'])){
-                                    echo 
-                                    '
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                    ';
-                                }
-                                
-                                ?>
+                                    <div class="d-flex justify-content-center" style="margin-top:30px;">
+                                        <nav aria-label="kundtjanster">
+                                            <ul class="pagination">
+                                                <?php if ($page > 1): ?>
+                                                <li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page-1 ?>">Tillbaka</a></li>
+                                                <?php endif; ?>
+
+                                                <?php if ($page > 3): ?>
+                                                <li class="start"><a class="page-link" href="_search?query=<?php echo $query ?>&page=1">1</a></li>
+                                                <li class="dots"><a class="page-link">. . .</a></li>
+                                                <?php endif; ?>
+
+                                                <?php if ($page-2 > 0): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
+                                                <?php if ($page-1 > 0): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
+
+                                                <li class="page-item active"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page ?>"><?php echo $page ?></a></li>
+
+                                                <?php if ($page+1 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
+                                                <?php if ($page+2 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+
+                                                <?php if ($page < ceil($total_pages / $limit)-2): ?>
+                                                <li class="dots"><a class="page-link">. . .</a></li>
+                                                <li class="end"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo ceil($total_pages / $limit) ?>"><?php echo ceil($total_pages / $limit) ?></a></li>
+                                                <?php endif; ?>
+
+                                                <?php if ($page < ceil($total_pages / $limit)): ?>
+                                                <li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+1 ?>">Nästa</a></li>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
