@@ -44,9 +44,9 @@ include '../includes/head.php';
                                 <?php 
                                 
                                 if($query != "" && !isset($search_array['code'])){
-                                 echo "<p><strong>".sizeof($search_array)."</strong> resultat hittades för sökningen efter <strong>".$query."</strong></p>";
+                                    echo "<p><strong>".sizeof($search_array)."</strong> resultat hittades för sökningen efter <strong>".$query."</strong></p>";
                                 } else {
-                                    echo "<p><strong>0</strong> resultat hittades för sökningen efter <strong>".$query."</strong></p>";
+                                    echo '<p><strong>Inget</strong> resultat hittades för sökningen efter "<strong>'.$query.'</strong>"</p>';
                                 }
 
                                 ?>
