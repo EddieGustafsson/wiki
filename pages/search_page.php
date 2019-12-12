@@ -66,7 +66,7 @@ include '../includes/head.php';
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4" style="border-right: 1px solid rgba(0,0,0,.125);">
-                                <h4>Filter</h4>
+                                <h4><i class="fa fa-filter fa-sm"></i> Filter</h4>
                             </div>
                             <div class="col-8">
                                 <form action="<?php echo $host;?>/_search" method="GET">
@@ -110,7 +110,7 @@ include '../includes/head.php';
                                         <?php else: ?>
 
                                             <p><center>Inget resultat för din sökning.</center></p>
-                                            <p><center><a href="<?php echo $host?>/<?php echo $query?>/">Klicka här för att skapa en artikel för <strong><?php echo $query?></strong></a></center></p>
+                                            <p><center><a href="<?php echo $host?>/<?php echo $query?>">Klicka här för att skapa en artikel för <strong><?php echo $query?></strong></a></center></p>
 
                                         <?php endif; ?>
                                     </tbody>
