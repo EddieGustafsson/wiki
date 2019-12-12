@@ -2,8 +2,6 @@
 function getSearch($query){
     include "../includes/settings.php";
 
-    $wiki_id = 8;
-
     // Create map with request parameters
     $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'function', 'handling' => 'skapa', 'funktion' => 'sokFalt', 'wikiId' => $wiki_id, 'sok' => $query);
 
