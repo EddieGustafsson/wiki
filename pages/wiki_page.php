@@ -49,11 +49,13 @@ include '../includes/head.php';
                                     </li>
                                 </ul>
                                 <br>
+                                <?php 
+                                if($array['sidor'][$page_id]['last'] == 1){
+                                    echo '<i style="margin-left:3px!important;" class="fa fa-lock fa-lg"></i> ';
+                                } 
+                                ?>
                                 <h1>
                                 <?php
-                                    if($array['sidor'][$page_id]['last'] == 1){
-                                        echo '<i class="fa fa-lock fa-sm"></i>';
-                                    } 
                                     echo $array['sidor'][$page_id]['titel']; 
                                 ?></h1>
                                 <p><i>Senast ändrad: <?php echo $array['sidor'][$page_id]['datum']; ?></i></p>
