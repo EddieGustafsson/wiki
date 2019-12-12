@@ -4,6 +4,7 @@ $page_title = "Adminpanel";
 
 include '../includes/settings.php';
 include '../includes/head.php';
+include '../functions/get_user.php';
 
 if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
 
@@ -13,6 +14,10 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
         window.location = '".$host."/home?admin=unauthorized';
     </script>
     ";
+
+}else{
+
+    $user_list = getUser();
 
 }
 
@@ -39,7 +44,44 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                     <div class="col-9">
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="user-list-tab" style="min-height: 500px;">
-                                <h4>Användarlista</h4>
+                                <div class="settings-section">
+                                    <h4>Användarlista</h4>
+                                    <hr>
+                                    <div id="accordian">
+                                        <?php
+                                        for($i = 0; $i < sizeof($user_list['anvandare']); $i++){
+
+                                            $user = $user_list['anvandare'][$i]['anamn'];
+                                            $id = $user_list['anvandare'][$i]['id'];
+
+                                            if(isset($user)){
+                                                echo
+                                                '
+                                                <div class="card">
+                                                    <div class="card-header" id="' . $user . '">
+                                                        <h4 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#' . $user . '' . $id . '" aria-expanded="false" aria-controls="' . $id . '">
+                                                                ' . $user . ' #' . $id . '
+                                                            </button>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="' . $user . '' . $id . '" class="collapse" aria-labelledby="' . $user . '" data-parent="#accordian">
+                                                        <div class="card-body">
+                                                            <div class="col">
+                                                                <button type="button" class="btn btn-outline-warning btn-sm">Deaktivera Konto</button>
+                                                            </div>
+                                                            <div class="col">
+                                                                <button type="button" class="btn btn-outline-danger btn-sm">Ta Bort Konto</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                ';
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab" style="min-height: 500px;">
                                 <h4>Statistik</h4>
