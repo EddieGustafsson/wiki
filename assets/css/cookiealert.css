@@ -67,3 +67,7 @@
     background-color:#ce1022!important;
     border-color:#ce1022!important;
 }
+
+img{
+    z-index: 99999999;
+}
