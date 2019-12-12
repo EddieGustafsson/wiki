@@ -45,7 +45,12 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="user-list-tab" style="min-height: 500px;">
                                 <div class="settings-section">
-                                    <h4>Användarlista</h4>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h4>Användarlista</h4>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#create-user">Skapa Konto</button>
+                                    </div>
                                     <hr>
                                     <div id="accordian">
                                         <?php
