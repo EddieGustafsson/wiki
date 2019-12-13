@@ -7,9 +7,11 @@ $type = 'function';
 $action = 'skapa';*/
 $function = 'skapaAKonto';
 $username = $_POST['username'];
+$password = $_POST['password'];
+$role = $_POST['role'];
 
 // Create map with request parameters
-$params = array ('funktion' => $function, 'username' => $username, 'rollid' => '5', 'tjanst' => '');
+$params = array ('funktion' => $function, 'username' => $username, 'rollid' => '5', 'tjanst' => '0');
 
 $query = http_build_query($params);
 
