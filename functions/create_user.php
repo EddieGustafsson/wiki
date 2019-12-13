@@ -29,6 +29,10 @@ $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/skapa.php
 
 $array = json_decode($result, true);
 
+if($array['success'] == true){
 
+    header("location: " . $host . "/_admin?create_user_status=success");
+
+}
 
 ?>
