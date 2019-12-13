@@ -84,6 +84,12 @@
                 e.preventDefault();
                 return false;
              };
+            var limit = 3;
+                $('input.custom-control-input').on('change', function(evt) {
+                if($("input[name='version']:checked").length >= limit) {
+                    this.checked = false;
+                }
+            });
         </script>
 
         <?php 
