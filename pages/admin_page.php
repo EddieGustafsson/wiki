@@ -83,7 +83,7 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                                                 <div class="col">
                                                                     <h4>Ta Bort Konto</h4>
                                                                     <hr>
-                                                                    <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p>
+                                                                    <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p></br>
                                                                     <button type="button" class="btn btn-outline-danger btn-sm">Ta Bort Konto</button>
                                                                 </div>
                                                             </div>
