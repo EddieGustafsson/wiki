@@ -227,3 +227,36 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
             </div>
     </div>
 </div>
+
+<!-- Skapa Konto -->
+<div class="modal fade" id="create-user" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="create-user">Skapa Konto till Marvel Wiki</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo $host;?>/functions/create_user.php" method="POST">
+                        <label for="inputUsername" class="sr-only">Användarnamn</label>
+                        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Användarnamn" required autofocus>
+                        <br>
+                        <label for="inputPassword" class="sr-only">Lösenord</label>
+                        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Lösenord" required>
+                        <br>
+                        <label for="inputRole" class="sr-only">Roll</label>
+                        <select class="input-group-text" for="inputRole">
+                            <option value="5" selected>Användare</option>
+                            <option value="3">Admin</option>
+                        </select>
+                        <br>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg">Skapa Konto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
