@@ -1,6 +1,7 @@
 <?php
 
 include "../includes/settings.php";
+include "../includes/edit_user.php";
 
 /*$service = 'wiki';
 $type = 'function';
