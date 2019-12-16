@@ -58,6 +58,7 @@
         <script src="<?php echo $host;?>/assets/js/editormd.js"></script>
         <script src="<?php echo $host;?>/assets/js/linked_popovers.js"></script>
         <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
+        <script src="<?php echo $host;?>/assets/js/checkbox-limit.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
         <script type="text/javascript">
@@ -85,11 +86,7 @@
                 return false;
              };
 
-            $('input.custom-control-input').on('change', function(evt) {
-                if($("input[type='checkbox']:checked").length >= 2) {
-                    this.checked = false;
-                }
-            });
+             checkboxlimit(document.forms.compare.version, 2)
         </script>
 
         <?php 
