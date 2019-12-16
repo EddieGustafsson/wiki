@@ -84,9 +84,9 @@
                 e.preventDefault();
                 return false;
              };
-            var limit = 3;
-                $('input.custom-control-input').on('change', function(evt) {
-                if($("input[name='version']:checked").length >= limit) {
+
+            $('input.custom-control-input').on('change', function(evt) {
+                if($("input[type='checkbox']:checked").length >= 2) {
                     this.checked = false;
                 }
             });
