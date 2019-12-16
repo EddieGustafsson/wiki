@@ -43,9 +43,7 @@
             </div>
 
             <div class="container">
-                <form method="POST" action="">
-                    <input type="hidden" name="page_id" value="0">
-                    <input type="hidden" name="user_id" value="0">
+                <form action="<?php echo $host;?>/<?php echo $page_title;?>/_compare" method="GET">
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <div class="row">
@@ -71,9 +69,8 @@
                                             <div class="d-flex">
                                                 <div class="p-2">Ändringar</div>
                                                 <div class="ml-auto p-2">
-
                                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <button type="button" class="btn btn-secondary btn-sm">Jämför Ändringar</button>
+                                                        <button type="submit" class="btn btn-secondary btn-sm">Jämför Ändringar</button>
                                                         <button type="button" class="btn btn-info btn-sm">Återställ Ändring</button>
                                                     </div>
                                                 </div>
@@ -107,7 +104,7 @@
                                                     '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
                                                         <div class="d-flex w-100 justify-content-between">
                                                             <div class="custom-control custom-checkbox">
-                                                                <input class="custom-control-input" type="checkbox" name="version" value="'.$array[$i]['sidId'].'"id="customCheck'.$i.'">
+                                                                <input class="custom-control-input" type="checkbox" name="version'.$i.'" value="'.$array[$i]['id'].'"id="customCheck'.$i.'">
                                                                 <label class="custom-control-label" for="customCheck'.$i.'"><h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5></label>
                                                             </div>
                                                         </div>
