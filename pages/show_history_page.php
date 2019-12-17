@@ -9,8 +9,13 @@ if(isset($_GET['version']) && isset($_GET['id'])){
     $array = getHistory($page_id);
     $index = $_GET['index'];
     $parent_branch = $_GET['branch_title'];
+    $final_array = array();
 
-    $page_title = '#'.$version_id.' '.$array[$index]['titel'].'';
+    for($i = sizeof($array)-1; $i >= 0; $i--){
+        array_push($final_array, $array[$i]);
+    }
+
+    $page_title = '#'.$version_id.' '.$final_array[$index]['titel'].'';
 }
 
 include '../includes/head.php';
@@ -26,7 +31,7 @@ include '../includes/head.php';
                             <li class="breadcrumb-item"><a href="/Wiki">Hem</a></li>
                             <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'>'.$parent_branch.'</a></li>
                             <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'/_history>Historik</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">#'.$version_id.' '.$array[$index]['titel'].'</li>
+                            <li class="breadcrumb-item active" aria-current="page">#'.$version_id.' '.$final_array[$index]['titel'].'</li>
                             ';
                         
                         ?>
@@ -50,14 +55,14 @@ include '../includes/head.php';
                                 <br>
                                 <h1>
                                 <?php
-                                    echo $array[$index]['titel'];
+                                    echo $final_array[$index]['titel'];
                                     echo ' (#'.$version_id.')'; 
                                 ?></h1>
-                                <p><i>Senast ändrad: <?php echo $array[$index]['datum']; ?></i></p>
+                                <p><i>Senast ändrad: <?php echo $final_array[$index]['datum']; ?></i></p>
                             </div>
                             <div class="col-4 alert alert-warning">
                                 <h5><i class="fas fa-exclamation-triangle"></i> Förhandsgranskning av artikel</h5><br>
-                                <p>Detta är en tidigare version av artikeln <em><?php echo $array[$index]['titel']?></em>, som publicerades <em><?php echo $array[$index]['datum']; ?></em>.</p>
+                                <p>Detta är en tidigare version av artikeln <em><?php echo $final_array[$index]['titel']?></em>, som publicerades <em><?php echo $final_array[$index]['datum']; ?></em>.</p>
                             </div>
                         </div>
                     </div>
@@ -67,7 +72,7 @@ include '../includes/head.php';
                                 <div id="test-markdown-view" class="js-toc-content">
                                     <!-- Server-side output Markdown text -->
                                     <textarea style="display:none;">
-<?php echo $array[$index]['innehall']; ?>
+<?php echo $final_array[$index]['innehall']; ?>
                                     </textarea>             
                                 </div>
                             </div>
