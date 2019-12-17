@@ -78,13 +78,13 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                                                     <hr>
                                                                     <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
                                                                     samt tar bort möjligheten för dem att ändra något.</p>
-                                                                    <button type="button" class="btn btn-outline-warning btn-sm">Deaktivera Konto</button>
+                                                                    <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#deactivate-account">Deaktivera Konto</button>
                                                                 </div>
                                                                 <div class="col">
                                                                     <h4>Ta Bort Konto</h4>
                                                                     <hr>
                                                                     <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p></br>
-                                                                    <button type="button" class="btn btn-outline-danger btn-sm">Ta Bort Konto</button>
+                                                                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete-user">Ta Bort Konto</button>
                                                                 </div>
                                                             </div>
                                                         </div>
