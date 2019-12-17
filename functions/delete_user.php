@@ -3,15 +3,15 @@
 include "../includes/settings.php";
 //include "../edit_user.php";
 
-if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
+if(isset($_POST['user_id']) && isset($_POST['username'])){
 
-    $function = 'skapaAKonto';
+    $function = 'harddelkonto';
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $user_Id = $_POST['user_id'];
     $role = $_POST['role'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'anamn' => $username, 'rollid' => $role, 'tjanst' => '43');
+    $params = array ('funktion' => $function, 'kontoID' => $user_Id, 'anamn' => $username);
 
     $query = http_build_query($params);
 
@@ -25,17 +25,13 @@ if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
 
     $context = stream_context_create(array('http' => $context_data));
 
-    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/skapa.php', false, $context);
+    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/tabort.php', false, $context);
 
     $array = json_decode($result, true);
 
-    /*echo $username;
-    echo $password;
-    echo $role;*/
+    print_r($array);
 
-    //print_r($array);
-
-    header("location: " . $host . "/_admin");
+    //header("location: " . $host . "/_admin");
 
 }
 
