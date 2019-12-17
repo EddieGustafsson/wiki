@@ -92,6 +92,9 @@ $link = basename($_SERVER["REQUEST_URI"]);
                     ?>
                 </div>
             </nav>
+
+            
+
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ce1022 !important;">
                 <a class="navbar-brand" href="<?php echo $host;?>/home">Marvel Wiki</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,22 +110,14 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user-circle"></i> Karaktärer
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                        <div id="character_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-book"></i> Serier
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                        <div id="comic_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                         </div>
                     </li>
                     <li class="nav-item dropdown">

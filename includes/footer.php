@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div style="text-align: center;">
-                            <small><a href="#">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="#">Användarvillkor</a></small>
+                            <small><a href="<?php echo $host;?>/Privacy Policy">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="<?php echo $host;?>/Terms of Service">Användarvillkor</a></small>
                             <br>
                             <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="https://github.com/EddieGustafsson/wiki">Wikingdom</a></small>
                         </div>
@@ -58,6 +58,7 @@
         <script src="<?php echo $host;?>/assets/js/editormd.js"></script>
         <script src="<?php echo $host;?>/assets/js/linked_popovers.js"></script>
         <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
+        <script src="<?php echo $host;?>/assets/js/checkbox-limit.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
         <script type="text/javascript">
@@ -77,13 +78,15 @@
 
             xhttp.open("POST", "http://10.130.216.101/TP/api.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("nyckel=nx06YHDvPELOArYg&tjanst=wiki&typ=JSON&wiki=8");
+            xhttp.send("nyckel=x9qXnagSOsS6sHun&tjanst=wiki&typ=JSON&wiki=9");
 
             const pasteBox = document.getElementById("confirmation_phrase");
             pasteBox.onpaste = e => {
                 e.preventDefault();
                 return false;
              };
+
+             checkboxlimit(document.forms.compare, 2)
         </script>
 
         <?php 

@@ -71,3 +71,15 @@
 img{
     z-index: 99999999;
 }
+del{
+    background:#fcc;
+    text-decoration: none!important;
+}
+ins{
+    background:#cfc;
+    text-decoration: none!important;
+}
+
+.tags{
+    visibility: hidden;
+}

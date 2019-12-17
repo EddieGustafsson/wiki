@@ -39,6 +39,58 @@ xhttp.onreadystatechange = function () {
             }
 
         }
+
+        let character_array = new Array();
+        let comic_array = new Array();
+        let div_start;
+        let tags;
+
+        for(i = 0; i < jsonData.sidor.length; i++){
+            let source = jsonData.sidor[i].innehall;
+
+            for(let j = 0; j < source.length; j++){
+                if(source.charAt(j) == '>'){
+                    div_start = j;
+                }
+                else if(source.charAt(j) == '<' && div_start != null){
+                    tags = source.substring(div_start+1, j);
+                }
+
+                if(tags == 'Character'){
+                   character_array.push(jsonData.sidor[i].titel);
+                }
+                else if(tags == 'Comic'){
+                    comic_array.push(jsonData.sidor[i].titel);
+                }
+                    
+                tags = null;
+            }
+            div_start = null;
+            tags = null;
+        }
+
+        character_array.sort();
+        comic_array.sort();
+
+        new addItemsIntoDropdown('character_dropdown', character_array);
+        new addItemsIntoDropdown('comic_dropdown', comic_array);
+
+        function addItemsIntoDropdown(list, array){
+            let dropdown = document.getElementById(list);
+        
+            for(let i = 0; i < array.length; i++){
+                
+                let a = document.createElement('a');
+                let linkText = document.createTextNode(array[i]);
+                a.appendChild(linkText);
+                a.title = array[i];
+                a.className = "dropdown-item";
+                a.href = "/Wiki/" + array[i];
+                dropdown.appendChild(a);
+
+            }
+        }
+        
         
     }
 

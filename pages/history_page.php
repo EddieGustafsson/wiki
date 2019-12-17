@@ -43,9 +43,8 @@
             </div>
 
             <div class="container">
-                <form method="POST" action="">
-                    <input type="hidden" name="page_id" value="0">
-                    <input type="hidden" name="user_id" value="0">
+                <form id="compare" name="compare" action="<?php echo $host;?>/<?php echo $page_title;?>/_compare" method="GET">                    <input type="hidden" name="parent_branch" value="<?php echo $page_title; ?>">
+                    <input type="hidden" name="page_id" value="<?php echo $wiki_page_id?>">
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <div class="row">
@@ -58,51 +57,75 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <div class="p-2">
+                                    <a type="button" href="<?php echo $host;?>/<?php echo $page_title; ?>/_edit" class="btn btn-outline-dark">Redigera artikel</a>
+                                    <a type="button" href="<?php echo $host;?>/_create" class="btn btn-success">Ny sida</a>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col">
-                                    <?php
-
-                                        if($array != null){
-
-                                            for($i = 0; $i < sizeof($array); $i++){
-                                                $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
-                                            }
-
-                                            function cmp($a, $b) {
-                                                return strcmp($b['id'], $a['id']);
-                                            }
-
-                                            usort($array, 'cmp');
-
-                                            echo "<div class='list-group'>";
-
-                                            for($i = 0; $i < sizeof($array); $i++){
-
-                                                //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
-
-                                                $source = $array[$i]['innehall'];
-                                                $source = substr($source,0,300);
-                                                echo '
-                                                <a href="/Wiki/'.$page_title.'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
-                                                '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                        <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" value="'.$array[$i]['sidId'].'" class="custom-control-input" id="customCheck1">
-                                                        <label class="custom-control-label" for="customCheck1"><h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5></label>
-                                                        </div>
+                                    <div class="card">
+                                        <div class="card-header">     
+                                            <div class="d-flex">
+                                                <div class="p-2">Ändringar</div>
+                                                <div class="ml-auto p-2">
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                        <button type="submit" class="btn btn-secondary btn-sm">Jämför Ändringar</button>
+                                                        <button type="button" class="btn btn-info btn-sm">Återställ Ändring</button>
                                                     </div>
-                                                    <small>Användare '.$array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$array[$i]['datum'].'</small>
-                                                </a>
-                                                ';
-                                
-                                            }
-                                        } else{
-                                            echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
-                                        }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <?php
 
-                                            echo "</div>";
-                                    
-                                    ?>
+                                                
+
+                                                if($array != null){
+
+                                                    $sorted_array = $array;
+                                                    $final_array = array();
+                                                    
+                                                    for($i = 0; $i < sizeof($array); $i++){
+                                                        $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
+                                                    }
+
+                                                    for($i = sizeof($array)-1; $i >= 0; $i--){
+                                                        array_push($final_array, $array[$i]);
+                                                    }
+
+                                                    echo "<div class='list-group'>";
+
+                                                    for($i = 0; $i < sizeof($final_array); $i++){
+
+                                                        //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
+
+                                                        $source = $final_array[$i]['innehall'];
+                                                        $source = substr($source,0,300);
+                                                        echo '
+                                                        <a href="/Wiki/'.$page_title.'/_show_history?id='.$final_array[$i]['sidId'].'&version='.$final_array[$i]['id'].
+                                                        '&index='.$i.'&branch_title='.$page_title.'&title='.$final_array[$i]['titel'].'" class="list-group-item list-group-item-action">
+                                                            <div class="d-flex w-100 justify-content-between">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input class="custom-control-input" type="checkbox" name="version[]" value="'.$final_array[$i]['id'].'"id="customCheck'.$i.'">
+                                                                    <label class="custom-control-label" for="customCheck'.$i.'"><h5 class="mb-1"><strong>'.$final_array[$i]['titel'].'</strong></h5></label>
+                                                                </div>
+                                                            </div>
+                                                            <small>Användare '.$final_array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$final_array[$i]['datum'].'</small>
+                                                        </a>
+                                                        ';
+
+                                                    }
+                                                } else{
+                                                    echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
+                                                }
+
+                                                    echo "</div>";
+
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
