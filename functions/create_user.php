@@ -11,7 +11,7 @@ if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
     $role = $_POST['role'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'anamn' => $username, 'rollid' => $role, 'tjanst' => '43');
+    $params = array ('funktion' => $function, 'anamn' => $username, 'rollid' => $role, 'tjanst' => '61');
 
     $query = http_build_query($params);
 
