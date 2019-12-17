@@ -1,18 +1,18 @@
 <?php
 
-function editUser(){
+function editUser($anvandarid, $password){
 
     include "../includes/settings.php";
 
     /*$service = 'wiki';
     $type = 'function';
     $action = 'skapa';*/
-    $function = 'skapaAKonto';
+    $function = 'redigeraKonto';
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'anamn' => $username, 'password' => $password, 'tjanst' => '0');
+    $params = array ('funktion' => $function, 'anvandarid' => $anvandarid, 'password' => $password);
 
     $query = http_build_query($params);
 
