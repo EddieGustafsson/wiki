@@ -91,29 +91,9 @@
                                                         $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
                                                     }
 
-                                                    /*function cmp($a, $b) {
-                                                        return strcmp($b['id'], $a['id']);
-                                                    }
-                                                    usort($sorted_array, 'cmp');*/
-
-                                                    /*for($i = 0; $i < sizeof($sorted_array); $i++){
-                                                        for($j = 0; $j < sizeof($array); $j++){
-                                                            if($sorted_array[$i]['id'] == $array[$j]['id']){
-                                                                array_push($final_array, $array[$j]);
-                                                            }
-                                                        }
-                                                    }*/
-
                                                     for($i = sizeof($array)-1; $i >= 0; $i--){
                                                         array_push($final_array, $array[$i]);
                                                     }
-                                                    
-                                                    //var_dump($final_array[1]['titel']);
-
-
-                                                    
-                                                    
-                                                    
 
                                                     echo "<div class='list-group'>";
 
