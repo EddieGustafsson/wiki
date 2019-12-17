@@ -80,45 +80,46 @@
                                         <div class="card-body">
                                             <?php
 
-                                            if($array != null){
+                                                if($array != null){
 
-                                                for($i = 0; $i < sizeof($array); $i++){
-                                                    $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
-                                                }
+                                                    for($i = 0; $i < sizeof($array); $i++){
+                                                        $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
+                                                    }
 
-                                                function cmp($a, $b) {
-                                                    return strcmp($b['id'], $a['id']);
-                                                }
+                                                    function cmp($a, $b) {
+                                                        return strcmp($b['id'], $a['id']);
+                                                    }
+                                                    usort($array, 'cmp');
+                                                    
+                                                    
 
-                                                usort($array, 'cmp');
+                                                    echo "<div class='list-group'>";
 
-                                                echo "<div class='list-group'>";
+                                                    for($i = 0; $i < sizeof($array); $i++){
 
-                                                for($i = 0; $i < sizeof($array); $i++){
+                                                        //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
 
-                                                    //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
-
-                                                    $source = $array[$i]['innehall'];
-                                                    $source = substr($source,0,300);
-                                                    echo '
-                                                    <a href="/Wiki/'.$page_title.'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
-                                                    '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
-                                                        <div class="d-flex w-100 justify-content-between">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input class="custom-control-input" type="checkbox" name="version[]" value="'.$array[$i]['id'].'"id="customCheck'.$i.'">
-                                                                <label class="custom-control-label" for="customCheck'.$i.'"><h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5></label>
+                                                        $source = $array[$i]['innehall'];
+                                                        $source = substr($source,0,300);
+                                                        echo '
+                                                        <a href="/Wiki/'.$page_title.'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
+                                                        '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
+                                                            <div class="d-flex w-100 justify-content-between">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input class="custom-control-input" type="checkbox" name="version[]" value="'.$array[$i]['id'].'"id="customCheck'.$i.'">
+                                                                    <label class="custom-control-label" for="customCheck'.$i.'"><h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5></label>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <small>Användare '.$array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$array[$i]['datum'].'</small>
-                                                    </a>
-                                                    ';
+                                                            <small>Användare '.$array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$array[$i]['datum'].'</small>
+                                                        </a>
+                                                        ';
 
+                                                    }
+                                                } else{
+                                                    echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
                                                 }
-                                            } else{
-                                                echo '<h5 class="mb-1"><strong>Inga tidigare versioner av denna artikel.</strong></h5>';
-                                            }
 
-                                                echo "</div>";
+                                                    echo "</div>";
 
                                             ?>
                                         </div>
