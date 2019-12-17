@@ -1,7 +1,7 @@
 <?php
 
 include "../includes/settings.php";
-include "../edit_user.php";
+//include "../edit_user.php";
 
 if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
 
@@ -11,7 +11,7 @@ if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
     $role = $_POST['role'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'anamn' => $username, 'rollid' => $role, 'tjanst' => '0');
+    $params = array ('funktion' => $function, 'anamn' => $username, 'rollid' => $role, 'tjanst' => '43');
 
     $query = http_build_query($params);
 
@@ -33,9 +33,9 @@ if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
     echo $password;
     echo $role;*/
 
-    
+    //print_r($array);
 
-    //header("location: " . $host . "/_admin");
+    header("location: " . $host . "/_admin");
 
 }
 
