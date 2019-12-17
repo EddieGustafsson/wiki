@@ -78,4 +78,7 @@ del{
 ins{
     background:#cfc;
     text-decoration: none!important;
+
+.tags{
+    visibility: hidden;
 }
