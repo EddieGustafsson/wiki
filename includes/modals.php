@@ -228,7 +228,14 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
     </div>
 </div>
 
+<?php
+
+if($page_title == 'Adminpanel' && $_SESSION['role'] == "superadmin"){
+
+echo '
+
 <!-- Skapa Konto -->
+
 <div class="modal fade" id="create-user" tabindex="-1" role="dialog" aria-labelledby="create_user" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -258,5 +265,142 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
                     </form>
                 </div>
             </div>
+        </div>
     </div>
-</div>
+
+    <!-- Deactivate account -->
+
+    <div class="modal fade" tabindex="-1" id="deactivate-account" tabindex="-1" role="dialog" aria-labelledby="deactivate-account" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deactivate-account">Är du säker på att du vill göra det här?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="<?php echo $host;?>/_login" method="POST">
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
+                                </div>
+                                <ul>
+                                    <li>Ditt konto kommer att <strong>deaktiveras</strong>.</li>
+                                    <li>Endast en <strong>adminstratör</strong> kommer kunna aktivera det igen</li>
+                                </ul> 
+                                <hr>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Ditt användarnamn:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Bekräfta ditt lösenord:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-danger btn-lg">Deaktivera konto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    <!-- Remove account -->
+
+    <div class="modal fade" tabindex="-1" id="remove-account" tabindex="-1" role="dialog" aria-labelledby="remove-account" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="remove-account">Är du säker på att du vill göra det här?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="'.$host.'/functions/delete_account.php" method="POST">
+                                <input type="hidden" name="user_id" value="'.$_SESSION["user_id"].'">
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
+                                </div>
+                                <ul>
+                                    <li>Ditt konto kommer att raderas <strong>permanent</strong>. Det kommer alltså vara omöjligt att ångra detta val.</li>
+                                    <li>Vi på Marvel Wiki har inte möjlighet att återställa ditt konto.</li>
+                                </ul> 
+                                <hr>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Ditt användarnamn:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input name="username" type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1"  required autofocus>
+                                    </div>
+                                </div>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Bekräfta ditt lösenord:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input name="password" type="password" class="form-control" aria-label="username" aria-describedby="basic-addon1" required>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-danger btn-lg">Fortsätt</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Remove account check -->
+
+        <div class="modal fade" id="remove-account-check" tabindex="-1" role="dialog" aria-labelledby="remove-account-check" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="remove-account-check">Ditt konto kommer strax att raderas</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="'.$host.'/functions/delete_account_confirm.php" method="POST">
+                                <input type="hidden" name="page_title" value="Adminpanel">
+                                <input type="hidden" name="user_id" value="'.$_SESSION["user_id"].'">
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fas fa-exclamation-triangle"></i> Om du är säker på att du vill fortsätta, följ instruktionerna
+                                </div>
+                                <p><strong>Var vänlig och skriv, </strong><i>jag försäkrar på heder och samvete att jag vill ta bort mitt konto</i><strong>, nedan:</strong></p>
+                                <hr>
+                                <div class="settings-section-modal">
+                                    <div class="input-group input-group-sm">';
+
+                                    if(isset($_SESSION["confirmation_phrase"]) && $_SESSION["confirmation_phrase"] == "failed"){
+                                        echo 
+                                        '
+                                        <input id="confirmation_phrase" name="confirmation_phrase" type="text" class="form-control is-invalid" aria-label="safe" aria-describedby="basic-addon1" required autofocus>
+                                        <div class="invalid-feedback">
+                                            Var vänlig och skriv in rätt fras.
+                                        </div>
+                                        ';
+                                    } else {
+                                        echo '<input id="confirmation_phrase" name="confirmation_phrase" type="text" class="form-control" aria-label="safe" aria-describedby="basic-addon1" required autofocus>';
+                                    }
+
+                                    echo '
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-danger btn-lg">Ta bort detta konto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        ';
+
+        }
+
+    ?>
