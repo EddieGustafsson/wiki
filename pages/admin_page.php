@@ -45,7 +45,12 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="user-list-tab" style="min-height: 500px;">
                                 <div class="settings-section">
-                                    <h4>Användarlista</h4>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h4>Användarlista</h4>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#create-user">Skapa Konto</button>
+                                    </div>
                                     <hr>
                                     <div id="accordian">
                                         <?php
@@ -73,13 +78,13 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                                                     <hr>
                                                                     <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
                                                                     samt tar bort möjligheten för dem att ändra något.</p>
-                                                                    <button type="button" class="btn btn-outline-warning btn-sm">Deaktivera Konto</button>
+                                                                    <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#deactivate-account">Deaktivera Konto</button>
                                                                 </div>
                                                                 <div class="col">
                                                                     <h4>Ta Bort Konto</h4>
                                                                     <hr>
-                                                                    <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p>
-                                                                    <button type="button" class="btn btn-outline-danger btn-sm">Ta Bort Konto</button>
+                                                                    <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p></br>
+                                                                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete-user">Ta Bort Konto</button>
                                                                 </div>
                                                             </div>
                                                         </div>
