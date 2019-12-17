@@ -1,13 +1,49 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+
 include "../includes/settings.php";
 include "../functions/view_json.php";
 include "../functions/get_title.php";
+include "../functions/get_history.php";
+include_once  "../functions/inline_function.php";
 
 $page_title = 'Jämför artikel';
-$parent_branch = 'test';
+
+if(isset($_GET['parent_branch'])){
+    $parent_branch = $_GET['parent_branch'];
+    $version = $_GET['version'];
+    $page_id = $_GET['page_id'];
+    $index = $_GET['index'];
+
+    if($version[1] == null){
+        header('location: '.$_SERVER['HTTP_REFERER'].'');
+    }
+
+    $array = getHistory($page_id);
+
+    for($i = 0; $i < sizeof($array); $i++){
+        if($array[$i]['id'] == $version[0]){
+            $index_new = $i;
+        } 
+
+        if($array[$i]['id'] == $version[1]){
+            $index_old = $i;
+        }
+
+        if(isset($index_new) && isset($index_old)){
+            break;
+        }
+
+    }
+
+    $new_souce = $array[$index_new]['innehall'];
+    $old_source = $array[$index_old]['innehall'];
+
+} else {
+    header('location: '.$host.'/'.$parent_branch.'/_history');
+}
 
 include '../includes/head.php';
-
 
 ?>
  <main role="main" class="flex-shrink-0">
@@ -20,9 +56,8 @@ include '../includes/head.php';
                             <li class="breadcrumb-item"><a href="/Wiki">Hem</a></li>
                             <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'>'.$parent_branch.'</a></li>
                             <li class="breadcrumb-item"><a href=/Wiki/'. $parent_branch.'/_history>Historik</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">test</li>
+                            <li class="breadcrumb-item active" aria-current="page">'.$page_title.'</li>
                             ';
-                        
                         ?>
                     </ol>
                 </nav>
@@ -42,12 +77,12 @@ include '../includes/head.php';
                                     </li>
                                 </ul>
                                 <br>
-                                <h1>test</h1>
-                                <p><i>Senast ändrad: test</i></p>
+                                <h1><?php echo $parent_branch ?></h1>
+                                <p><i><?php echo "Du jämför artikeln ".$parent_branch." med versionerna <strong>".$version[0]."</strong> och <strong>".$version[1]."</strong>"; ?></i></p>
                             </div>
                             <div class="col-4 alert alert-warning">
-                                <h5><i class="fas fa-exclamation-triangle"></i> Förhandsgranskning av artikel</h5><br>
-                                <p>Detta är en tidigare version av artikeln <em>test</em>, som publicerades <em>test</em>.</p>
+                                <h5><i class="fas fa-exclamation-triangle"></i> Jämförelse av artiklar</h5><br>
+                                <p><i><?php echo "Du jämför artikeln ".$parent_branch." med versionerna <strong>".$version[0]."</strong> och <strong>".$version[1]."</strong>"; ?></i></p>
                             </div>
                         </div>
                     </div>
@@ -56,7 +91,13 @@ include '../includes/head.php';
                             <div class="col-8">
                                 <div id="test-markdown-view" class="js-toc-content">
                                     <!-- Server-side output Markdown text -->
-                                    <textarea style="display:none;"># test
+                                    <textarea style="display:none;">
+<?php 
+$nl = '#**!)@#';
+$diff = inline_diff($new_souce, $old_source , $nl);
+//echo str_replace($nl,"\n",$diff)."\n";
+echo $diff;
+?>
                                     </textarea>             
                                 </div>
                             </div>
