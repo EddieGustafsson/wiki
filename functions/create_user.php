@@ -1,38 +1,41 @@
 <?php
 
 include "../includes/settings.php";
-include "../includes/edit_user.php";
+include "../edit_user.php";
 
-/*$service = 'wiki';
-$type = 'function';
-$action = 'skapa';*/
-$function = 'skapaAKonto';
-$username = $_POST['username'];
-$password = $_POST['password'];
-$role = $_POST['role'];
+if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
 
-// Create map with request parameters
-$params = array ('funktion' => $function, 'username' => $username, 'rollid' => '5', 'tjanst' => '0');
+    $function = 'skapaAKonto';
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $role = $_POST['role'];
 
-$query = http_build_query($params);
+    // Create map with request parameters
+    $params = array ('funktion' => $function, 'anamn' => $username, 'rollid' => $role, 'tjanst' => '0');
 
-// Create Http context details
-$context_data = array (
-    'method' => 'POST',
-    'header' => "Connection: close\r\n".
-                "Content-Type: application/x-www-form-urlencoded\r\n".
-                "Content-Length: ".strlen($query)."\r\n",
-    'content'=> $query );
+    $query = http_build_query($params);
 
-$context = stream_context_create(array('http' => $context_data));
+    // Create Http context details
+    $context_data = array (
+        'method' => 'POST',
+        'header' => "Connection: close\r\n".
+                    "Content-Type: application/x-www-form-urlencoded\r\n".
+                    "Content-Length: ".strlen($query)."\r\n",
+        'content'=> $query );
 
-$result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/skapa.php', false, $context);
+    $context = stream_context_create(array('http' => $context_data));
 
-$array = json_decode($result, true);
+    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/skapa.php', false, $context);
 
-if($array['success'] == true){
+    $array = json_decode($result, true);
 
-    header("location: " . $host . "/_admin?create_user_status=success");
+    /*echo $username;
+    echo $password;
+    echo $role;*/
+
+    
+
+    //header("location: " . $host . "/_admin");
 
 }
 
