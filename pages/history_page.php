@@ -80,37 +80,59 @@
                                         <div class="card-body">
                                             <?php
 
+                                                
+
                                                 if($array != null){
 
+                                                    $sorted_array = $array;
+                                                    $final_array = array();
+                                                    
                                                     for($i = 0; $i < sizeof($array); $i++){
                                                         $array[$i]['titel'] = '#'.($i+1).' '.$array[$i]['titel'];
                                                     }
 
-                                                    function cmp($a, $b) {
+                                                    /*function cmp($a, $b) {
                                                         return strcmp($b['id'], $a['id']);
                                                     }
-                                                    usort($array, 'cmp');
+                                                    usort($sorted_array, 'cmp');*/
+
+                                                    /*for($i = 0; $i < sizeof($sorted_array); $i++){
+                                                        for($j = 0; $j < sizeof($array); $j++){
+                                                            if($sorted_array[$i]['id'] == $array[$j]['id']){
+                                                                array_push($final_array, $array[$j]);
+                                                            }
+                                                        }
+                                                    }*/
+
+                                                    for($i = sizeof($array)-1; $i >= 0; $i--){
+                                                        array_push($final_array, $array[$i]);
+                                                    }
+                                                    
+                                                    //var_dump($final_array[1]['titel']);
+
+
+                                                    
                                                     
                                                     
 
                                                     echo "<div class='list-group'>";
 
-                                                    for($i = 0; $i < sizeof($array); $i++){
+                                                    for($i = 0; $i < sizeof($final_array); $i++){
 
                                                         //echo "<li><a href='/Wiki/".$array['sidor'][$i]['titel']."'>".$array['sidor'][$i]['titel']."</a></li>";
 
-                                                        $source = $array[$i]['innehall'];
+                                                        $source = $final_array[$i]['innehall'];
                                                         $source = substr($source,0,300);
                                                         echo '
-                                                        <a href="/Wiki/'.$page_title.'/_show_history?id='.$array[$i]['sidId'].'&version='.$array[$i]['id'].
-                                                        '&index='.$i.'&branch_title='.$page_title.'&title='.$array[$i]['titel'].'" class="list-group-item list-group-item-action">
+                                                        <a href="/Wiki/'.$page_title.'/_show_history?id='.$final_array[$i]['sidId'].'&version='.$final_array[$i]['id'].
+                                                        '&index='.$i.'&branch_title='.$page_title.'&title='.$final_array[$i]['titel'].'" class="list-group-item list-group-item-action">
                                                             <div class="d-flex w-100 justify-content-between">
                                                                 <div class="custom-control custom-checkbox">
-                                                                    <input class="custom-control-input" type="checkbox" name="version[]" value="'.$array[$i]['id'].'"id="customCheck'.$i.'">
-                                                                    <label class="custom-control-label" for="customCheck'.$i.'"><h5 class="mb-1"><strong>'.$array[$i]['titel'].'</strong></h5></label>
+                                                                    <input class="custom-control-input" type="checkbox" name="version[]" value="'.$final_array[$i]['id'].'"id="customCheck'.$i.'">
+                                                                    <label class="custom-control-label" for="customCheck'.$i.'"><h5 class="mb-1"><strong>'.$final_array[$i]['titel'].'</strong></h5></label>
                                                                 </div>
                                                             </div>
-                                                            <small>Användare '.$array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$array[$i]['datum'].'</small>
+                                                            <small>Användare '.$final_array[$i]['godkantAv'].' godkände uppdatering av artikeln den '.$final_array[$i]['datum'].'</small>
                                                         </a>
                                                         ';
 
