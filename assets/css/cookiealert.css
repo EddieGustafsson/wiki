@@ -71,3 +71,7 @@
 img{
     z-index: 99999999;
 }
+
+.tags{
+    visibility: hidden;
+}
