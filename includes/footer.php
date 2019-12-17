@@ -86,7 +86,7 @@
                 return false;
              };
 
-             checkboxlimit(document.forms.compare.version, 2)
+             checkboxlimit(document.forms.compare, 2)
         </script>
 
         <?php 
