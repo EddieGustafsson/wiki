@@ -43,8 +43,7 @@
             </div>
 
             <div class="container">
-                <form id="compare" name="compare" action="<?php echo $host;?>/<?php echo $page_title;?>/_compare" method="GET">
-                    <input type="hidden" name="parent_branch" value="<?php echo $page_title; ?>">
+                <form id="compare" name="compare" action="<?php echo $host;?>/<?php echo $page_title;?>/_compare" method="GET">                    <input type="hidden" name="parent_branch" value="<?php echo $page_title; ?>">
                     <input type="hidden" name="page_id" value="<?php echo $wiki_page_id?>">
                     <div class="card shadow-lg">
                         <div class="card-header">
