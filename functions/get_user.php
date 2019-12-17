@@ -5,7 +5,7 @@ function getUser(){
     include "../includes/settings.php";
 
     $function = "tjanstJson";
-    $tjanst_id = "0";
+    $tjanst_id = "43";
 
     // Create map with request parameters
     $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'JSON', 'tjanstId' => $tjanst_id);

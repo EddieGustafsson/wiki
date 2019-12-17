@@ -246,7 +246,7 @@ echo '
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo $host;?>/functions/create_user.php" method="POST">
+                    <form action="'.$host.'/functions/create_user.php" method="POST">
                         <label for="input-username" class="sr-only">Användarnamn</label>
                         <input name="username" type="text" id="input-username" class="form-control" placeholder="Användarnamn" required autofocus>
                         <br>
@@ -312,83 +312,27 @@ echo '
 
     <!-- Remove account -->
 
-    <div class="modal fade" tabindex="-1" id="remove-account" tabindex="-1" role="dialog" aria-labelledby="remove-account" aria-hidden="true">
+        <div class="modal fade" id="delete-user" tabindex="-1" role="dialog" aria-labelledby="delete-user" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="remove-account">Är du säker på att du vill göra det här?</h5>
+                            <h5 class="modal-title" id="delete-user">Ta bort användarkonto</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="'.$host.'/functions/delete_account.php" method="POST">
-                                <input type="hidden" name="user_id" value="'.$_SESSION["user_id"].'">
+                            <form action="'.$host.'/functions/delete_user.php" method="POST">
+                                <input type="hidden" name="user_id" value="">
                                 <div class="alert alert-danger" role="alert">
-                                    <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
+                                    <i class="fas fa-exclamation-triangle"></i> Är du säker på att du vill ta bort denna användare.
                                 </div>
-                                <ul>
-                                    <li>Ditt konto kommer att raderas <strong>permanent</strong>. Det kommer alltså vara omöjligt att ångra detta val.</li>
-                                    <li>Vi på Marvel Wiki har inte möjlighet att återställa ditt konto.</li>
-                                </ul> 
+                                <p><strong>Genom att ta bort denna användare så kommer allt denna användare har gjort att tas bort!</strong></p>
                                 <hr>
                                 <div class="settings-section-modal">
                                     <lable><strong>Ditt användarnamn:</strong></lable>
                                     <div class="input-group input-group-sm">
                                         <input name="username" type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1"  required autofocus>
-                                    </div>
-                                </div>
-                                <div class="settings-section-modal">
-                                    <lable><strong>Bekräfta ditt lösenord:</strong></lable>
-                                    <div class="input-group input-group-sm">
-                                        <input name="password" type="password" class="form-control" aria-label="username" aria-describedby="basic-addon1" required>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-outline-danger btn-lg">Fortsätt</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-            </div>
-        </div>
-
-        <!-- Remove account check -->
-
-        <div class="modal fade" id="remove-account-check" tabindex="-1" role="dialog" aria-labelledby="remove-account-check" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="remove-account-check">Ditt konto kommer strax att raderas</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="'.$host.'/functions/delete_account_confirm.php" method="POST">
-                                <input type="hidden" name="page_title" value="Adminpanel">
-                                <input type="hidden" name="user_id" value="'.$_SESSION["user_id"].'">
-                                <div class="alert alert-danger" role="alert">
-                                    <i class="fas fa-exclamation-triangle"></i> Om du är säker på att du vill fortsätta, följ instruktionerna
-                                </div>
-                                <p><strong>Var vänlig och skriv, </strong><i>jag försäkrar på heder och samvete att jag vill ta bort mitt konto</i><strong>, nedan:</strong></p>
-                                <hr>
-                                <div class="settings-section-modal">
-                                    <div class="input-group input-group-sm">';
-
-                                    if(isset($_SESSION["confirmation_phrase"]) && $_SESSION["confirmation_phrase"] == "failed"){
-                                        echo 
-                                        '
-                                        <input id="confirmation_phrase" name="confirmation_phrase" type="text" class="form-control is-invalid" aria-label="safe" aria-describedby="basic-addon1" required autofocus>
-                                        <div class="invalid-feedback">
-                                            Var vänlig och skriv in rätt fras.
-                                        </div>
-                                        ';
-                                    } else {
-                                        echo '<input id="confirmation_phrase" name="confirmation_phrase" type="text" class="form-control" aria-label="safe" aria-describedby="basic-addon1" required autofocus>';
-                                    }
-
-                                    echo '
                                     </div>
                                 </div>
                                 <div class="text-center">
