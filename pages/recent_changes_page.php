@@ -38,7 +38,7 @@ include '../includes/head.php';
                             <div class="row">
                                 <div class="col">
                                     <p>Detta är en lista över de senaste ändringarna på Marvel Wiki.</p>
-                                    <table class="table" id="recent_changes" style="width:100%">
+                                    <table class="table <?php  if($style == "/darkmode.css"){ echo "table-dark"; };?>" id="recent_changes" style="width:100%">
                                         <thead>
                                             <tr>
                                             <th scope="col">Datum</th>
