@@ -26,19 +26,6 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
     $offset = ($page - 1) * $limit; // offset
     $total_items = count($user_list['anvandare']); // total items
     $total_pages = ceil($total_items / $limit);
-    //$final = array_slice($user_list['anvandare'], $offset, $end); // slice them according to offset and limit
-
-    /*echo '<pre>';
-    var_dump($user_list['anvandare']);
-    echo '</pre>';
-    echo $end;
-    echo "</br>";
-    echo $page;
-    echo "</br>";
-    echo $offset;
-    echo $limit;
-    echo "</br>";
-    print_r($final);*/
 
 }
 
