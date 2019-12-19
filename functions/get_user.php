@@ -29,18 +29,6 @@ function getUser(){
 
     return $array;
 
-    /*for($i = 0; $i < sizeof($array['anvandare']); $i++){
-
-        $anamn = $array['anvandare'][$i]['anamn'];
-        $id = $array['anvandare'][$i]['id'];
-        echo $anamn;
-        echo "</br>";
-        echo $id;
-        echo "</br>";
-        return $anamn;
-
-    }*/
-
 }
 
 ?>
