@@ -54,7 +54,6 @@
         <?php include '../includes/modals.php'; ?>
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
         <script src="<?php echo $host;?>/assets/js/editormd.js"></script>
         <script src="<?php echo $host;?>/assets/js/linked_popovers.js"></script>
         <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
@@ -62,6 +61,7 @@
         <script src="<?php echo $host;?>/assets/js/backtotop.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
+        
         <script type="text/javascript">
             $(function() {
                 var testView = editormd.markdownToHTML("test-markdown-view", {
@@ -79,7 +79,7 @@
 
             xhttp.open("POST", "http://10.130.216.101/TP/api.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("nyckel=x9qXnagSOsS6sHun&tjanst=wiki&typ=JSON&wiki=9");
+            xhttp.send("nyckel=<?php echo $api;?>&tjanst=wiki&typ=JSON&wiki=9");
 
             const pasteBox = document.getElementById("confirmation_phrase");
             pasteBox.onpaste = e => {
@@ -88,29 +88,24 @@
              };
 
              checkboxlimit(document.forms.compare, 2)
+
+            <?php 
+            if(isset($_SESSION["delete_account"]) && $_SESSION["delete_account"] == "true"){
+                echo 
+                "
+                    $('#remove-account-check').modal({
+                        show: true
+                    })
+
+                $('#remove-account-check').on('hide.bs.modal', function(){
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function() {
+                        document.location = '".$host."/functions/delete_account.php';
+                    }
+                    xhr.open('GET', '".$host."/functions/delete_account.php', true);
+                    xhr.send();
+                });
+                ";
+            }
+            ?>
         </script>
-
-        <?php 
-
-        if(isset($_SESSION["delete_account"]) && $_SESSION["delete_account"] == "true"){
-            echo 
-            "
-            <script>
-                $('#remove-account-check').modal({
-                    show: true
-                })
-
-              $('#remove-account-check').on('hide.bs.modal', function(){
-                var xhr = new XMLHttpRequest();
-                xhr.onload = function() {
-                    document.location = '".$host."/functions/delete_account.php';
-                }
-                xhr.open('GET', '".$host."/functions/delete_account.php', true);
-                xhr.send();
-              });
-
-            </script>
-            ";
-        }
-
-        ?>

@@ -20,23 +20,14 @@ $link = basename($_SERVER["REQUEST_URI"]);
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>
-        <?php 
-            if(isset($page_title)){
-                echo $page_title;
-            } else {
-                echo $array['sidor'][$page_id]['titel']; 
-            }
-        ?>
-        – Marvel Wiki 
-        </title>
+        <title><?php if(isset($page_title)){echo $page_title;} else {echo $array['sidor'][$page_id]['titel']; }?> – Marvel Wiki</title>
         <meta name="description" content="Explore the Marvel cinematic and comic universe including all characters, heroes, villains, teams, groups, weapons, items, and more!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" href="<?php echo $host;?>/assets/images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="<?php echo $host;?>/assets/css<?php echo $style; ?>">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.min.css">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
         <link rel="stylesheet" href="<?php echo $host;?>/assets/css/cookiealert.css">
