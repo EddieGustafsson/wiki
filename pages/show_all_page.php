@@ -56,6 +56,7 @@ include '../includes/head.php';
                                         $source = str_replace("**","",$source);
                                         $source = str_replace(">","",$source);
                                         $source = str_replace("#","",$source);
+                                        $source = str_replace("<","",$source);
                                         $source = substr($source,0,300);
 
                                         echo 
