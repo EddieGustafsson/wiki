@@ -18,30 +18,22 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
 }else{
 
     $user_list = getUser();
-
-    if(isset($_GET['query'])){
-        $query = $_GET['query'];
-        $user_array = getUser($query);
     
-        /*if(!isset($user_array['code'])){
-            for($i = 0; $i < sizeof($user_array); $i++){
-                if(strtolower($user_array[$i]) == strtolower($query)){
-                    header("location: ".$host."/".$query."");
-                }
+    /*if(!isset($user_list['code'])){
+        for($i = 0; $i < sizeof($user_list); $i++){
+           if(strtolower($user_list[$i]) == strtolower($query)){
+                header("location: ".$host."/".$query."");
             }
-        }*/
+        }
+    }*/
     
-        $raw_data = $user_array;
-    
-        // use get variable to paging number
-        $page = !isset($_GET['page']) ? 1 : $_GET['page'];
-        $limit = 5; // five rows per page
-        $offset = ($page - 1) * $limit; // offset
-        $total_items = count($raw_data); // total items
-        $total_pages = ceil($total_items / $limit);
-        $final = array_splice($raw_data, $offset, $limit); // splice them according to offset and limit
-    
-    }
+    // use get variable to paging number
+    $page = !isset($_GET['page']) ? 1 : $_GET['page'];
+    $limit = 5; // five rows per page
+    $offset = ($page - 1) * $limit; // offset
+    $total_items = count($user_list['anvandare']); // total items
+    $total_pages = ceil($total_items / $limit);
+    $final = array_splice($user_list['anvandare'], $offset, $limit); // splice them according to offset and limit
 
 }
 
@@ -120,35 +112,35 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                         ?>
                                     </div>
                                     <br>
-                                    <?php if($query != "" && !isset($user_array['code'])): ?>
+                                    <?php if(!isset($user_list['code'])): ?>
                                     
                                         <div class="d-flex justify-content-center" style="margin-top:30px;">
                                             <nav aria-label="kundtjanster">
                                                 <ul class="pagination">
                                                     <?php if ($page > 1): ?>
-                                                    <li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page-1 ?>">Tillbaka</a></li>
+                                                    <li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page-1 ?>">Tillbaka</a></li>
                                                     <?php endif; ?>
 
                                                     <?php if ($page > 3): ?>
-                                                    <li class="start"><a class="page-link" href="_search?query=<?php echo $query ?>&page=1">1</a></li>
+                                                    <li class="start"><a class="page-link" href="_admin?page=1">1</a></li>
                                                     <li class="dots"><a class="page-link">. . .</a></li>
                                                     <?php endif; ?>
 
-                                                    <?php if ($page-2 > 0): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
-                                                    <?php if ($page-1 > 0): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
+                                                    <?php if ($page-2 > 0): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
+                                                    <?php if ($page-1 > 0): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
 
-                                                    <li class="page-item active"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page ?>"><?php echo $page ?></a></li>
+                                                    <li class="page-item active"><a class="page-link" href="_admin?page=<?php echo $page ?>"><?php echo $page ?></a></li>
 
-                                                    <?php if ($page+1 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
-                                                    <?php if ($page+2 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+                                                    <?php if ($page+1 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
+                                                    <?php if ($page+2 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
 
                                                     <?php if ($page < ceil($total_pages / $limit)-2): ?>
                                                     <li class="dots"><a class="page-link">. . .</a></li>
-                                                    <li class="end"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo ceil($total_pages / $limit) ?>"><?php echo ceil($total_pages / $limit) ?></a></li>
+                                                    <li class="end"><a class="page-link" href="_admin?page=<?php echo ceil($total_pages / $limit) ?>"><?php echo ceil($total_pages / $limit) ?></a></li>
                                                     <?php endif; ?>
 
                                                     <?php if ($page < ceil($total_pages / $limit)): ?>
-                                                    <li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+1 ?>">Nästa</a></li>
+                                                    <li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+1 ?>">Nästa</a></li>
                                                     <?php endif; ?>
                                                 </ul>
                                             </nav>
