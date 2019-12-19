@@ -227,3 +227,124 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
             </div>
     </div>
 </div>
+
+<?php
+
+if($page_title == 'Adminpanel' && $_SESSION['role'] == "superadmin"){
+
+echo '
+
+<!-- Skapa Konto -->
+
+<div class="modal fade" id="create-user" tabindex="-1" role="dialog" aria-labelledby="create_user" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="create-user">Skapa Konto till Marvel Wiki</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="'.$host.'/functions/create_user.php" method="POST">
+                        <label for="input-username" class="sr-only">Användarnamn</label>
+                        <input name="username" type="text" id="input-username" class="form-control" placeholder="Användarnamn" required autofocus>
+                        <br>
+                        <label for="input-password" class="sr-only">Lösenord</label>
+                        <input name="password" type="password" id="input-password" class="form-control" placeholder="Lösenord" required>
+                        <br>
+                        <label for="input-role" class="sr-only">Roll</label>
+                        <select name="role" class="input-group-text" for="input-role">
+                            <option value="5" selected>Användare</option>
+                            <option value="3">Admin</option>
+                        </select>
+                        <br>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg">Skapa Konto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deactivate account -->
+
+    <div class="modal fade" tabindex="-1" id="deactivate-account" tabindex="-1" role="dialog" aria-labelledby="deactivate-account" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deactivate-account">Är du säker på att du vill göra det här?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="<?php echo $host;?>/_login" method="POST">
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
+                                </div>
+                                <ul>
+                                    <li>Ditt konto kommer att <strong>deaktiveras</strong>.</li>
+                                    <li>Endast en <strong>adminstratör</strong> kommer kunna aktivera det igen</li>
+                                </ul> 
+                                <hr>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Ditt användarnamn:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Bekräfta ditt lösenord:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-danger btn-lg">Deaktivera konto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    <!-- Remove account -->
+
+        <div class="modal fade" id="delete-user" tabindex="-1" role="dialog" aria-labelledby="delete-user" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="delete-user">Ta bort användarkonto</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="'.$host.'/functions/delete_user.php" method="POST">
+                                <input type="hidden" name="user_id" value="">
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fas fa-exclamation-triangle"></i> Är du säker på att du vill ta bort denna användare.
+                                </div>
+                                <p><strong>Genom att ta bort denna användare så kommer allt denna användare har gjort att tas bort!</strong></p>
+                                <hr>
+                                <div class="settings-section-modal">
+                                    <lable><strong>Ditt användarnamn:</strong></lable>
+                                    <div class="input-group input-group-sm">
+                                        <input name="username" type="text" class="form-control" aria-label="username" aria-describedby="basic-addon1"  required autofocus>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-danger btn-lg">Ta bort detta konto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        ';
+
+        }
+
+    ?>

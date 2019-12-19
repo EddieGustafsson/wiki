@@ -85,7 +85,37 @@ if(empty($_SESSION['username'])){
                     placeholder: "Hej, skriv din markdown här!",
 
                     toolbarIcons : function() {
-                        return ["undo", "redo", "|", "bold", "italic", "quote", "ucwords", "|", "h1", "h2", "h3", "h4", "h5", "h6", "|", "list-ul", "list-ol", "hr", "|", "link", "reference-link", "image", "code", "table", "|", "clear", "search", "watch" ,"help"]
+                        return ["undo", "redo", "|", "bold", "italic", "quote", "ucwords", "|", "h1", "h2", "h3", "h4", "h5", "h6", "|", "list-ul", "list-ol", "hr", "|", "link", "reference-link", "image", "code", "table", "|", "clear", "search", "watch" ,"help", "tag"]
+                    },
+
+                    toolbarIconsClass : {
+                        tag : "fa-hashtag"  
+                    },
+
+                    toolbarHandlers : {
+                        /** 
+                         * @param {Object}      cm         CodeMirror对象
+                         * @param {Object}      icon       图标按钮jQuery元素对象
+                         * @param {Object}      cursor     CodeMirror的光标对象，可获取光标所在行和位置
+                         * @param {String}      selection  编辑器选中的文本
+                         */
+                        tag : function(cm, icon, cursor, selection) {
+
+                            cm.replaceSelection("<div class='tags'></div>");
+
+                            if(selection === "") {
+                                cm.setCursor(cursor.line, cursor.ch + 18);
+                            }
+
+                            console.log("tagIcon =>", this, icon.html());
+                        },
+
+                    },
+
+                    lang : {
+                        toolbar : {
+                            tag : "Infoga tagg-div", 
+                        }
                     },
 
                     codeFold : true,
