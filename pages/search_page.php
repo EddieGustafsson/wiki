@@ -136,8 +136,8 @@ include '../includes/head.php';
 
                                                 <li class="page-item active"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page ?>"><?php echo $page ?></a></li>
 
-                                                <?php if ($page+1 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
-                                                <?php if ($page+2 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+                                                <?php if ($page+1 < $total_pages+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
+                                                <?php if ($page+2 < $total_pages+1): ?><li class="page-item"><a class="page-link" href="_search?query=<?php echo $query ?>&page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
 
                                                 <?php if ($page < ceil($total_pages / $limit)-2): ?>
                                                 <li class="dots"><a class="page-link">. . .</a></li>
