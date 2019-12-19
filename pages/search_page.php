@@ -12,6 +12,8 @@ if(isset($_GET['query'])){
     
     $search_array = getSearch($query);
 
+    $msg = $search_array['msg'];
+
     if(!isset($search_array['code'])){
         for($i = 0; $i < sizeof($search_array); $i++){
             if(strtolower($search_array[$i]) == strtolower($query)){
@@ -54,7 +56,7 @@ include '../includes/head.php';
                                 <h1>Sökresultat</h1>
                                 <?php 
                                 
-                                if($query != "" && !isset($search_array['code'])){
+                                if($query != "" && $msg != "hittade inget"){
                                     echo "<p><strong>".sizeof($search_array)."</strong> resultat hittades för sökningen efter <strong>".$query."</strong></p>";
                                 } else {
                                     echo '<p><strong>Inget</strong> resultat hittades för sökningen efter "<strong>'.$query.'</strong>"</p>';
@@ -100,7 +102,7 @@ include '../includes/head.php';
                                 <br>
                                 <table class="table table-striped">
                                     <tbody>
-                                        <?php if($query != "" && !isset($search_array['code'])): ?>
+                                        <?php if($query != "" && $msg != "hittade inget"): ?>
 
                                             <?php foreach($final as $key): ?>
                                                 <tr>
