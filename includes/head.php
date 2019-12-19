@@ -40,11 +40,36 @@ $link = basename($_SERVER["REQUEST_URI"]);
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/css/editormd.preview.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
         <link rel="stylesheet" href="<?php echo $host;?>/assets/css/cookiealert.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
         <script src="<?php echo $host;?>/assets/js/search_auto_complete.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#recent_changes').DataTable({
+                    "order": [[ 0, 'desc' ]],
+                    "language": {
+                        "lengthMenu": "Visar _MENU_ rader per sida",
+                        "search": "Sök:",
+                        "paginate": {
+                            "first": "Första",
+                            "last": "Sista",
+                            "next": "Nästa",
+                            "previous": "Tillbaka"
+                        },
+                        "zeroRecords": "Inget resultat",
+                        "info": "Visar _PAGE_ av sidor _PAGES_",
+                        "infoEmpty": "Inga uppgifter är tillgängliga",
+                        "infoFiltered": "(filtreras från _MAX_ totala rader)"
+                    }
+                });
+            } );
+        </script>
 
     </head>
     
@@ -113,7 +138,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="<?php echo $host;?>/_random">Slumpartikel</a>
                             <a class="dropdown-item" href="<?php echo $host;?>/_showall">Alla sidor</a>
-                            <a class="dropdown-item" href="#">Senaste ändringarna</a>
+                            <a class="dropdown-item" href="<?php echo $host;?>/_recent_changes">Senaste ändringarna</a>
                         </div>
                     </li>
                     </ul>
