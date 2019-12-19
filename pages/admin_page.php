@@ -19,21 +19,26 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
 
     $user_list = getUser();
     
-    /*if(!isset($user_list['code'])){
-        for($i = 0; $i < sizeof($user_list); $i++){
-           if(strtolower($user_list[$i]) == strtolower($query)){
-                header("location: ".$host."/".$query."");
-            }
-        }
-    }*/
-    
     // use get variable to paging number
     $page = !isset($_GET['page']) ? 1 : $_GET['page'];
     $limit = 5; // five rows per page
+    $end = $limit * $page;
     $offset = ($page - 1) * $limit; // offset
     $total_items = count($user_list['anvandare']); // total items
     $total_pages = ceil($total_items / $limit);
-    $final = array_splice($user_list['anvandare'], $offset, $limit); // splice them according to offset and limit
+    //$final = array_slice($user_list['anvandare'], $offset, $end); // slice them according to offset and limit
+
+    /*echo '<pre>';
+    var_dump($user_list['anvandare']);
+    echo '</pre>';
+    echo $end;
+    echo "</br>";
+    echo $page;
+    echo "</br>";
+    echo $offset;
+    echo $limit;
+    echo "</br>";
+    print_r($final);*/
 
 }
 
@@ -70,49 +75,54 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                     <hr>
                                     <div id="accordian">
                                         <?php
-                                        for($i = 0; $i < sizeof($user_list['anvandare']); $i++){
+                                        for($i = $offset; $i < $end; $i++){
 
-                                            $user = $user_list['anvandare'][$i]['anamn'];
-                                            $id = $user_list['anvandare'][$i]['id'];
+                                            if(isset($user_list['anvandare'][$i]['anamn']) && isset($user_list['anvandare'][$i]['id'])){
 
-                                            if(isset($user)){
-                                                echo
-                                                '
-                                                <div class="card">
-                                                    <div class="card-header" id="' . $user . '">
-                                                        <h4 class="mb-0">
-                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#' . $user . '' . $id . '" aria-expanded="false" aria-controls="' . $id . '">
-                                                                ' . $user . ' #' . $id . '
-                                                            </button>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="' . $user . '' . $id . '" class="collapse" aria-labelledby="' . $user . '" data-parent="#accordian">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col" style="border-right: 1px solid rgba(0,0,0,.125);">
-                                                                    <h4>Deaktivera Konto</h4>
-                                                                    <hr>
-                                                                    <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
-                                                                    samt tar bort möjligheten för dem att ändra något.</p>
-                                                                    <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#deactivate-account">Deaktivera Konto</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <h4>Ta Bort Konto</h4>
-                                                                    <hr>
-                                                                    <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p></br>
-                                                                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete-user">Ta Bort Konto</button>
+                                                $user = $user_list['anvandare'][$i]['anamn'];
+                                                $id = $user_list['anvandare'][$i]['id'];
+
+                                                if(isset($user)){
+                                                    echo
+                                                    '
+                                                    <div class="card">
+                                                        <div class="card-header" id="' . $user . '">
+                                                            <h4 class="mb-0">
+                                                                <button class="btn btn-link" data-toggle="collapse" data-target="#' . $user . '' . $id . '" aria-expanded="false" aria-controls="' . $id . '">
+                                                                    ' . $user . ' #' . $id . '
+                                                                </button>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="' . $user . '' . $id . '" class="collapse" aria-labelledby="' . $user . '" data-parent="#accordian">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col" style="border-right: 1px solid rgba(0,0,0,.125);">
+                                                                        <h4>Deaktivera Konto</h4>
+                                                                        <hr>
+                                                                        <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
+                                                                        samt tar bort möjligheten för dem att ändra något.</p>
+                                                                        <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#deactivate-account">Deaktivera Konto</button>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h4>Ta Bort Konto</h4>
+                                                                        <hr>
+                                                                        <p>Genom att ta bort detta konto så tas det bort förevigt. Detta konto kommer man inte kunna få tillbaka.</p></br>
+                                                                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#delete-user">Ta Bort Konto</button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                ';
+                                                    ';
+                                                }
+
                                             }
+
                                         }
                                         ?>
                                     </div>
                                     <br>
-                                    <?php if(!isset($user_list['code'])): ?>
+                                    <?php if($page != "" && !isset($user_list['code'])): ?>
                                     
                                         <div class="d-flex justify-content-center" style="margin-top:30px;">
                                             <nav aria-label="kundtjanster">
@@ -131,15 +141,15 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
 
                                                     <li class="page-item active"><a class="page-link" href="_admin?page=<?php echo $page ?>"><?php echo $page ?></a></li>
 
-                                                    <?php if ($page+1 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
-                                                    <?php if ($page+2 < ceil($total_pages / $limit)+1): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+                                                    <?php if ($page+1 < $total_pages+1): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
+                                                    <?php if ($page+2 < $total_pages+1): ?><li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
 
                                                     <?php if ($page < ceil($total_pages / $limit)-2): ?>
                                                     <li class="dots"><a class="page-link">. . .</a></li>
                                                     <li class="end"><a class="page-link" href="_admin?page=<?php echo ceil($total_pages / $limit) ?>"><?php echo ceil($total_pages / $limit) ?></a></li>
                                                     <?php endif; ?>
 
-                                                    <?php if ($page < ceil($total_pages / $limit)): ?>
+                                                    <?php if ($page < $total_pages): ?>
                                                     <li class="page-item"><a class="page-link" href="_admin?page=<?php echo $page+1 ?>">Nästa</a></li>
                                                     <?php endif; ?>
                                                 </ul>
