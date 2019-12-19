@@ -63,7 +63,15 @@ include '../includes/head.php';
                             <div class="col-4 alert alert-warning">
                                 <h5><i class="fas fa-exclamation-triangle"></i> Förhandsgranskning av artikel</h5><br>
                                 <p>Detta är en tidigare version av artikeln <em><?php echo $final_array[$index]['titel']?></em>, som publicerades <em><?php echo $final_array[$index]['datum']; ?></em>.</p>
+                                <form id="history_restore" name="history_restore" action="<?php echo $host ?>/functions/text_formating.php" method="POST">
+                                    <input type="hidden" name="page_id" value="<?php echo $page_id?>">
+                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']?>">
+                                    <input type="hidden" name="title" value="<?php echo $final_array[$index]['titel']?>">
+                                    <input type="hidden" name="source" value="<?php echo $final_array[$index]['innehall']?>">
+                                    <button type="submit" class="btn btn-info btn-sm">Återställ Ändring</button>
+                                </form>
                             </div>
+                                
                         </div>
                     </div>
                     <div class="card-body">

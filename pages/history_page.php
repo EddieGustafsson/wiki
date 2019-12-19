@@ -43,7 +43,7 @@
             </div>
 
             <div class="container">
-                <form id="compare" name="compare" action="<?php echo $host;?>/<?php echo $page_title;?>/_compare" method="GET">                    <input type="hidden" name="parent_branch" value="<?php echo $page_title; ?>">
+                <form id="compare" name="compare" action="<?php echo $host;?>/<?php echo $page_title;?>/_compare" method="GET"><input type="hidden" name="parent_branch" value="<?php echo $page_title; ?>">
                     <input type="hidden" name="page_id" value="<?php echo $wiki_page_id?>">
                     <div class="card shadow-lg">
                         <div class="card-header">
@@ -72,7 +72,6 @@
                                                 <div class="ml-auto p-2">
                                                     <div class="btn-group" role="group" aria-label="Basic example">
                                                         <button type="submit" class="btn btn-secondary btn-sm">Jämför Ändringar</button>
-                                                        <button type="button" class="btn btn-info btn-sm">Återställ Ändring</button>
                                                     </div>
                                                 </div>
                                             </div>
