@@ -6,7 +6,10 @@ include "../includes/settings.php";
 
 
 if(isset($_GET['query'])){
-    $query = $_GET['query'];
+
+    $find = array("'",'"'); // Removes ", '
+    $query = str_replace($find,"",$_GET['query']);
+    
     $search_array = getSearch($query);
 
     if(!isset($search_array['code'])){
@@ -17,15 +20,13 @@ if(isset($_GET['query'])){
         }
     }
 
-    $raw_data = $search_array;
-
     // use get variable to paging number
     $page = !isset($_GET['page']) ? 1 : $_GET['page'];
     $limit = 5; // five rows per page
     $offset = ($page - 1) * $limit; // offset
-    $total_items = count($raw_data); // total items
+    $total_items = count($search_array); // total items
     $total_pages = ceil($total_items / $limit);
-    $final = array_splice($raw_data, $offset, $limit); // splice them according to offset and limit
+    $final = array_splice($search_array, $offset, $limit); // splice them according to offset and limit
 
 }
 
