@@ -63,7 +63,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                             "previous": "Tillbaka"
                         },
                         "zeroRecords": "Inget resultat",
-                        "info": "Visar _PAGE_ av sidor _PAGES_",
+                        "info": "Visar _PAGE_ av _PAGES_ sidor",
                         "infoEmpty": "Inga uppgifter är tillgängliga",
                         "infoFiltered": "(filtreras från _MAX_ totala rader)"
                     }
