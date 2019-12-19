@@ -69,7 +69,7 @@
                     toc: true,
                     tocm: true,    // Using [TOCM]
                     tocContainer: "#custom-toc-container",
-                    // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
+                    htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
                 });
             });
 
