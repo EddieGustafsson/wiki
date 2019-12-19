@@ -3,7 +3,7 @@
 <img width="60%" src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/7/7d/Thor_Ragnarok_Textless_Character_Posters_03.jpg/revision/latest/scale-to-width-down/310?cb=20170918170640" align="right">
 
 >    "I, Loki, Prince of Asgard, [Odin](http://localhost/Wiki/Odin "Odin")son, the rightful King of Jotunheim, God of Mischief, do hereby pledge to you, my undying fidelity." 
-    --Loki to [[Thanos](http://localhost/Wiki/thanos "Thanos")](http://localhost/Wiki/[Thanos](http://localhost/Wiki/thanos "Thanos") "[Thanos](http://localhost/Wiki/thanos "Thanos")")
+    --Loki to [[Thanos](http://localhost/Wiki/thanos "Thanos")](http://localhost/Wiki/thanos")
 	
 Transported by the wormhole to Sanctuary, Loki encountered The Other who offered to serve under [Thanos](http://localhost/Wiki/thanos "Thanos")' command and gave him the Scepter. Loki was given with command over the Chitauri army in order to conquer Earth, under the provision that Loki acquires the Tesseract for [Thanos](http://localhost/Wiki/thanos "Thanos"). Once he came to Earth, Loki managed to take possession of the Tesseract and used its power to open a wormhole above New York City and caused the Chitauri Invasion, but all of Loki's schemes were ultimately defeated by the Avengers. [Thor](http://localhost/Wiki/Thor "Thor") returned him to Asgard as his prisoner, where [Odin](http://localhost/Wiki/Odin "Odin") condemned him to spend the rest of his life in the Asgardian Dungeons as punishment for his crimes.
 
@@ -21,7 +21,7 @@ In 2023, after discovering a method to traverse through time safely, Iron Man, C
 
 >    "The Casket wasn't the only thing you took from Jotunheim that day, was it?"
     "No. In the aftermath of the battle, I went into the temple and I found a baby. Small for a giant's offspring. Abandoned, suffering, left to die. Laufey's son." 
-    --Loki and [[Odin](http://localhost/Wiki/Odin "Odin")](http://localhost/Wiki/[Odin](http://localhost/Wiki/Odin "Odin") "[Odin](http://localhost/Wiki/Odin "Odin")")
+    --Loki and [[Odin](http://localhost/Wiki/Odin "Odin")](http://localhost/Wiki/odin")
 	
 
 <img width="60%" src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/b/b0/Baby_Loki_Shapeshifting.png" align="left">
@@ -31,7 +31,7 @@ Loki was born on Jotunheim as the son of the Frost Giant King, Laufey. Small and
 ### [Odin](http://localhost/Wiki/Odin "Odin")'s Lessons
 >"We were raised together. We played together, we fought together. Do you remember none of that?"
     "I remember a shadow, living in the shade of your greatness." 
-    --[[Thor](http://localhost/Wiki/Thor "Thor")](http://localhost/Wiki/[Thor](http://localhost/Wiki/Thor "Thor") "[Thor](http://localhost/Wiki/Thor "Thor")") and Lok
+    --Thor to Valkyrie
 	
 When speaking to his two sons within his Treasure Room regarding the future of the throne, [Odin](http://localhost/Wiki/Odin "Odin") attempted to teach the two to value peace above war while dealing with all of their enemies. As both [Thor](http://localhost/Wiki/Thor "Thor") and Loki insisted that they would both be ready to become King of Asgard, [Odin](http://localhost/Wiki/Odin "Odin") noted that only one of them would be able to take the throne. 
 
@@ -52,7 +52,7 @@ Once, when Loki and [[Thor](http://localhost/Wiki/Thor "Thor")](http://localhost
 [Odin](http://localhost/Wiki/Odin "Odin") brought [Thor](http://localhost/Wiki/Thor "Thor") and Loki on a visit to Earth. The Asgardians taught the Norse people their language and culture and displayed their abilities; this caused the Norse people to believe the Asgardians to be deities, and bestowed upon [Thor](http://localhost/Wiki/Thor "Thor") the moniker "God of Thunder" while Loki became the "God of Mischief" due to the various tricks and illusions Loki displayed.
 
 ## Trickster's Schemes
-### [Thor](http://localhost/Wiki/Thor "Thor")'s Royal Coronation
+### Thor's Royal Coronation
 
 >"I've looked forward to this day as long as you have. You're my brother and my friend. Sometimes I'm envious, but never doubt that I love you."
     "Thank you."
@@ -65,7 +65,7 @@ However, midway through, [Thor](http://localhost/Wiki/Thor "Thor")'s royal cerem
 
 Loki, [Thor](http://localhost/Wiki/Thor "Thor") and [Odin](http://localhost/Wiki/Odin "Odin") made their way to [Odin](http://localhost/Wiki/Odin "Odin")'s Vault to investigate; when they arrived, they found the bodies of the Frost Giants and the Asgardian guards who had been killed. Enraged, [Thor](http://localhost/Wiki/Thor "Thor") demanded [Odin](http://localhost/Wiki/Odin "Odin") march into Jotunheim and attack the Frost Giants in retaliation, but [Odin](http://localhost/Wiki/Odin "Odin") refused. [Thor](http://localhost/Wiki/Thor "Thor") argued that as the king of Asgard he should be able to decide these matters, but [Odin](http://localhost/Wiki/Odin "Odin") told him he was not yet king. Loki stayed silent, listening and working out his own plan.
 
-### Manipulating [Thor](http://localhost/Wiki/Thor "Thor")
+### Manipulating Thor
 
 >    "I think you're right. About the Frost Giants, about Laufey, about everything. If they found a way to penetrate Asgard's defenses once, who's to say they won't try again. Next time with an army." 
     --Loki to [Thor](http://localhost/Wiki/Thor "Thor")
