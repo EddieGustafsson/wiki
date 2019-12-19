@@ -59,6 +59,7 @@
         <script src="<?php echo $host;?>/assets/js/linked_popovers.js"></script>
         <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
         <script src="<?php echo $host;?>/assets/js/checkbox-limit.js"></script>
+        <script src="<?php echo $host;?>/assets/js/backtotop.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
         <script type="text/javascript">
