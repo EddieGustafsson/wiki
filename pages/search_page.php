@@ -12,7 +12,11 @@ if(isset($_GET['query'])){
     
     $search_array = getSearch($query);
 
-    $msg = $search_array['msg'];
+    if(isset($search_array['code'])){
+        $code = $search_array['code'];
+    } else {
+        $code = NULL;
+    }
 
     if(!isset($search_array['code'])){
         for($i = 0; $i < sizeof($search_array); $i++){
@@ -30,6 +34,8 @@ if(isset($_GET['query'])){
     $total_pages = ceil($total_items / $limit);
     $final = array_splice($search_array, $offset, $limit); // splice them according to offset and limit
 
+} else {
+    header("location: ".$host."/_search?query=");
 }
 
 $page_title = 'Sök';
@@ -56,7 +62,7 @@ include '../includes/head.php';
                                 <h1>Sökresultat</h1>
                                 <?php 
                                 
-                                if($query != "" && $msg != "hittade inget"){
+                                if($query != "" && isset($msg) && $msg != "hittade inget"){
                                     echo "<p><strong>".sizeof($search_array)."</strong> resultat hittades för sökningen efter <strong>".$query."</strong></p>";
                                 } else {
                                     echo '<p><strong>Inget</strong> resultat hittades för sökningen efter "<strong>'.$query.'</strong>"</p>';
@@ -102,7 +108,7 @@ include '../includes/head.php';
                                 <br>
                                 <table class="table table-striped">
                                     <tbody>
-                                        <?php if($query != "" && $msg != "hittade inget"): ?>
+                                        <?php if($query != "" && $query != NULL && $code != "201"): ?>
 
                                             <?php foreach($final as $key): ?>
                                                 <tr>
