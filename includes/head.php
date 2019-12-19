@@ -1,12 +1,16 @@
 <?php
 session_start();
 include '../includes/settings.php';
+include '../functions/get_wiki_status.php';
 
 if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
     $style = '/' . $_COOKIE['theme'] . '.css';
 } else {
     $style = '/main.css';
 }
+
+$array_status = getWikiStatus();
+$page_tot = sizeof($array_status['sidor']);
 
 $link = basename($_SERVER["REQUEST_URI"]);
 
@@ -26,7 +30,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
         ?>
         – Marvel Wiki 
         </title>
-        <meta name="description" content="">
+        <meta name="description" content="Explore the Marvel cinematic and comic universe including all characters, heroes, villains, teams, groups, weapons, items, and more!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" href="<?php echo $host;?>/assets/images/favicon.ico" type="image/x-icon">
@@ -47,10 +51,11 @@ $link = basename($_SERVER["REQUEST_URI"]);
     <body class="d-flex flex-column h-100">
 
         <div class="container <?php if($link != "_edit" && $link != "_create"){echo "sticky-top";}?>" style="margin-bottom:15px">
-            <nav class="navbar navbar-dark bg-dark justify-content-end" style="padding: .1rem 1rem!important;font-size: 15px;">
-                <div class="navbar-text" style="padding-top: .3rem; padding-bottom: .3rem;">
+            <nav class="navbar navbar-dark bg-dark" style="padding: .1rem 1rem!important;font-size: 15px;">
+                <div class="navbar-text justify-content-start"><i class="far fa-sticky-note"></i> <strong><?php echo $page_tot?></strong> sidor</div>
+                <div class="navbar-text justify-content-end" style="padding-top: .3rem; padding-bottom: .3rem;">
                     <?php 
-                        if(!empty($_SESSION['username'])/* && $_SESSION['role'] == "superadmin"*/){
+                        if(!empty($_SESSION['username'])){
                             echo 
                             '
                                 <div class="btn-group">
@@ -69,31 +74,12 @@ $link = basename($_SERVER["REQUEST_URI"]);
                                     </div>
                                 </div>
                             ';
-                        /*} else if(!empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
-
-                            echo 
-                            '
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-danger btn-sm">Inloggad som <strong>'.$_SESSION["username"].'</strong></button>
-                                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.$host.'/_settings"><i class="fas fa-cogs"></i> Inställningar</a>
-                                    <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="'.$host.'/_logout"><i class="fa fa-sign-out-alt"></i> Logga ut</a>
-                                    </div>
-                                </div>
-                            ';
-                        */
                         }else {
                             echo '<button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#login">Logga in</button>';
                         }
                     ?>
                 </div>
             </nav>
-
-            
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow" style="background-color: #ce1022 !important;">
                 <a class="navbar-brand" href="<?php echo $host;?>/home">Marvel Wiki</a>
