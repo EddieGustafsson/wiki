@@ -5,7 +5,7 @@ include "../includes/settings.php";
 
 if(isset($_POST['user_id']) && isset($_POST['username'])){
 
-    $function = 'harddelkonto';
+    $function = '';
     $username = $_POST['username'];
     $user_Id = $_POST['user_id'];
     $role = $_POST['role'];
