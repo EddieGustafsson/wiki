@@ -1,7 +1,6 @@
 <?php
 
 include "../includes/settings.php";
-//include "../edit_user.php";
 
 if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
 
@@ -28,12 +27,6 @@ if(isset($_POST['username']) && $_POST['password'] && $_POST['role']){
     $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/skapa.php', false, $context);
 
     $array = json_decode($result, true);
-
-    /*echo $username;
-    echo $password;
-    echo $role;*/
-
-    //print_r($array);
 
     header("location: " . $host . "/_admin");
 
