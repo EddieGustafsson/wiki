@@ -25,24 +25,17 @@ xhttp1.onreadystatechange = function () {
                 if(tags == 'Character'){
                    character_array.push(jsonData.sidor[i].titel);
                 }
-                else if(tags == 'Cartoon'){
+                else if(tags == 'Comic'){
                     cartoon_array.push(jsonData.sidor[i].titel);
                 }
                 else{
                     tags = null;
                 }
-                
 
             }
             div_start = null;
             tags = null;
         }
-
-        character_array.forEach(element => console.log(element));
-        //cartoon_array.forEach(element => console.log(element));
-        
-        
-        
         
     }
 
