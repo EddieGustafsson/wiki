@@ -2,15 +2,13 @@
 
 include "../includes/settings.php";
 
-if(isset($_POST['user_id']) && isset($_POST['username'])){
+if(isset($_POST['user_id'])){
 
-    $function = '';
-    $username = $_POST['username'];
+    $function = 'tabortKonto';
     $user_Id = $_POST['user_id'];
-    $role = $_POST['role'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'kontoID' => $user_Id, 'anamn' => $username);
+    $params = array ('funktion' => $function, 'kontoID' => $user_Id);
 
     $query = http_build_query($params);
 
