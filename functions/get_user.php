@@ -4,8 +4,6 @@ function getUser(){
 
     include "../includes/settings.php";
 
-    $function = "tjanstJson";
-
     $tjanst_id = "61";
 
     // Create map with request parameters
