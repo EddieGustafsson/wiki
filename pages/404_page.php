@@ -31,7 +31,7 @@ include '../includes/head.php';
                             <div class="col">
                                 <p><strong>Oops you've have encountered an error</strong></p>
                                 <p>
-                                It apperrs that Either something went wrong or the page doesn't exist anymore...<br />
+                                It appears that either something went wrong or the page doesn't exist anymore...<br />
                                 </p>
                             </div>
                         </div>
