@@ -26,9 +26,7 @@ if(isset($_POST['user_id'])){
 
     $array = json_decode($result, true);
 
-    print_r($array);
-
-    //header("location: " . $host . "/_admin");
+    header("location: " . $host . "/_admin");
 
 }
 
