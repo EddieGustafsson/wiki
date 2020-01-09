@@ -148,6 +148,8 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                             </div>
                             <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab" style="min-height: 500px;">
                                 <h4>Statistik</h4>
+                                <hr>
+                                <?php include '../includes/statistics.php'; ?>
                             </div>
                         </div>
                     </div> 

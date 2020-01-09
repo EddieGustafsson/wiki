@@ -32,6 +32,7 @@ if($array['success'] == true){
     session_start();
     $_SESSION["username"] = $array['anamn'];
     $_SESSION["user_id"] = $array['anvandarId'];
+    $_SESSION["mail"] = $array['mail'];
     $_SESSION["role"] = $array['roll'];
     
     setcookie("theme", 'main', time()+(60*60*24*30), '/');

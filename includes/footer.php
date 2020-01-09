@@ -21,14 +21,14 @@
                                 <div class="col-sm">
                                     <h4 class="card-text">Hjälp</h4>
                                     <ul>
-                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="<?php echo $host;?>/_faq">FAQ</a></li>
                                         <li><a href="#">Kontakta oss</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div style="text-align: center;">
-                            <small><a href="<?php echo $host;?>/Privacy Policy">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="<?php echo $host;?>/Terms of Service">Användarvillkor</a></small>
+                            <small><a href="<?php echo $host;?>/Privacy Policy">Integritetspolicy</a> &#8226 © <?php echo date("Y"); ?> Marvel Wiki &#8226 <a href="<?php echo $host;?>/Terms of Service">Användarvillkor</a></small>
                             <br>
                             <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="https://github.com/EddieGustafsson/wiki">Wikingdom</a></small>
                         </div>

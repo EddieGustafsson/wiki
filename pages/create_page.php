@@ -32,18 +32,9 @@ if(empty($_SESSION['username'])){
                     <div class="card shadow-lg">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col">
                                     <div class="input-group input-group-lg">
                                         <input placeholder="Din titel" name="title" value="<?php if(isset($_GET['page'])){echo $_GET['page'];}; ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required autofocus>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <p style="margin-top:1px;margin-bottom:-2px;">Inställningar:</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Lås artikel
-                                        </label>
                                     </div>
                                 </div>
                             </div>
