@@ -38,6 +38,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
         <script src="<?php echo $host;?>/assets/js/search_auto_complete.js"></script>
 
         <script>
@@ -70,7 +71,12 @@ $link = basename($_SERVER["REQUEST_URI"]);
 
         <div class="container <?php if($link != "_edit" && $link != "_create"){echo "sticky-top";}?>" style="margin-bottom:15px">
             <nav class="navbar navbar-dark bg-dark" style="padding: .1rem 1rem!important;font-size: 15px;">
-                <div class="navbar-text justify-content-start"><i class="far fa-sticky-note"></i> <strong><?php echo $page_tot?></strong> sidor</div>
+                <div class="navbar-text justify-content-start">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" style="color: white!important;" class="btn btn-secondary btn-sm"><i class="far fa-sticky-note"></i> <strong><?php echo $page_tot?></strong> sidor</a>
+                        <a role="button" style="color: white!important;" class="btn btn-success btn-sm" href="<?php echo $host;?>/_create">Skapa sida</a>
+                    </div>
+                </div>
                 <div class="navbar-text justify-content-end" style="padding-top: .3rem; padding-bottom: .3rem;">
                     <?php 
                         if(!empty($_SESSION['username'])){

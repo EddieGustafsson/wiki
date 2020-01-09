@@ -71,11 +71,11 @@
 img{
     z-index: 99999999;
 }
-del{
+.del{
     background:#fcc;
     text-decoration: none!important;
 }
-ins{
+.ins{
     background:#cfc;
     text-decoration: none!important;
 }

@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div style="text-align: center;">
-                            <small><a href="<?php echo $host;?>/Privacy Policy">Integritetspolicy</a> &#8226 © 2019 Marvel Wiki &#8226 <a href="<?php echo $host;?>/Terms of Service">Användarvillkor</a></small>
+                            <small><a href="<?php echo $host;?>/Privacy Policy">Integritetspolicy</a> &#8226 © <?php echo date("Y"); ?> Marvel Wiki &#8226 <a href="<?php echo $host;?>/Terms of Service">Användarvillkor</a></small>
                             <br>
                             <small><i class="fas fa-xs fa-power-off" ></i> Powered by <a href="https://github.com/EddieGustafsson/wiki">Wikingdom</a></small>
                         </div>
