@@ -114,14 +114,20 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user-circle"></i> Karaktärer
                         </a>
+                        <div class="dropdown">
                         <div id="character_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <input name="character" id="character" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i Marvel Wiki" aria-label="Search">
                         </div>
+
+                        </div>
+                        
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-book"></i> Serier
                         </a>
                         <div id="comic_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <input name="comic" id="comic" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i Marvel Wiki" aria-label="Search">
                         </div>
                     </li>
                     <li class="nav-item dropdown">
