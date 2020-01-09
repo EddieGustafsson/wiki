@@ -122,7 +122,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         </a>
                         <div class="dropdown">
                         <div id="character_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <input name="character" id="character" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i Marvel Wiki" aria-label="Search">
+                            <input name="character" id="character" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i karaktärer" aria-label="Search">
                         </div>
 
                         </div>
@@ -133,7 +133,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         <i class="fa fa-book"></i> Serier
                         </a>
                         <div id="comic_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <input name="comic" id="comic" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i Marvel Wiki" aria-label="Search">
+                            <input name="comic" id="comic" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i serier" aria-label="Search">
                         </div>
                     </li>
                     <li class="nav-item dropdown">

@@ -13,6 +13,11 @@
     background: #212327;
 }
 
+.nav-item  .dropdown {
+  position: relative!important;
+  display: block!important;
+}
+
 .cookiealert.show {
     opacity: 1;
     transform: translateY(0%);
