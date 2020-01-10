@@ -282,17 +282,48 @@ echo '
                         <div class="modal-body">
                             <form action="'.$host.'/functions/deactivate_user.php" method="POST">
                                 <input type="hidden" name="user_id" id="user_id" value="">
-                                <div class="alert alert-danger" role="alert">
+                                <div class="alert alert-warning" role="alert">
                                     <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
                                 </div>
                                 <ul>
                                     <li>Detta konto kommer att <strong>deaktiveras</strong>.</li>
                                     <li>Ett deaktiverat konto kommer <strong>inte vara tillgängligt</strong> för användaren</li>
-                                    <li>Kontot måste aktiveras av en admin igen för att användaren ska få tillgång</li>
+                                    <li>Kontot <strong>måste</strong> aktiveras av en admin igen för att användaren ska få tillgång</li>
                                 </ul> 
                                 <hr>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-outline-danger btn-lg">Deaktivera konto</button>
+                                    <button type="submit" class="btn btn-outline-warning btn-lg">Deaktivera konto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    <!-- Activate user -->
+
+    <div class="modal fade" tabindex="-1" id="activate-user" role="dialog" aria-labelledby="activate-user" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="activate-user">Är du säker på att du vill göra det här?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="'.$host.'/functions/activate_user.php" method="POST">
+                                <input type="hidden" name="user_id" id="user_id" value="">
+                                <div class="alert alert-success" role="alert">
+                                    <i class="fas fa-exclamation-triangle"></i> Detta är viktigt.
+                                </div>
+                                <ul>
+                                    <li>Detta kommer att <strong>aktivera</strong> kontot.</li>
+                                    <li>Kontot <strong>måste vara aktiverat</strong> för att användaren ska kunna komma in på detta wiki igen</li>
+                                </ul> 
+                                <hr>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-success btn-lg">Aktivera Konto</button>
                                 </div>
                             </form>
                         </div>
