@@ -138,8 +138,9 @@
     </body>
 </html>
 
-<?php
+<script src="<?php echo $host;?>/assets/js/checkbox-limit.js"></script>
+<script>
 
+    checkboxlimit(document.forms.compare, 2)
 
-
-?>
+</script>
