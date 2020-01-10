@@ -27,8 +27,6 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
     $total_items = count($user_list['anvandare']); // total items
     $total_pages = ceil($total_items / $limit);
 
-    print_r($user_list);
-
 }
 
 ?>
