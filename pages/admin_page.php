@@ -27,6 +27,8 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
     $total_items = count($user_list['anvandare']); // total items
     $total_pages = ceil($total_items / $limit);
 
+    print_r($user_list);
+
 }
 
 ?>
@@ -88,7 +90,7 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                                                         <hr>
                                                                         <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
                                                                         samt tar bort möjligheten för dem att ändra något.</p>
-                                                                        <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#deactivate_user" class="identify_user" data-id="' . $id . '">Deaktivera Konto</button>
+                                                                        <button type="button" class="btn btn-outline-warning btn-sm identify_user" data-toggle="modal" data-target="#deactivate-user" data-id="' . $id . '">Deaktivera Konto</button>
                                                                     </div>
                                                                     <div class="col">
                                                                         <h4>Ta Bort Konto</h4>
