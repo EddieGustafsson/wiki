@@ -86,11 +86,10 @@
                 return false;
             };
 
-            $('#deactivate_user').on('shown.bs.modal', function() {
+            $('#deactivate-user').on('shown.bs.modal', function(e) {
 
-                var user = $(this).data('id');
-                $(".modal-body #user_id").val(user);
-                alert("hej");
+                var my_id_value = $(e.relatedTarget).data('id');
+                $(".modal-body #user_id").val(my_id_value);
 
             });
 
