@@ -57,7 +57,6 @@
         <script src="<?php echo $host;?>/assets/js/editormd.js"></script>
         <script src="<?php echo $host;?>/assets/js/linked_popovers.js"></script>
         <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
-        <script src="<?php echo $host;?>/assets/js/checkbox-limit.js"></script>
         <script src="<?php echo $host;?>/assets/js/backtotop.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
@@ -85,9 +84,15 @@
             pasteBox.onpaste = e => {
                 e.preventDefault();
                 return false;
-             };
+            };
 
-             checkboxlimit(document.forms.compare, 2)
+            $('#deactivate_user').on('shown.bs.modal', function() {
+
+                var user = $(this).data('id');
+                $(".modal-body #user_id").val(user);
+                alert("hej");
+
+            });
 
             <?php 
             if(isset($_SESSION["delete_account"]) && $_SESSION["delete_account"] == "true"){
