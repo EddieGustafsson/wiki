@@ -281,7 +281,7 @@ echo '
                         </div>
                         <div class="modal-body">
                             <form action="'.$host.'/functions/deactivate_user.php" method="POST">
-                                <input type="hidden" name="user_id" value="user_id">
+                                <input type="hidden" name="user_id" id="user_id" value="">
                                 <div class="alert alert-danger" role="alert">
                                     <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
                                 </div>
