@@ -57,7 +57,7 @@ include '../includes/head.php';
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
                                             </div>
-                                            <input id="faqFilter" onkeyup="faqSearch()" type="text" class="form-control" placeholder="Sök efter frågor..." aria-label="Search" aria-describedby="basic-addon1">
+                                            <input id="faqFilter" onkeyup="faqSearch('faqFilter','accordionExample','card','.card-body .btn-link')" type="text" class="form-control" placeholder="Sök efter frågor..." aria-label="Search" aria-describedby="basic-addon1">
                                         </div>
                                     </form>
                                 </div>

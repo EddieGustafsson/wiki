@@ -131,7 +131,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                         </a>
                         <div class="dropdown">
                         <div id="character_dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <input name="character" id="character" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i karaktärer" aria-label="Search">
+                            <input id="character" onkeyup="faqSearch('character','character_dropdown','dropdown-item','null')" class="form-control typeahead mr-sm-2" type="text" ata-provide="typeahead" autocomplete="off" placeholder="Sök i karaktärer" aria-label="Search">
                         </div>
 
                         </div>
