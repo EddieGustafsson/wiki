@@ -1,17 +1,28 @@
-function faqSearch() {
-    var input, filter, cards, cardContainer, h5, title, i;
+function faqSearch(input_id, container_id, object_class_name, location) {
+    var input, filter, cards, cardContainer, title, i;
     
-    input = document.getElementById("faqFilter");
+    input = document.getElementById(input_id);
     filter = input.value.toUpperCase();
-    cardContainer = document.getElementById("accordionExample");
-    cards = cardContainer.getElementsByClassName("card");
+    cardContainer = document.getElementById(container_id);
+    cards = cardContainer.getElementsByClassName(object_class_name);
 
     for (i = 0; i < cards.length; i++) {
-        title = cards[i].querySelector(".card-body .btn-link");
-        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-            cards[i].style.display = "";
+        if(cards[i].querySelector(location) != null){
+            title = cards[i].querySelector(location);
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            } 
         } else {
-            cards[i].style.display = "none";
+            title = cards[i].title;
+            if (title.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+            
         }
+        
     }
 }
