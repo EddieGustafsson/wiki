@@ -47,7 +47,7 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="user-list-tab" data-toggle="pill" href="#user-list" role="tab" aria-controls="user-list" aria-selected="false">Användarlista</a>
                             <a class="nav-link" id="statistics-tab" data-toggle="pill" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistik</a>
-                            <a class="nav-link" id="changelog-tab" data-toggle="pill" href="#changelog" role="tab" aria-controls="changelog" aria-selected="false">Ändringslogg</a>
+                            <a class="nav-link" id="changelog-tab" data-toggle="pill" href="#changelog" role="tab" aria-controls="changelog" aria-selected="false">Changelog</a>
                         </div>
                     </div>
                     <div class="col-9">
@@ -153,7 +153,7 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                 <?php include '../includes/statistics.php'; ?>
                             </div>
                             <div class="tab-pane fade" id="changelog" role="tabpanel" aria-labelledby="changelog-tab" style="min-height: 700px;">
-                                <h4>Ändringslogg</h4>
+                                <h4>Changelog</h4>
                                 <hr>
                                     <div style="height:600px;" class="overflow-auto"id="test-markdown-view">
                                         <!-- Server-side output Markdown text -->
