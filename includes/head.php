@@ -38,30 +38,39 @@ $link = basename($_SERVER["REQUEST_URI"]);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js" integrity="sha256-TkEcmf5KSG2zToAaUzkq6G+GWezMQ4lEtaBiyaq6Jb4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-        <script>
-            $(document).ready(function() {
-                $('#recent_changes').DataTable({
-                    "order": [[ 0, 'desc' ]],
-                    "language": {
-                        "lengthMenu": "Visar _MENU_ rader per sida",
-                        "search": "Sök:",
-                        "paginate": {
-                            "first": "Första",
-                            "last": "Sista",
-                            "next": "Nästa",
-                            "previous": "Tillbaka"
-                        },
-                        "zeroRecords": "Inget resultat",
-                        "info": "Visar _PAGE_ av _PAGES_ sidor",
-                        "infoEmpty": "Inga uppgifter är tillgängliga",
-                        "infoFiltered": "(filtreras från _MAX_ totala rader)"
-                    }
-                });
-            } );
-        </script>
+        <?php   
+        if($_SERVER['REQUEST_URI'] == "/Wiki/_recent_changes"){
+            echo 
+            "
+            <script>
+                $(document).ready(function() {
+                    $('#recent_changes').DataTable({
+                        'order': [[ 0, 'desc' ]],
+                        'language': {
+                            'lengthMenu': 'Visar _MENU_ rader per sida',
+                            'search': 'Sök:',
+                            'paginate': {
+                                'first': 'Första',
+                                'last': 'Sista',
+                                'next': 'Nästa',
+                                'previous': 'Tillbaka'
+                            },
+                            'zeroRecords': 'Inget resultat',
+                            'info': 'Visar _PAGE_ av _PAGES_ sidor',
+                            'infoEmpty': 'Inga uppgifter är tillgängliga',
+                            'infoFiltered': '(filtreras från _MAX_ totala rader)'
+                        }
+                    });
+                } );
+            </script>
+            ";
+        }
+        ?>
+
 
     </head>
     
@@ -74,7 +83,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                 <div class="navbar-text justify-content-start">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a role="button" style="color: white!important;" class="btn btn-secondary btn-sm"><i class="far fa-sticky-note"></i> <strong><?php echo $page_tot?></strong> sidor</a>
-                        <a role="button" style="color: white!important;" class="btn btn-success btn-sm" href="<?php echo $host;?>/_create">Skapa sida</a>
+                        <a role="button" style="color: white!important;" class="btn btn-success btn-sm" href="<?php echo $host;?>/_create">Skapa artikel</a>
                     </div>
                 </div>
                 <div class="navbar-text justify-content-end" style="padding-top: .3rem; padding-bottom: .3rem;">

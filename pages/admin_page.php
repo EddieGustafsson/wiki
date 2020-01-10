@@ -47,11 +47,12 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="user-list-tab" data-toggle="pill" href="#user-list" role="tab" aria-controls="user-list" aria-selected="false">Användarlista</a>
                             <a class="nav-link" id="statistics-tab" data-toggle="pill" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistik</a>
+                            <a class="nav-link" id="changelog-tab" data-toggle="pill" href="#changelog" role="tab" aria-controls="changelog" aria-selected="false">Ändringslogg</a>
                         </div>
                     </div>
                     <div class="col-9">
                         <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="user-list-tab" style="min-height: 500px;">
+                            <div class="tab-pane fade show active" id="user-list" role="tabpanel" aria-labelledby="user-list-tab" style="min-height: 700px;">
                                 <div class="settings-section">
                                     <div class="row">
                                         <div class="col-10">
@@ -146,10 +147,20 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab" style="min-height: 500px;">
+                            <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab" style="min-height: 700px;">
                                 <h4>Statistik</h4>
                                 <hr>
                                 <?php include '../includes/statistics.php'; ?>
+                            </div>
+                            <div class="tab-pane fade" id="changelog" role="tabpanel" aria-labelledby="changelog-tab" style="min-height: 700px;">
+                                <h4>Ändringslogg</h4>
+                                <hr>
+                                    <div style="height:600px;" class="overflow-auto"id="test-markdown-view">
+                                        <!-- Server-side output Markdown text -->
+                                        <textarea style="display:none;"><?php echo file_get_contents("../CHANGELOG.md");?>
+                                        </textarea>             
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div> 
