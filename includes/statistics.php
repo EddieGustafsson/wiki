@@ -38,49 +38,8 @@
     Featured
   </div>
   <div class="card-body">
-    <canvas id="chartjs" width="100%" height="60%"></canvas>
+    <canvas id="canvas"></canvas>
   </div>
 </div>
 
-<script>
-var canvas = document.getElementById('chartjs');
-
-var data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-  datasets: [{
-    label: 'Counts',
-    data: [0, 0, 2, 0, 1, 3, 5],
-    fill: false,
-    lineTension: 0,
-    backgroundColor: 'rgba(75,192,192,0.4)',
-    borderWidth: 3,
-    borderColor: 'rgba(75,192,192,1)',
-    borderCapStyle: 'round',
-    borderJoinStyle: 'round',
-    pointBorderColor: 'rgba(75,192,192,1)',
-    pointBackgroundColor: '#fff',
-    pointBorderWidth: 1,
-    pointHoverRadius: 5,
-    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-    pointHoverBorderColor: 'rgba(220,220,220,1)',
-    pointHoverBorderWidth: 2,
-    pointRadius: 3,
-    pointHitRadius: 20,
-    pointStyle: 'circle',
-  }]
-};
-
-var myBarChart = Chart.Line(canvas, {
-  data: data,
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-            beginAtZero:true,
-            suggestedMax:10
-        }
-      }]
-    }
-  }
-});
-</script>
+<script src="<?php echo $host;?>/assets/js/statistics_chart.js"></script>
