@@ -98,7 +98,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                                     </button>
                                     <div class="dropdown-menu">
                             ';
-                            if($_SESSION['role'] == "superadmin"){ echo'<a class="dropdown-item" href="'.$host.'/_admin"><i class="fab fa-accessible-icon"></i> Admin</a>';}
+                            if($_SESSION['role'] == "superadmin"){ echo'<a class="dropdown-item" href="'.$host.'/_admin"><i class="fas fa-user-cog"></i> Adminpanel</a>';}
                             echo 
                             '
                                         <a class="dropdown-item" href="'.$host.'/_settings"><i class="fas fa-cogs"></i> Inställningar</a>
