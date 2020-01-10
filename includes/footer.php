@@ -22,7 +22,7 @@
                                     <h4 class="card-text">Hjälp</h4>
                                     <ul>
                                         <li><a href="<?php echo $host;?>/_faq">FAQ</a></li>
-                                        <li><a href="#">Kontakta oss</a></li>
+                                        <li><a href="<?php echo $host;?>/_contact">Kontakta oss</a></li>
                                     </ul>
                                 </div>
                             </div>
