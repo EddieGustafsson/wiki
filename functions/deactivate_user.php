@@ -1,18 +1,14 @@
 <?php
 
-function editUser($anvandarid, $password){
+include "../includes/settings.php";
 
-    include "../includes/settings.php";
+if(isset($_POST['user_id'])){
 
-    /*$service = 'wiki';
-    $type = 'function';
-    $action = 'skapa';*/
-    $function = 'redigeraKonto';
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $function = 'deaktiveraKonto';
+    $user_id = $_POST['user_id'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'anvandarid' => $anvandarid, 'password' => $password);
+    $params = array ('funktion' => $function, 'id' => $user_id);
 
     $query = http_build_query($params);
 
@@ -26,11 +22,11 @@ function editUser($anvandarid, $password){
 
     $context = stream_context_create(array('http' => $context_data));
 
-    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/redigera.php', false, $context);
+    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/konto.php', false, $context);
 
     $array = json_decode($result, true);
 
-
+    header("location: " . $host . "/_admin");
 
 }
 

@@ -1,13 +1,14 @@
 <?php
 
-function getUser(){
+include "../includes/settings.php";
 
-    include "../includes/settings.php";
+if(isset($_POST['user_id'])){
 
-    $tjanst_id = "61";
+    $function = 'aktiveraKonto';
+    $user_id = $_POST['user_id'];
 
     // Create map with request parameters
-    $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'JSON', 'tjanstId' => $tjanst_id);
+    $params = array ('funktion' => $function, 'id' => $user_id);
 
     $query = http_build_query($params);
 
@@ -21,11 +22,11 @@ function getUser(){
 
     $context = stream_context_create(array('http' => $context_data));
 
-    $result = file_get_contents('http://10.130.216.101/TP/api.php', false, $context);
+    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/konto.php', false, $context);
 
     $array = json_decode($result, true);
 
-    return $array;
+    header("location: " . $host . "/_admin");
 
 }
 

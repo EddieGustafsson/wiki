@@ -69,6 +69,7 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
 
                                                 $user = $user_list['anvandare'][$i]['anamn'];
                                                 $id = $user_list['anvandare'][$i]['id'];
+                                                $active = $user_list['anvandare'][$i]['aktiv'];
 
                                                 if(isset($user)){
                                                     echo
@@ -85,11 +86,25 @@ if(empty($_SESSION['username']) && $_SESSION['role'] != "superadmin"){
                                                             <div class="card-body">
                                                                 <div class="row">
                                                                     <div class="col" style="border-right: 1px solid rgba(0,0,0,.125);">
-                                                                        <h4>Deaktivera Konto</h4>
-                                                                        <hr>
-                                                                        <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
-                                                                        samt tar bort möjligheten för dem att ändra något.</p>
-                                                                        <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#deactivate-account">Deaktivera Konto</button>
+                                                                    ';
+                                                                    if($active == 1){
+                                                                        echo'
+                                                                            <h4>Deaktivera Konto</h4>
+                                                                            <hr>
+                                                                            <p>Genom att deaktivera detta konto så tar du bort möjligheten för användaren att komma in på detta Wiki, 
+                                                                            samt tar bort möjligheten för dem att ändra något.</p>
+                                                                            <button type="button" class="btn btn-outline-warning btn-sm identify_user" data-toggle="modal" data-target="#deactivate-user" data-id="' . $id . '">Deaktivera Konto</button>
+                                                                        ';
+                                                                    }else if($active == 0){
+                                                                        echo'
+                                                                            <h4>Aktivera Konto</h4>
+                                                                            <hr>
+                                                                            <p>Genom att aktivera detta konto så ger du användaren möjligheten att komma in på detta Wiki, 
+                                                                            samt ger möjligheten för dem att ändra på saker.</p>
+                                                                            <button type="button" class="btn btn-outline-success btn-sm identify_user" data-toggle="modal" data-target="#activate-user" data-id="' . $id . '">Aktivera Konto</button>
+                                                                        ';
+                                                                    }
+                                                                    echo'
                                                                     </div>
                                                                     <div class="col">
                                                                         <h4>Ta Bort Konto</h4>
