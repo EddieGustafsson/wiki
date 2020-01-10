@@ -5,10 +5,10 @@ include "../includes/settings.php";
 if(isset($_POST['user_id'])){
 
     $function = 'tabortKonto';
-    $user_Id = $_POST['user_id'];
+    $user_id = $_POST['user_id'];
 
     // Create map with request parameters
-    $params = array ('funktion' => $function, 'kontoID' => $user_Id);
+    $params = array ('funktion' => $function, 'anvandarid' => $user_id);
 
     $query = http_build_query($params);
 
