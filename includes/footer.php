@@ -93,6 +93,13 @@
 
             });
 
+            $('#activate-user').on('shown.bs.modal', function(e) {
+
+                var my_id_value = $(e.relatedTarget).data('id');
+                $(".modal-body #user_id").val(my_id_value);
+
+            });
+
             <?php 
             if(isset($_SESSION["delete_account"]) && $_SESSION["delete_account"] == "true"){
                 echo 
