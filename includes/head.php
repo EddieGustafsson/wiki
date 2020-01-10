@@ -83,7 +83,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
                 <div class="navbar-text justify-content-start">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a role="button" style="color: white!important;" class="btn btn-secondary btn-sm"><i class="far fa-sticky-note"></i> <strong><?php echo $page_tot?></strong> sidor</a>
-                        <a role="button" style="color: white!important;" class="btn btn-success btn-sm" href="<?php echo $host;?>/_create">Skapa sida</a>
+                        <a role="button" style="color: white!important;" class="btn btn-success btn-sm" href="<?php echo $host;?>/_create">Skapa artikel</a>
                     </div>
                 </div>
                 <div class="navbar-text justify-content-end" style="padding-top: .3rem; padding-bottom: .3rem;">
