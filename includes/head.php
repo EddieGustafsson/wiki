@@ -41,27 +41,35 @@ $link = basename($_SERVER["REQUEST_URI"]);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js" integrity="sha256-TkEcmf5KSG2zToAaUzkq6G+GWezMQ4lEtaBiyaq6Jb4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-        <script>
-            $(document).ready(function() {
-                $('#recent_changes').DataTable({
-                    "order": [[ 0, 'desc' ]],
-                    "language": {
-                        "lengthMenu": "Visar _MENU_ rader per sida",
-                        "search": "Sök:",
-                        "paginate": {
-                            "first": "Första",
-                            "last": "Sista",
-                            "next": "Nästa",
-                            "previous": "Tillbaka"
-                        },
-                        "zeroRecords": "Inget resultat",
-                        "info": "Visar _PAGE_ av _PAGES_ sidor",
-                        "infoEmpty": "Inga uppgifter är tillgängliga",
-                        "infoFiltered": "(filtreras från _MAX_ totala rader)"
-                    }
-                });
-            } );
-        </script>
+        <?php   
+        if($_SERVER['REQUEST_URI'] == "/Wiki/_recent_changes"){
+            echo 
+            "
+            <script>
+                $(document).ready(function() {
+                    $('#recent_changes').DataTable({
+                        'order': [[ 0, 'desc' ]],
+                        'language': {
+                            'lengthMenu': 'Visar _MENU_ rader per sida',
+                            'search': 'Sök:',
+                            'paginate': {
+                                'first': 'Första',
+                                'last': 'Sista',
+                                'next': 'Nästa',
+                                'previous': 'Tillbaka'
+                            },
+                            'zeroRecords': 'Inget resultat',
+                            'info': 'Visar _PAGE_ av _PAGES_ sidor',
+                            'infoEmpty': 'Inga uppgifter är tillgängliga',
+                            'infoFiltered': '(filtreras från _MAX_ totala rader)'
+                        }
+                    });
+                } );
+            </script>
+            ";
+        }
+        ?>
+
 
     </head>
     
