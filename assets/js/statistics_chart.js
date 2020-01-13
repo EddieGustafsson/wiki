@@ -7,13 +7,13 @@ function hoursEarlier(hours) {
 var speedData = {
   labels: [hoursEarlier(10), hoursEarlier(9.4), hoursEarlier(8), hoursEarlier(7), hoursEarlier(6), hoursEarlier(5), hoursEarlier(4)],
   datasets: [{
-    label: "Car Speed",
+    label: "Santas Speed",
     data: [0, 59, 75, 20, 20, 55, 40],
     lineTension: 0.25,
     fill: false,
-    borderColor: 'orange',
+    borderColor: 'red',
     backgroundColor: 'transparent',
-    pointBorderColor: 'orange',
+    pointBorderColor: 'red',
     pointBackgroundColor: 'rgba(255,150,0,0.5)',
     borderDash: [5, 5],
     pointRadius: 5,
