@@ -186,8 +186,8 @@ img{
     visibility: visible;
   }
 
-  #reason{
-    
+  #contact_info_title{
+    font-size: 20px;
   }
 
   /* Page loading bar */
