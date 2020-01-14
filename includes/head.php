@@ -3,6 +3,10 @@ session_start();
 include '../includes/settings.php';
 include '../functions/get_wiki_status.php';
 
+if($maintenance_mode == true){
+    header('Location: ' .$host.'/_maintenance');
+}
+
 if(isset($_COOKIE['theme']) && in_array($_COOKIE['theme'], $stylesArr)) {
     $style = '/' . $_COOKIE['theme'] . '.css';
 } else {
@@ -20,7 +24,7 @@ $link = basename($_SERVER["REQUEST_URI"]);
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title><?php if(isset($page_title)){echo $page_title;} else {echo $array['sidor'][$page_id]['titel']; }?> – Marvel Wiki</title>
+        <title><?php if(isset($page_title)){echo $page_title;} else {echo $array['sidor'][$page_id]['titel']; }?> – <?php echo $site_title?></title>
         <meta name="description" content="Explore the Marvel cinematic and comic universe including all characters, heroes, villains, teams, groups, weapons, items, and more!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
