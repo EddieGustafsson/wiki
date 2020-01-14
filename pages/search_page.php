@@ -28,7 +28,7 @@ if(isset($_GET['query'])){
 
     // use get variable to paging number
     $page = !isset($_GET['page']) ? 1 : $_GET['page'];
-    $limit = 5; // five rows per page
+    $limit = 10; // five rows per page
     $offset = ($page - 1) * $limit; // offset
     $total_items = count($search_array); // total items
     $total_pages = ceil($total_items / $limit);
@@ -86,25 +86,6 @@ include '../includes/head.php';
                                         </div>
                                     </div>
                                 </form>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="dropdown">
-                                            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sortera efter</button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <div class="btn-group"> 
-                                            <button type="button" class="btn btn-outline-dark active"><i class="fa fa-list"></i></button> 
-                                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-th"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
                                 <br>
                                 <table class="table table-striped">
                                     <tbody>
