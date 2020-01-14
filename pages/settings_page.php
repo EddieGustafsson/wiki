@@ -11,7 +11,7 @@ if(empty($_SESSION['username'])){
     echo 
     "
     <script>
-        window.location = '".$host."/home?edit=unauthorized';
+        window.location = '".$host."/home?status=settings&reason=unauthorized';
     </script>
     ";
 }
@@ -69,17 +69,17 @@ if(empty($_SESSION['username'])){
                                         <form method="POST" action="<?php echo $host?>/functions/change_password.php">
                                             <lable><strong>Gammalt lösenord</strong></lable>
                                             <div class="input-group input-group-sm w-50">
-                                                <input id="password" name="password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
+                                                <input id="password" name="password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1" required>
                                             </div>
                                             <br>
                                             <lable><strong>Nytt lösenord</strong></lable>
                                             <div class="input-group input-group-sm w-50">
-                                                <input id="new_password" name="new_password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
+                                                <input id="new_password" name="new_password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1" required>
                                             </div>
                                             <br>
                                             <lable><strong>Bekräfta nytt lösenord</strong></lable>
                                             <div class="input-group input-group-sm w-50">
-                                                <input id="confirm_password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
+                                                <input id="confirm_password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1" required>
                                             </div>
                                             <br>
                                             <button type="submit" class="btn btn-secondary btn-sm">Uppdatera lösenord</button>
