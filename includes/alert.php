@@ -23,6 +23,9 @@ if(!empty($_GET['status'])){
                 case 'DebugDisabled':
                     alert("alert-success", "<i class='fas fa-info-circle'></i> Panel för felsökningsinformation har nu deaktiverats");
                     break;
+                case 'unauthorized':
+                    alert("aler-warning","<i class='fas fa-exclamation-triangle'></i> Du har inte rättighet att nå den föregående sidan. Vänligen försök att logga in.");
+                    break;
             }
             break;  
         case 'delete':
