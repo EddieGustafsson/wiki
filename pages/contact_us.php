@@ -40,6 +40,30 @@ if(empty($_SESSION['username'])){
                         <div class="row">
                             <div class="col-3" style="border-right: 1px solid rgba(0,0,0,.125);">
                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <br><br>
+                                    <div id="contact_info_title">
+                                        <p class="font-weight-bold">Kontakt information</p>
+                                    </div>
+                                    <br>
+                                    <div id="contact_info">
+                                        <div class="card">
+                                            <div class="card-header text-white bg-danger">
+                                                <i class="far fa-envelope"></i> Mail
+                                            </div>
+                                            <div class="card-body">
+                                                    <p class="font-weight-normal">wikingdom.info@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="card">
+                                            <div class="card-header text-white bg-danger">
+                                                <i class="far fa-compass"></i> Address
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="font-weight-normal">Kylarvägen 1 <br> 541 34 Skövde</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-9">
@@ -49,32 +73,43 @@ if(empty($_SESSION['username'])){
                                             <h4>Skicka ett meddelande till oss</h4>
                                             <hr>
 
-                                            <form>
+                                            <form action="<?php echo $host;?>/functions/mail_action.php" method="get">
                                             <div class="row">
                                                 <div class="col">
-                                                    <label for="basic-url">Fyll i ditt namn:</label>
+                                                    <label for="basic-url">Fyll i ditt förnamn:</label>
                                                     <div class="input-group mb-3">
-                                                    <input id="mail" type="text" class="form-control" placeholder='"John Parkin"' aria-label="Username" aria-describedby="basic-addon1" required>
+                                                    <input id="name" type="text" class="form-control" placeholder='John' aria-label="Username" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
                                                 <div class="col">
-                                                <label for="basic-url">Fyll i din mail address:</label>
+                                                    <label for="basic-url">Fyll i ditt efternamn:</label>
                                                     <div class="input-group mb-3">
-                                                    <input id="mail" type="text" class="form-control" placeholder="exempel@yahoo.se" aria-label="Email" aria-describedby="basic-addon2" required>
+                                                    <input id="lastname" type="text" class="form-control" placeholder='Parkin' aria-label="Username" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
+                                                
                                             </div>
                                             <br>
 
-                                            <div class="contact-us-reason">
-                                                <label for="basic-url">Vad är anledningen för att du kontaktar oss?</label>
-                                                <div class="form-group">
-                                                    <select class="form-control" id="reason" >
-                                                        <option>Välj ...</option>
-                                                        <option>Almänna frågor</option>
-                                                        <option>IT-problem</option>
-                                                        <option>Kontakta webmaster</option>
-                                                    </select>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="basic-url">Fyll i din mail address:</label>
+                                                    <div class="input-group mb-3">
+                                                        <input id="mail" type="text" class="form-control" placeholder="info@example.com" aria-label="Email" aria-describedby="basic-addon2" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="contact-us-reason">
+                                                        <label for="basic-url">Vad är anledningen för att du kontaktar oss?</label>
+                                                        <div class="form-group">
+                                                            <select class="form-control" id="reason">
+                                                                <option>Välj ...</option>
+                                                                <option>Almänna frågor</option>
+                                                                <option>IT-problem</option>
+                                                                <option>Kontakta webmaster</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <br>
