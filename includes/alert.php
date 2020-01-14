@@ -18,10 +18,10 @@ if(!empty($_GET['status'])){
         case 'settings':
             switch($_GET['reason']){
                 case 'DebugEnabled':
-                    alert("alert-success", "Panel för felsökningsinformation har nu aktiverats");
+                    alert("alert-success", "<i class='fas fa-info-circle'></i> Panel för felsökningsinformation har nu aktiverats");
                     break;
                 case 'DebugDisabled':
-                    alert("alert-success", "Panel för felsökningsinformation har nu deaktiverats");
+                    alert("alert-success", "<i class='fas fa-info-circle'></i> Panel för felsökningsinformation har nu deaktiverats");
                     break;
             }
             break;  
@@ -32,6 +32,15 @@ if(!empty($_GET['status'])){
                     break;
                 case 'Error':
                     alert("alert-danger", "<i class='fas fa-exclamation-triangle'></i> Det uppstod något fel vid borttaning av artikeln. Vänligen försök igen.");
+                    break;
+            }
+        case 'changePassword':
+            switch($_GET['reason']){
+                case 'success':
+                    alert("alert-success", "<i class='fas fa-info-circle'></i> Ditt lösenord har nu ändrats!");
+                    break;
+                case 'failed':
+                    alert("alert-danger", "<i class='fas fa-exclamation-triangle'></i> Det uppstod något fel vid ändring av ditt lösenord. Vänligen försök igen.");
                     break;
             }
     }
