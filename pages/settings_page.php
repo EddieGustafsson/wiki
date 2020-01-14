@@ -66,22 +66,24 @@ if(empty($_SESSION['username'])){
                                     <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" style="min-height: 500px;">
                                         <h4>Ändra lösenord</h4>
                                         <hr>
-                                        <lable><strong>Gammalt lösenord</strong></lable>
-                                        <div class="input-group input-group-sm w-50">
-                                            <input type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
-                                        </div>
-                                        <br>
-                                        <lable><strong>Nytt lösenord</strong></lable>
-                                        <div class="input-group input-group-sm w-50">
-                                            <input type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
-                                        </div>
-                                        <br>
-                                        <lable><strong>Bekräfta nytt lösenord</strong></lable>
-                                        <div class="input-group input-group-sm w-50">
-                                            <input type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
-                                        </div>
-                                        <br>
-                                        <button type="button" class="btn btn-secondary btn-sm">Uppdatera lösenord</button>
+                                        <form method="POST" action="<?php echo $host?>/functions/change_password.php">
+                                            <lable><strong>Gammalt lösenord</strong></lable>
+                                            <div class="input-group input-group-sm w-50">
+                                                <input id="password" name="password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
+                                            </div>
+                                            <br>
+                                            <lable><strong>Nytt lösenord</strong></lable>
+                                            <div class="input-group input-group-sm w-50">
+                                                <input id="new_password" name="new_password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
+                                            </div>
+                                            <br>
+                                            <lable><strong>Bekräfta nytt lösenord</strong></lable>
+                                            <div class="input-group input-group-sm w-50">
+                                                <input id="confirm_password" type="password" class="form-control" aria-label="password" aria-describedby="basic-addon1">
+                                            </div>
+                                            <br>
+                                            <button type="submit" class="btn btn-secondary btn-sm">Uppdatera lösenord</button>
+                                        </form>
                                     </div>
                                     <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab" style="min-height: 500px;">
                                         <div class="settings-section">
@@ -141,6 +143,8 @@ if(empty($_SESSION['username'])){
                 </div>
             </div>
         </main>
+
+        <script src="<?php echo $host?>/assets/js/confirm_password.js"></script>
 
         <?php include '../includes/footer.php'; ?>
 
