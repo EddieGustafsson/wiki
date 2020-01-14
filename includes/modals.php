@@ -173,7 +173,6 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?php echo $host;?>/_login" method="POST">
                                 <div class="alert alert-danger" role="alert">
                                     <i class="fas fa-exclamation-triangle"></i> Oväntade dåliga saker kommer att hända om du inte läser detta!
                                 </div>
@@ -183,13 +182,40 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
                                     <li>Det kan ta några minuter att byta namn.</li>
                                 </ul> 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-outline-danger btn-lg">Jag förstår, låt mig ändra mitt användarnamn</button>
+                                    <button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal" data-target="#change-username-step-2" data-dismiss="modal">Jag förstår, låt mig ändra mitt användarnamn</button>
                                 </div>
-                            </form>
                         </div>
                     </div>
             </div>
         </div>
+
+        <!-- Change username step 2 -->
+
+        <div class="modal fade" id="change-username-step-2" tabindex="-1" role="dialog" aria-labelledby="change-username" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form action="'.$host.'/functions/change_username.php" method="POST">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="change-username">Ändra ditt användarnamn</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="username">Nytt användarnamn</label>
+                                <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Skriv in ett användarnamn" required>
+                                <small id="usernameHelp" class="form-text text-muted">Ditt användarnamn måste följa Marvel Wikis <a target="_blank" href="'.$host.'/Terms%20of%20Service">användarvilkor.</a></small>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Avsluta</button>
+                            <button type="submit" class="btn btn-danger">Spara</button>
+                        </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+        
     ';
 }
 
