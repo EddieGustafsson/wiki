@@ -27,7 +27,7 @@
 
 <?php 
 
-if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
+if(isset($page_title) && $page_title == 'Inställnigar' && isset($_SESSION["user_id"])){
     echo 
     '
     <!-- Deactivate account -->
@@ -256,7 +256,7 @@ if($page_title = 'Inställnigar' && isset($_SESSION["user_id"])){
 
 <?php
 
-if($page_title == 'Adminpanel' && $_SESSION['role'] == "superadmin"){
+if(isset($page_title) && $page_title == 'Adminpanel' && $_SESSION['role'] == "superadmin"){
 
 echo '
 
@@ -307,7 +307,7 @@ echo '
                         </div>
                         <div class="modal-body">
                             <form action="'.$host.'/functions/deactivate_user.php" method="POST">
-                                <input type="hidden" name="user_id" id="user_id" value="">
+                                <input type="hidden" name="anv_id" id="anv_id" value="">
                                 <div class="alert alert-warning" role="alert">
                                     <i class="fas fa-exclamation-triangle"></i> Detta är oerhört viktigt.
                                 </div>

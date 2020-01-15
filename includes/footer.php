@@ -91,16 +91,10 @@
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("nyckel=<?php echo $api;?>&tjanst=wiki&typ=JSON&wiki=9");
 
-            const pasteBox = document.getElementById("confirmation_phrase");
-            pasteBox.onpaste = e => {
-                e.preventDefault();
-                return false;
-            };
-
             $('#deactivate-user').on('shown.bs.modal', function(e) {
 
                 var my_id_value = $(e.relatedTarget).data('id');
-                $(".modal-body #user_id").val(my_id_value);
+                $(".modal-body #anv_id").val(my_id_value);
 
             });
 

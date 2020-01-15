@@ -4,28 +4,32 @@ function getUser(){
 
     include "../includes/settings.php";
 
-    $tjanst_id = "61";
+    if(isset($_SESSION['role']) && $_SESSION['role'] == "superadmin"){
 
-    // Create map with request parameters
-    $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'JSON', 'tjanstId' => $tjanst_id);
+        $tjanst_id = "61";
 
-    $query = http_build_query($params);
+        // Create map with request parameters
+        $params = array ('nyckel' => $api, 'tjanst' => 'wiki', 'typ' => 'JSON', 'tjanstId' => $tjanst_id);
 
-    // Create Http context details
-    $context_data = array (
-        'method' => 'POST',
-        'header' => "Connection: close\r\n".
-                    "Content-Type: application/x-www-form-urlencoded\r\n".
-                    "Content-Length: ".strlen($query)."\r\n",
-        'content'=> $query );
+        $query = http_build_query($params);
 
-    $context = stream_context_create(array('http' => $context_data));
+        // Create Http context details
+        $context_data = array (
+            'method' => 'POST',
+            'header' => "Connection: close\r\n".
+                        "Content-Type: application/x-www-form-urlencoded\r\n".
+                        "Content-Length: ".strlen($query)."\r\n",
+            'content'=> $query );
 
-    $result = file_get_contents('http://10.130.216.101/TP/api.php', false, $context);
+        $context = stream_context_create(array('http' => $context_data));
 
-    $array = json_decode($result, true);
+        $result = file_get_contents('http://10.130.216.101/TP/api.php', false, $context);
 
-    return $array;
+        $array = json_decode($result, true);
+
+        return $array;
+
+    }
 
 }
 
