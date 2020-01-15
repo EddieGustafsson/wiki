@@ -7,7 +7,7 @@ function hoursEarlier(hours) {
 var speedData = {
   labels: [hoursEarlier(10), hoursEarlier(9.4), hoursEarlier(8), hoursEarlier(7), hoursEarlier(6), hoursEarlier(5), hoursEarlier(4)],
   datasets: [{
-    label: "Santas Speed",
+    label: "Publiceringar/dag",
     data: [0, 59, 75, 20, 20, 55, 40],
     lineTension: 0.25,
     fill: false,
@@ -53,8 +53,8 @@ var chartOptions = {
       },
       scaleLabel: {
         display: true,
-        labelString: "Speed in Miles per Hour",
-        fontColor: "green"
+        labelString: "Publicering",
+        fontColor: "red"
       }
     }]
   }
