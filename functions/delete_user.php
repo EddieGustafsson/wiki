@@ -1,37 +1,41 @@
 <?php
 
+session_start();
 include "../includes/settings.php";
-//include "../edit_user.php";
 
-if(isset($_POST['user_id']) && isset($_POST['username'])){
+if(isset($_SESSION['role']) && $_SESSION['role'] == "superadmin"){
 
-    $function = '';
-    $username = $_POST['username'];
-    $user_Id = $_POST['user_id'];
-    $role = $_POST['role'];
+    if(isset($_POST['user_id']) && isset($_POST['username'])){
 
-    // Create map with request parameters
-    $params = array ('funktion' => $function, 'kontoID' => $user_Id, 'anamn' => $username);
+        $function = '';
+        $username = $_POST['username'];
+        $user_Id = $_POST['user_id'];
+        $role = $_POST['role'];
 
-    $query = http_build_query($params);
+        // Create map with request parameters
+        $params = array ('funktion' => $function, 'kontoID' => $user_Id, 'anamn' => $username);
 
-    // Create Http context details
-    $context_data = array (
-        'method' => 'POST',
-        'header' => "Connection: close\r\n".
-                    "Content-Type: application/x-www-form-urlencoded\r\n".
-                    "Content-Length: ".strlen($query)."\r\n",
-        'content'=> $query );
+        $query = http_build_query($params);
 
-    $context = stream_context_create(array('http' => $context_data));
+        // Create Http context details
+        $context_data = array (
+            'method' => 'POST',
+            'header' => "Connection: close\r\n".
+                        "Content-Type: application/x-www-form-urlencoded\r\n".
+                        "Content-Length: ".strlen($query)."\r\n",
+            'content'=> $query );
 
-    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/tabort.php', false, $context);
+        $context = stream_context_create(array('http' => $context_data));
 
-    $array = json_decode($result, true);
+        $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/tabort.php', false, $context);
 
-    print_r($array);
+        $array = json_decode($result, true);
 
-    //header("location: " . $host . "/_admin");
+        print_r($array);
+
+        header("location: " . $host . "/_admin");
+
+    }
 
 }
 
