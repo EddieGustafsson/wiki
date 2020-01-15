@@ -5,7 +5,6 @@ include "../includes/settings.php";
 include "../functions/view_json.php";
 include "../functions/get_title.php";
 include "../functions/get_history.php";
-include_once  "../functions/inline_function.php";
 
 $page_title = 'Jämför artikel';
 
@@ -88,40 +87,10 @@ include '../includes/head.php';
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-8">
-                                <div id="test-markdown-view" class="js-toc-content">
-                                    <!-- Server-side output Markdown text -->
-                                    <textarea style="display:none;">
-<?php 
-$nl = '#**!)@#';
-$diff = inline_diff($new_souce, $old_source , $nl);
-//echo str_replace($nl,"\n",$diff)."\n";
-echo $diff;
-?>
-                                    </textarea>             
-                                </div>
-                            </div>
-                            <div class="col-4" style="border-left: 1px solid rgba(0,0,0,.125);text-align:left;">
-                            <div id="accordion">
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne">
-                                            <h5 class="mb-0">
-                                                <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    <h5>Innehållsförteckning</h5>
-                                                </button>
-                                                <div class="float-right" data-toggle="collapse" data-target="#collapseOne" style="margin-top: 3%;">
-                                                    <i class="fa" aria-hidden="true"></i>
-                                                </div>
-                                            </h5>
-                                        </div>
-
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <div id="custom-toc-container"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col">
+                                <textarea style="display:none;" id="original"><?php echo $array[$index_old]['innehall']; ?></textarea>
+                                <textarea style="display:none;" id="modified"><?php echo $array[$index_new]['innehall']; ?></textarea>
+                                <?php include '../includes/diff.php'?>
                             </div>
                         </div>
                     </div>

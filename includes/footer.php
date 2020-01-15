@@ -59,8 +59,18 @@
         <script src="<?php echo $host;?>/assets/js/cookie-popup.js"></script>
         <script src="<?php echo $host;?>/assets/js/backtotop.js"></script>
         <script src="<?php echo $host;?>/assets/js/faq-search.js"></script>
+        <script src="<?php echo $host;?>/assets/js/search_auto_complete.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/marked.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/prettify.min.js"></script>
+        <!-- Diff Script -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/scala.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html-ui.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jsdiff/3.2.0/diff.min.js'></script>
+        <script src="<?php echo $host;?>/assets/js/diff-script.js"></script>
+
         
         <script type="text/javascript">
             $(function() {
