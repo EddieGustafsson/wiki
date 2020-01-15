@@ -27,7 +27,7 @@
 
 <?php 
 
-if($page_title == 'Inställnigar' && isset($_SESSION["user_id"])){
+if(isset($page_title) && $page_title == 'Inställnigar' && isset($_SESSION["user_id"])){
     echo 
     '
     <!-- Deactivate account -->
@@ -256,7 +256,7 @@ if($page_title == 'Inställnigar' && isset($_SESSION["user_id"])){
 
 <?php
 
-if($page_title == 'Adminpanel' && $_SESSION['role'] == "superadmin"){
+if(isset($page_title) && $page_title == 'Adminpanel' && $_SESSION['role'] == "superadmin"){
 
 echo '
 
