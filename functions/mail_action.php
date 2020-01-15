@@ -1,6 +1,8 @@
 <?php
 namespace wiki;
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 require '../includes/PHPMailer-master/src/PHPMailer.php';
 require '../includes/PHPMailer-master/src/SMTP.php';
 require '../includes/PHPMailer-master/src/Exception.php';
@@ -14,15 +16,13 @@ require '../includes/PHPMailer-master/src/Exception.php';
     }
 
     
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
+
     $mail = new PHPMailer;
 
-    $mail->IsSMTP();
+    //$mail->IsSMTP();
     $mail->CharSet = 'UTF-8';
 
-   /* $mail->Host       = "smtp.gmail.com"; // SMTP server example
-    $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+    /*$mail->Host       = "smtp.gmail.com"; // SMTP server example
     $mail->SMTPAuth   = true;                  // enable SMTP authentication
     $mail->Port       = 25;                    // set the SMTP port for the GMAIL server
     $mail->Username   = "wikingdom.info@gmail.com"; // SMTP account username example
@@ -39,8 +39,10 @@ require '../includes/PHPMailer-master/src/Exception.php';
     $mail->Body    = $message;
     $mail->AltBody = 'From: ' . $input_mail;
 
+    //var_dump($mail);
+
     if(!$mail->send()) {
-        echo 'Message could not be sent.';
+        echo 'Message could not be sent. ';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
         echo 'Message has been sent';
