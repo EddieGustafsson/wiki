@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-xs-6 col-form-label" data-tootik="Hur många rader i sammanhanget bör inkluderas" data-tootik-conf="left multiline" for="contextLines">Kontextrader: </label>
+                                <label class="col-xs-6 col-form-label" data-tootik="Hur många rader i sammanhanget som bör inkluderas" data-tootik-conf="left multiline" for="contextLines">Kontextrader: </label>
                                 <div class="col-xs-6">
                                     <input class="form-control" id="contextLines" min="0" type="number" value="3" />
                                 </div>
