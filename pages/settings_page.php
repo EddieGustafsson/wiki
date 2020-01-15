@@ -148,5 +148,13 @@ if(empty($_SESSION['username'])){
 
         <?php include '../includes/footer.php'; ?>
 
+        <script>
+            const pasteBox = document.getElementById("confirmation_phrase");
+            pasteBox.onpaste = e => {
+                e.preventDefault();
+                return false;
+            };
+        </script>
+
     </body>
 </html>
