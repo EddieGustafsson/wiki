@@ -4,7 +4,7 @@ session_start();
 
 include "../includes/settings.php";
 
-if(isset($_POST['confirmation_phrase'])){
+if(isset($_POST['confirmation_phrase']) && isset($_SESSION['role'])){
     $confirmation_phrase = $_POST['confirmation_phrase'];
     $user_id = $_POST['user_id'];
 

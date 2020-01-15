@@ -118,12 +118,8 @@ if(empty($_SESSION['username'])){
                             ';
                         }
                     ?>
-
-                    imageUpload: true,
-                    imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-                    imageUploadURL: "./php/upload.php",
                     
-                    path : "<?php echo $host;?>/assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
+                    path: "<?php echo $host;?>/assets/js/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
                 });
 
             });

@@ -1,32 +1,37 @@
 <?php
 
+session_start();
 include "../includes/settings.php";
 
-if(isset($_POST['user_id'])){
+if(isset($_SESSION['role']) && $_SESSION['role'] == "superadmin"){
 
-    $function = 'aktiveraKonto';
-    $user_id = $_POST['user_id'];
+    if(isset($_POST['user_id'])){
 
-    // Create map with request parameters
-    $params = array ('funktion' => $function, 'id' => $user_id);
+        $function = 'aktiveraKonto';
+        $user_id = $_POST['user_id'];
 
-    $query = http_build_query($params);
+        // Create map with request parameters
+        $params = array ('funktion' => $function, 'id' => $user_id);
 
-    // Create Http context details
-    $context_data = array (
-        'method' => 'POST',
-        'header' => "Connection: close\r\n".
-                    "Content-Type: application/x-www-form-urlencoded\r\n".
-                    "Content-Length: ".strlen($query)."\r\n",
-        'content'=> $query );
+        $query = http_build_query($params);
 
-    $context = stream_context_create(array('http' => $context_data));
+        // Create Http context details
+        $context_data = array (
+            'method' => 'POST',
+            'header' => "Connection: close\r\n".
+                        "Content-Type: application/x-www-form-urlencoded\r\n".
+                        "Content-Length: ".strlen($query)."\r\n",
+            'content'=> $query );
 
-    $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/konto.php', false, $context);
+        $context = stream_context_create(array('http' => $context_data));
 
-    $array = json_decode($result, true);
+        $result = file_get_contents('http://10.130.216.101/TP/Admin/funktioner/konto.php', false, $context);
 
-    header("location: " . $host . "/_admin");
+        $array = json_decode($result, true);
+
+        header("location: " . $host . "/_admin");
+
+    }
 
 }
 
