@@ -117,7 +117,7 @@ if(empty($_SESSION['username'])){
                                                 </div>
                                             </div>
                                             <br><br>
-                                            <button type="submit" class="btn btn-primary">Skicka</button>
+                                            <button type="submit" class="btn btn-primary" style="float:right;">Skicka</button>
                                         </div>
                                         </form>
 
