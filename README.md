@@ -7,9 +7,20 @@ The goal is to create a knowledge base website, a wiki, on which users collabora
 
 ## Demo
 
-Här kommer det under ett senare skede läggas in bilder som visar upp vår wiki.
+### Article
 
-Here, at a later stage, pictures will be posted showing our wiki.
+![Wiki article](https://i.imgur.com/GlF2wSt.png "Wiki article")
+
+### Editor
+
+![Wiki editor](https://i.imgur.com/pwSMXKq.png "Wiki editor")
+
+### History/Revisions
+
+![Wiki article history](https://i.imgur.com/r6A8yom.png "Wiki article history")
+
+### Compare Revisions
+![Revisions compare](https://i.imgur.com/VpEMQc4.png "Revisions compare page")
 
 ## Credits
 
