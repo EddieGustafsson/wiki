@@ -124,4 +124,12 @@
                 ";
             }
             ?>
+            (function() {
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = '//api.usersnap.com/load/1fe45d58-8d51-4634-88cf-9e141962d7bc.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            })();
         </script>
