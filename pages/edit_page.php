@@ -48,9 +48,9 @@ if(empty($_SESSION['username'])){
                                     </div>
                                 </div>
                                 <div class="col-4" style="margin-top: 5px;">
-                                    <a type="button" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_history" class="btn btn-outline-dark ">Sidverision</a>
-                                    <a type="button" href="<?php echo $host;?>/_create" class="btn btn-success ">Ny sida</a>
-                                    <a type="button" data-toggle="modal" data-target="#remove-page-check" class="btn btn-outline-danger ">Ta bort sida</a>
+                                    <a type="button" href="<?php echo $host;?>/<?php echo $array['sidor'][$page_id]['titel']; ?>/_history" class="btn btn-outline-dark ">Historik</a>
+                                    <a type="button" href="<?php echo $host;?>/_create" class="btn btn-success ">Ny artikel</a>
+                                    <a type="button" data-toggle="modal" data-target="#remove-page-check" class="btn btn-outline-danger ">Ta bort artikel</a>
                                 </div>
                             </div>
                         </div>
